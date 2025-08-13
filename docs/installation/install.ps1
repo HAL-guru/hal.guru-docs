@@ -65,7 +65,7 @@ function Install-Halguru {
         }
 
         Write-Host "Installation of halguru v$version completed successfully!" -ForegroundColor Green
-        Write-Host "Open a new terminal window and execute the command: halguru --install" -ForegroundColor Yellow
+        Write-Host "Open a new terminal window and execute the command: halguru install" -ForegroundColor Yellow
     }
     catch {
         throw "Installation error: $_"
