@@ -42,7 +42,8 @@ function Install-Halguru {
         $arch = Get-SystemArch
         $version = Get-LatestVersion
 
-        $filename = "halguru-win-$arch-$version.zip"
+        $folder = "halguru-win-$arch-$version"
+        $filename = "$folder.zip"
         $downloadUrl = "https://github.com/$RepoOwner/$RepoName/releases/download/$version/$filename"
         $downloadPath = Join-Path $InstallDir $filename
 
@@ -53,7 +54,9 @@ function Install-Halguru {
 
         # Unpacking
         Expand-Archive -Path $downloadPath -DestinationPath $InstallDir -Force -ErrorAction Stop
+        Move-Item -Path "$InstallDir\$folder\*" -Destination $InstallDir -Force -ErrorAction Stop
         Remove-Item $downloadPath -ErrorAction SilentlyContinue
+        Remove-Item "$InstallDir\$folder" -ErrorAction SilentlyContinue
 
         # Updating PATH
         $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
