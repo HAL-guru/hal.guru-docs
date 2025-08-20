@@ -12,7 +12,7 @@ Next, you need to install the halguru application along with its extension for t
 
 ## MacOS and Linux users
 
-Open your terminal and execute the following command to download and run the installatio [script](https://docs.hal.guru/installation/install.sh):
+Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/installation/install.sh):
 
 ```bash
 sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash
