@@ -110,7 +110,7 @@ jobs:
           name: Release ${{ steps.version.outputs.version }}
           tag_name: ${{ github.ref_name }}
           draft: false
-          prerelease: false
+          prerelease: ${{ contains(steps.version.outputs.version, 'beta') }}
           files: assets/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
