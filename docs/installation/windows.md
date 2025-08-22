@@ -20,10 +20,11 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Installation Steps
 
-Open PowerShell as a regular user. Copy and paste the following command to download and run the installation script:
+Open PowerShell as a regular user. Copy and paste the following command to download and run 
+the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
 ```powershell
-irm https://docs.hal.guru/installation/install.ps1 | iex
+irm https://docs.hal.guru/halguru-install.ps1 | iex
 ```
 
 The script will automatically:
@@ -41,7 +42,6 @@ After installation, you'll need to open a new terminal window and run the comman
 1. The installer automatically detects your system architecture (x64 or arm64)
 2. The installation is performed on a per-user basis, no administrator privileges required
 3. All files are installed in the `.halguru` directory in your user profile
-4. Complete [install.ps1](https://docs.hal.guru/installation/install.ps1) script file.
 
 If you encounter any problems during installation, the script will display an error message explaining what went wrong.
 

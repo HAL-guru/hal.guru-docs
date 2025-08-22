@@ -22,10 +22,11 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Installation Steps
 
-Open your terminal window and execute the following command to download and run the installation script:
+Open your terminal window and execute the following command to download and run 
+the installation [script](https://docs.hal.guru/halguru-install.sh):
 
 ```bash
-sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash
 ```
  
 The script will automatically:
@@ -45,8 +46,15 @@ After successful installation, you can start using halguru immediately by typing
    * System architecture (x64 or arm64)
 2. The installation requires sudo privileges to create the symbolic link
 3. Primary installation location is in the `.halguru` directory in your home folder
-4. Complete [install.sh](https://docs.hal.guru/installation/install.sh) bash script file.
 
 If any errors occur during installation, the script will display appropriate error messages and exit.
 
 See the [Experienced Users Guide](experiences-users.md) for more details.
+
+## Pre-release version
+
+If you want to install the latest pre-release version of halguru, you can use the following command:
+
+```bash
+curl -sSL https://docs.hal.guru/installation/install.sh | bash -s --prerelease
+```

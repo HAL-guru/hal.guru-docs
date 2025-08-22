@@ -79,6 +79,29 @@ get_latest_version() {
     echo "$version"
 }
 
+get_latest_prerelease_version() {
+    local version
+    version=$(
+        curl -s "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases?per_page=30" \
+        | tr -d '\n' \
+        | sed -E 's/\},[[:space:]]*\{/\}\n\{/g' \
+        | grep -E '"prerelease"[[:space:]]*:[[:space:]]*true' \
+        | grep -Ev '"draft"[[:space:]]*:[[:space:]]*true' \
+        | sed -E -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/p' \
+        | head -n1
+    ) || {
+        log_error 2 "Failed to fetch latest prerelease version"
+        exit 2
+    }
+
+    if [ -z "$version" ]; then
+        log_error 3 "Received empty prerelease version value"
+        exit 3
+    fi
+
+    echo "$version"
+}
+
 get_arch() {
     local arch
     arch=$(uname -m)
@@ -147,17 +170,43 @@ cleanup() {
     fi
 }
 
+
+parse_args() {
+    PRERELEASE="false"
+    while [ $# -gt 0 ]; do
+        case "$1" in
+            --prerelease|--pre-release)
+                PRERELEASE="true"
+                ;;
+            --help|-h)
+                echo "Usage: install.sh [--prerelease]"
+                exit 0
+                ;;
+            *)
+                log_error 10 "Unknown argument: $1"
+                exit 10
+                ;;
+        esac
+        shift
+    done
+}
+
 main() {
     trap cleanup EXIT
 
-    log_info "Starting installation halguru"
+    log_info "Installer for the 'halguru' CLI"
 
     check_prerequisites
+    parse_args "$@"
 
     OS=$(get_os)
     ARCH=$(get_arch)
 
-    VERSION=$(get_latest_version)
+    if [ "$PRERELEASE" = "true" ]; then
+        VERSION=$(get_latest_prerelease_version)
+    else
+        VERSION=$(get_latest_version)
+    fi
 
     log_info "Creating directory $INSTALL_DIR"
 
@@ -233,4 +282,4 @@ main() {
     log_info "You can run the command: halguru --version"
 }
 
-main
+main "$@"
