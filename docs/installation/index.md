@@ -12,20 +12,20 @@ Next, you need to install the halguru application along with its extension for t
 
 ## MacOS and Linux users
 
-Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/installation/install.sh):
+Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.sh):
 
 ```bash
-sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash
 ```
 
 > More details: [MacOS and Linux installation tutorial](macos-and-linux.md).
 
 ## Windows users
 
-Open PowerShell as a regular user. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/installation/install.ps1):
+Open PowerShell as a regular user. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
 ```powershell
-irm https://docs.hal.guru/installation/install.ps1 | iex
+irm https://docs.hal.guru/halguru-install.ps1 | iex
 ```
 
 After the installation, open a new terminal window and run the command `halguru install` 
