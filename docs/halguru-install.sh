@@ -179,7 +179,7 @@ parse_args() {
                 PRERELEASE="true"
                 ;;
             --help|-h)
-                echo "Usage: install.sh [--prerelease]"
+                echo "Usage: halguru-install.sh [--prerelease|--help]"
                 exit 0
                 ;;
             *)
@@ -194,7 +194,7 @@ parse_args() {
 main() {
     trap cleanup EXIT
 
-    log_info "Installer for the 'halguru' CLI"
+    log_info "Installer for the 'halguru' CLI (macOS and Linux)"
 
     check_prerequisites
     parse_args "$@"

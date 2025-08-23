@@ -1,3 +1,8 @@
+param(
+    [switch]$Prerelease,
+    [switch]$Help
+)
+
 $RepoOwner = "HAL-guru"
 $RepoName = "hal.guru-docs"
 $InstallDir = "$env:USERPROFILE\.halguru"
@@ -15,6 +20,18 @@ function Get-LatestVersion {
     catch {
         throw "Failed to get latest version. Check your internet connection and ensure the repository exists."
     }
+}
+
+function Get-LatestPrereleaseVersion {
+    try {
+        $rels = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases?per_page=30" -Headers $CommonHeaders
+        $pre = $rels | Where-Object { $_.prerelease -eq $true -and $_.draft -ne $true } |
+                Sort-Object { [datetime]$_.published_at } -Descending |
+                Select-Object -First 1
+        if (-not $pre -or -not $pre.tag_name) { throw "Prelease not available." }
+        return $pre.tag_name
+    } catch {
+        throw "Failed to get latest version. Check your internet connection and ensure the repository exists."    }
 }
 
 function Get-SystemArch {
@@ -35,12 +52,19 @@ function Get-SystemArch {
 
 function Install-Halguru {
     try {
+        Write-Host "Installer for the 'halguru' CLI (Windows)"
+
+        if ($Help) {
+            Write-Host "Usage: halguru-install.ps1 [--prerelease|--help]"
+            exit
+        }
+
         # Creating installation directory
         New-Item -ItemType Directory -Force -Path $InstallDir -ErrorAction Stop | Out-Null
 
         # Getting system info and version
         $arch = Get-SystemArch
-        $version = Get-LatestVersion
+        $version = if ($Prerelease) { Get-LatestPrereleaseVersion } else { Get-LatestVersion }
 
         $folder = "halguru-win-$arch-$version"
         $filename = "$folder.zip"
@@ -48,6 +72,8 @@ function Install-Halguru {
         $downloadPath = Join-Path $InstallDir $filename
 
         Write-Host "Downloading $filename..." -ForegroundColor Cyan
+
+        exit
 
         # Downloading file
         Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -ErrorAction Stop
