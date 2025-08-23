@@ -61,22 +61,22 @@ curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s --prerelease
 
 ## Errror list
 
-| Kod | Komunikat                                                                     |
-|---|-------------------------------------------------------------------------------|
-| 1 | Missing required tools: ...                                                   |
-| 2 | Failed to fetch latest version                                                |
-| 3 | Received empty version value                                                  |
-| 4 | Unsupported architecture: $arch                                               |
-| 5 | Unsupported operating system: $os                                             |
-| 6 | The downloaded file is too small                                              |
-| 7 | The file could not be downloaded.                                             |
-| 8 | Failed to download file after ... attempts                                    |
-| 9 | Cannot change directory                                                       |
-| 10 | Unknown argument: $1                                                          |
-| 11 | Failed to extract archive                                                     |
-| 12 | It was not possible to move the unpacked files to the directory: $INSTALL_DIR |
-| 13 | Cannot set execution permissions                                              |
-| 14 | Unable to create directory or symbolic link                                   |
-| 15 | Failed to configure halguru                                                   |
-| 16 | Cannot create directory $INSTALL_DIR                                          |
-| 17 | Cannot create log file $LOG_FILE                                              |
+| Code | Message                                                                       |
+|------|-------------------------------------------------------------------------------|
+| 1    | Missing required tools: $TOOL_NAME                                            |
+| 2    | Failed to fetch latest version                                                |
+| 3    | Received empty version value                                                  |
+| 4    | Unsupported architecture: $ARCHITECTURE                                       |
+| 5    | Unsupported operating system: $OS                                             |
+| 6    | The downloaded file is too small                                              |
+| 7    | The file could not be downloaded.                                             |
+| 8    | Failed to download file after $COUNT attempts                                 |
+| 9    | Cannot change directory                                                       |
+| 10   | Unknown argument: $1                                                          |
+| 11   | Failed to extract archive                                                     |
+| 12   | It was not possible to move the unpacked files to the directory: $INSTALL_DIR |
+| 13   | Cannot set execution permissions                                              |
+| 14   | Unable to create directory or symbolic link                                   |
+| 15   | Failed to configure halguru                                                   |
+| 16   | Cannot create directory $INSTALL_DIR                                          |
+| 17   | Cannot create log file $LOG_FILE                                              |
