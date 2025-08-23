@@ -45,19 +45,20 @@ jobs:
         with:
           python-version: 3.x
 
+      - name: Install halguru
+        run: |
+          ls -la site
+          chmod +x site/halguru-install.sh
+          site/halguru-install.sh --no-run
+          halguru --version
+          halguru about
+
       - name: Build website
         run: |
           pip install mkdocs-material 
           mkdocs build
           test -d site && echo "Site directory exists" || echo "Missing site directory"
           ls -la site
-
-      - name: Install halguru
-        run: |
-          chmod +x ./halguru-install.sh
-          ./halguru-install.sh --no-run
-          halguru --version
-          halguru about
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
