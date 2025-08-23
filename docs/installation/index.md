@@ -35,4 +35,4 @@ to complete the setup and configure the Visual Studio Code editor for your AI ag
 
 ## Experienced users
 
-For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users).
+For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users.md).

@@ -49,7 +49,7 @@ After successful installation, you can start using halguru immediately by typing
 
 If any errors occur during installation, the script will display appropriate error messages and exit.
 
-See the [Experienced Users Guide](experiences-users.md) for more details.
+See the [Experienced Users Guide](experienced-users.md) for more details.
 
 ## Pre-release version
 
