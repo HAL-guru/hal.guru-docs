@@ -46,3 +46,11 @@ After installation, you'll need to open a new terminal window and run the comman
 If you encounter any problems during installation, the script will display an error message explaining what went wrong.
 
 More details at [Experienced users guide](experiences-users.md)
+
+## Pre-release version
+
+If you want to install the latest pre-release version of halguru, you can use the following command:
+
+```bash
+iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
+```

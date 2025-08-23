@@ -1,6 +1,6 @@
 param(
-    [switch]$Prerelease,
-    [switch]$Help
+    [switch]$prerelease,
+    [switch]$help
 )
 
 $RepoOwner = "HAL-guru"
@@ -54,7 +54,7 @@ function Install-Halguru {
     try {
         Write-Host "Installer for the 'halguru' CLI (Windows)"
 
-        if ($Help) {
+        if ($help) {
             Write-Host "Usage: halguru-install.ps1 [--prerelease|--help]"
             exit
         }
@@ -64,7 +64,7 @@ function Install-Halguru {
 
         # Getting system info and version
         $arch = Get-SystemArch
-        $version = if ($Prerelease) { Get-LatestPrereleaseVersion } else { Get-LatestVersion }
+        $version = if ($prerelease) { Get-LatestPrereleaseVersion } else { Get-LatestVersion }
 
         $folder = "halguru-win-$arch-$version"
         $filename = "$folder.zip"
@@ -72,8 +72,6 @@ function Install-Halguru {
         $downloadPath = Join-Path $InstallDir $filename
 
         Write-Host "Downloading $filename..." -ForegroundColor Cyan
-
-        exit
 
         # Downloading file
         Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -ErrorAction Stop
