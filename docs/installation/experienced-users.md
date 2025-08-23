@@ -59,32 +59,32 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 
 ## Initial Configuration
 
-1. Open new terminal/command prompt
+1. Open a new terminal / command prompt
 2. Run: `halguru install`
 3. Wait for the initial setup to complete the setup and configure Visual Studio Code Editor for your AI Agents
 
 ## Verify Installation
 
-1. In terminal/command prompt run:
+1. In the terminal / command prompt run:
 2. `halguru --version`
 3. Should display the version number
 
 ## Troubleshooting
 
-1. If command not found:
+1. If the command is not found:
     * Windows: Verify Path environment variable
-    * macOS/Linux: Check symbolic link in `/usr/local/bin`
-2. If permission denied:
+    * macOS/Linux: Check a symbolic link in `/usr/local/bin`
+2. If permission is denied:
     * Windows: Run terminal as administrator
     * macOS/Linux: Verify file permissions (`chmod +x`)
-3. If binary won't start:
-    * Verify you downloaded correct architecture
+3. If the binary doesn't start:
+    * Verify you downloaded the correct architecture
     * Check antivirus isn't blocking execution
 
 ## Updating
 
-To update existing installation:
+To update the existing installation:
 
-1. Download new version
+1. Download a new version
 2. Replace files in `.halguru` directory
-3. Run `halguru --install` again
+3. Run `halguru install` again

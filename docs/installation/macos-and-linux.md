@@ -18,7 +18,7 @@ Next, you need to install the halguru application along with its extension for t
 - `sudo` privileges
 - Internet connection
 
-> Windows users should use [Windows tutorial](windows.md)
+> Windows users should use [this tutorial](windows.md)
 
 ## Installation Steps
 

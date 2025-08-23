@@ -16,7 +16,7 @@ Next, you need to install the halguru application along with its extension for t
 - PowerShell
 - Internet connection
 
-> Linux and MacOS users should use [MacOS and Linux tutorial](macos-and-linux.md)
+> Linux and macOS users should use [this tutorial](macos-and-linux.md)
 
 ## Installation Steps
 

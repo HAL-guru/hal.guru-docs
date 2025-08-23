@@ -18,7 +18,7 @@ Open your terminal and execute the following command to download and run the ins
 curl -sSL https://docs.hal.guru/halguru-install.sh | bash
 ```
 
-> More details: [MacOS and Linux installation tutorial](macos-and-linux.md).
+> More details: [macOS and Linux installation tutorial](macos-and-linux.md).
 
 ## Windows users
 
