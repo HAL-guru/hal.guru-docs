@@ -4,7 +4,7 @@ trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
 
 set -e
 
-echo "Generate manual files for the hal.guru platform."
+echo "Generate all necessary manual files for the hal.guru platform."
 
 halguru --version || {
     exit 1
@@ -14,7 +14,7 @@ cd docs || {
     exit 2
 }
 
-halguru manual --generate-schemas --overwrite || {
+halguru manual --generate-schemas --overwrite --bad-arg-test || {
     cd ..
     exit 3
 }
