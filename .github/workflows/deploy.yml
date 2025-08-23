@@ -52,6 +52,11 @@ jobs:
           test -d site && echo "Site directory exists" || echo "Missing site directory"
           ls -la site
 
+      - name: Install halguru
+        run: |
+          curl -sSL https://docs.hal.guru/halguru-install.sh | bash
+          halguru --version
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
