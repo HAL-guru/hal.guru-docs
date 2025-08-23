@@ -51,6 +51,6 @@ More details at [Experienced users guide](experienced-users.md)
 
 If you want to install the latest pre-release version of halguru, you can use the following command:
 
-```bash
+```powershell
 iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
 ```
