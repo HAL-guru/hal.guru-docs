@@ -47,12 +47,11 @@ jobs:
 
       - name: Install halguru
         run: |
-          ls -la docs
           chmod +x docs/halguru-install.sh
           docs/halguru-install.sh --no-run
           halguru about
-          halguru manual --generate-schemas --generate-models-docs --generate-cli-commands-docs --update-mkdocs --overwrite
-          ls -la docs
+          chmod +x ./halguru-generate-manual.sh
+          ./halguru-generate-manual.sh
 
       - name: Build website
         run: |
