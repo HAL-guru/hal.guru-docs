@@ -47,9 +47,9 @@ jobs:
 
       - name: Install halguru
         run: |
-          ls -la site
-          chmod +x site/halguru-install.sh
-          site/halguru-install.sh --no-run
+          ls -la
+          chmod +x ./halguru-install.sh
+          ./halguru-install.sh --no-run
           halguru --version
           halguru about
 
