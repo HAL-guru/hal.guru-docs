@@ -1,6 +1,6 @@
 ---
-title: Installation halguru on MacOS and Linux
-description: Installation halguru on MacOS and Linux
+title: Installation halguru on macOS and Linux
+description: Installation halguru on macOS and Linux
 date: 2025-03-07
 author: Chris Prusik
 ---

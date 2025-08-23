@@ -28,7 +28,7 @@ Next, you need to install the halguru application along with its extension for t
 ## Download and Extract
 
 1. Download the appropriate ZIP file
-2. Create directory:
+2. Create a directory:
     * Windows: `%USERPROFILE%\.halguru`
     * macOS/Linux: `~/.halguru`
 3. Extract ZIP contents to this directory
