@@ -56,7 +56,7 @@ See the [Experienced Users Guide](experienced-users.md) for more details.
 If you want to install the latest pre-release version of halguru, you can use the following command:
 
 ```bash
-curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s --prerelease
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --prerelease
 ```
 
 ## Errror list
