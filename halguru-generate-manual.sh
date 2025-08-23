@@ -14,7 +14,7 @@ cd docs || {
     exit 2
 }
 
-badhalguru manual --generate-schemas --overwrite || {
+halguru manual --generate-schemas --overwrite || {
     cd ..
     exit 3
 }
