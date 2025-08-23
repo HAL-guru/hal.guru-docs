@@ -182,7 +182,7 @@ parse_args() {
                 NORUN="true"
                 ;;
             --help|-h)
-                echo "Usage: halguru-install.sh [--pre-release|--help|--no-run]"
+                echo "Usage: halguru-install.sh [--pre-release|--no-run|--help]"
                 exit 0
                 ;;
             *)
