@@ -178,8 +178,11 @@ parse_args() {
             --prerelease|--pre-release)
                 PRERELEASE="true"
                 ;;
+            --norun|--no-run)
+                NORUN="true"
+                ;;
             --help|-h)
-                echo "Usage: halguru-install.sh [--prerelease|--help]"
+                echo "Usage: halguru-install.sh [--pre-release|--help|--no-run]"
                 exit 0
                 ;;
             *)
@@ -273,13 +276,15 @@ main() {
         exit 14
     fi
 
-    if ! halguru install; then
-        log_error 15 "Failed to configure halguru"
-        exit 15
+    if [ "$NORUN" != "true" ]; then
+      if ! halguru install; then
+          log_error 15 "Failed to configure halguru"
+          exit 15
+      fi
     fi
 
     log_success "Installation of halguru $VERSION completed successfully!"
-    log_info "You can run the command: halguru --version"
+    log_info "You can run the command: halguru about"
 }
 
 main "$@"
