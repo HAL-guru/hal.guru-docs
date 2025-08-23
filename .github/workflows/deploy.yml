@@ -54,7 +54,8 @@ jobs:
 
       - name: Install halguru
         run: |
-          curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s --no-run
+          chmod +x ./halguru-install.sh
+          ./halguru-install.sh --no-run
           halguru --version
           halguru about
 
