@@ -4,29 +4,29 @@ trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
 
 set -e
 
-main() {
-    halguru --version || {
-        exit 1
-    }
+echo "Generate manual files for the hal.guru platform."
 
-    cd docs || {
-        exit 2
-    }
+halguru --version || {
+    exit 1
+}
 
-    halguru manual --generate-schemas --overwrite || {
-        cd ..
-        exit 3
-    }
-    halguru manual --generate-models-docs --overwrite || {
-        cd ..
-        exit 4
-    }
-    halguru manual --generate-cli-commands-docs --overwrite || {
-        cd ..
-        exit 5
-    }
-    halguru manual --update-mkdocs --overwrite || {
-        cd ..
-        exit 6
-    }
+cd docs || {
+    exit 2
+}
+
+halguru manual --generate-schemas --overwrite || {
+    cd ..
+    exit 3
+}
+halguru manual --generate-models-docs --overwrite || {
+    cd ..
+    exit 4
+}
+halguru manual --generate-cli-commands-docs --overwrite || {
+    cd ..
+    exit 5
+}
+halguru manual --update-mkdocs --overwrite || {
+    cd ..
+    exit 6
 }
