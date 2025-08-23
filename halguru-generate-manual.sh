@@ -14,7 +14,7 @@ cd docs || {
     exit 2
 }
 
-halguru manual --generate-schemas --overwrite --bad-arg-test || {
+halguru manual --generate-schemas --overwrite --test-bad-arg || {
     cd ..
     exit 3
 }
