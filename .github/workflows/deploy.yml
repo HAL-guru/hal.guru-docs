@@ -51,7 +51,7 @@ jobs:
           chmod +x docs/halguru-install.sh
           docs/halguru-install.sh --no-run
           halguru about
-          halguru manual --generate-schemas --generate-models-docs --generate-cli-commands-docs --update-mkdocs
+          halguru manual --generate-schemas --generate-models-docs --generate-cli-commands-docs --update-mkdocs --overwrite
           ls -la docs
 
       - name: Build website
