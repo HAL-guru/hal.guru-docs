@@ -1,0 +1,13 @@
+{% if config.copyright %}
+<div class="md-copyright">
+    <div class="md-copyright__highlight">
+        {% if config.extra.title %}
+        {{ config.extra.title }}
+        {% endif %}
+        {% if config.extra.version %}
+        {{ config.extra.version }}
+        {% endif %}
+        {{ config.copyright }}
+    </div>
+</div>
+{% endif %}
