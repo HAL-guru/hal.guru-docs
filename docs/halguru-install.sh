@@ -64,9 +64,12 @@ check_prerequisites() {
 
 get_latest_version() {
     local version
-    version=$(curl -s "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases/latest" |
-             grep '"tag_name":' |
-             sed -E 's/.*"([^"]+)".*/\1/') || {
+    version=$(curl -s \
+            -H "User-Agent: halguru-installer" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases/latest" |
+            grep '"tag_name":' |
+            sed -E 's/.*"tag_name"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/') || {
         log_error 2 "Failed to fetch latest version"
         exit 2
     }
@@ -81,8 +84,10 @@ get_latest_version() {
 
 get_latest_prerelease_version() {
     local version
-    version=$(
-        curl -s "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases?per_page=30" \
+    version=$(curl -s \
+        -H "User-Agent: halguru-installer" \
+        -H "Accept: application/vnd.github+json" \
+        "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases?per_page=30" \
         | tr -d '\n' \
         | sed -E 's/\},[[:space:]]*\{/\}\n\{/g' \
         | grep -E '"prerelease"[[:space:]]*:[[:space:]]*true' \
