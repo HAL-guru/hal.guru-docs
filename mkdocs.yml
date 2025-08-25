@@ -80,3 +80,4 @@ markdown_extensions:
       separator: "_"
 plugins:
   - search
+  - macros
