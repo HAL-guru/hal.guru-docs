@@ -6,6 +6,11 @@ param(
 $RepoOwner = "HAL-guru"
 $RepoName = "hal.guru-docs"
 $InstallDir = "$env:USERPROFILE\.halguru"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+$CommonHeaders = @{
+    "User-Agent" = "halguru-installer"
+    "Accept"     = "application/vnd.github+json"
+}
 
 function Write-Error {
     param([string]$Message)
@@ -14,7 +19,7 @@ function Write-Error {
 
 function Get-LatestVersion {
     try {
-        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases/latest" -ErrorAction Stop
+        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases/latest" -Headers $CommonHeaders -ErrorAction Stop
         return $release.tag_name
     }
     catch {
@@ -24,7 +29,7 @@ function Get-LatestVersion {
 
 function Get-LatestPrereleaseVersion {
     try {
-        $rels = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases?per_page=30" -Headers $CommonHeaders
+        $rels = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases?per_page=30" -Headers $CommonHeaders -ErrorAction Stop
         $pre = $rels | Where-Object { $_.prerelease -eq $true -and $_.draft -ne $true } |
                 Sort-Object { [datetime]$_.published_at } -Descending |
                 Select-Object -First 1
@@ -74,7 +79,7 @@ function Install-Halguru {
         Write-Host "Downloading $filename..." -ForegroundColor Cyan
 
         # Downloading file
-        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -ErrorAction Stop
+        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -Headers @{ "User-Agent" = "halguru-installer" } -ErrorAction Stop
 
         # Unpacking
         Expand-Archive -Path $downloadPath -DestinationPath $InstallDir -Force -ErrorAction Stop
@@ -89,7 +94,12 @@ function Install-Halguru {
         }
 
         Write-Host "Installation of halguru v$version completed successfully!" -ForegroundColor Green
+        Write-Host ""
+        Write-Host "To install Visual Studio Code extension for halguru CLI"
         Write-Host "Open a new terminal window and execute the command: halguru install" -ForegroundColor Yellow
+        Write-Host ""
+        Write-Host "To generate manual README.md file for halguru CLI"
+        Write-Host "Execute the command: halguru manual $InstallDir\README.md --overwrite" -ForegroundColor Yellow
     }
     catch {
         throw "Installation error: $_"

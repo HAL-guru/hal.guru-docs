@@ -283,6 +283,13 @@ main() {
       fi
     fi
 
+    if [ "$NORUN" != "true" ]; then
+      if ! halguru manual --generate-file "$INSTALL_DIR/README.md" --overwrite; then
+          log_error 18 "Failed to generate README.md file"
+          exit 18
+      fi
+    fi
+
     log_success "Installation of halguru $VERSION completed successfully!"
     log_info "You can run the command: halguru about"
 }

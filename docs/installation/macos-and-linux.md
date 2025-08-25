@@ -80,3 +80,4 @@ curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --prerelease
 | 15   | Failed to configure halguru                                                   |
 | 16   | Cannot create directory $INSTALL_DIR                                          |
 | 17   | Cannot create log file $LOG_FILE                                              |
+| 18   | Cannot generate README.md file                                                |
