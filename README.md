@@ -69,7 +69,11 @@ Each updated section is located between two comments:
 Example macros and variables:
 
 ```python
-def define_env(env): # Global variables: env.variables.project = { "name": "hal.guru", "url": "[https://example.com](https://example.com)", "year": 2025, }
+def define_env(env): 
+    
+    # Global variables: 
+    
+    env.variables.project = { "name": "hal.guru", "url": "[https://hal.guru](https://hal.guru)", "year": 2025, }
 
     # Simple macro:
 
