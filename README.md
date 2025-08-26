@@ -52,7 +52,7 @@ After running the script:
 2. YAML schemas will be generated in the `docs/schemas` folder (their names will end with `-schema.json`).
 3. The `nav` section in the `mkdocs.yml` configuration file will be populated with the generated entries, and documentation version number will be updated.
 
-Automatically generated files are not versioned in the GitHub repository (see [.gitignore](.gitignore)
+Automatically generated files are not versioned in the GitHub repository (see [.gitignore](.gitignore))
 
 Each updated section is located between two comments:
 
