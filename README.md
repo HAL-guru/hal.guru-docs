@@ -125,15 +125,15 @@ Best practices
 - Keep logic inside macros.py to keep Markdown clean.
 - Use short, clear macro names.
 - Centralize globals (e.g., project, author, links) in one place.
-- Store reusable data (tables, lists) in JSON/YAML under docs/data/.
+- Store reusable data (tables, lists) in JSON/YAML under `docs/data/`.
 - Leverage admonitions (note, tip, warning) for highlights.
 - Enable code highlight and copy features in Material.
 
 Debugging
 
-- Inspect variables by temporarily printing {{ variables | pprint }} in a .md file.
+- Inspect variables by temporarily printing `{{ variables | pprint }}` in a .md file.
 - Jinja errors are printed in the mkdocs serve console.
-- If a macro fails, verify macros.py path/name and the plugins section in mkdocs.yml.
+- If a macro fails, verify macros.py path/name and the plugins section in `mkdocs.yml`.
 
 ## Links
 
