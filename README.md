@@ -6,7 +6,7 @@ The repository contains a technical description of creating AI agents on the hal
 
 ## Installation
 
-The documentation is built with MkDocs (Material theme) and mkdocs-macros-plugin. Macros let you inject variables, simple logic, and external data into Markdown pages, making docs more dynamic and easier to maintain.
+The documentation is built with `mkdocs`ś (material theme) and `mkdocs-macros-plugin`. Macros let you inject variables, simple logic, and external data into Markdown pages, making docs more dynamic and easier to maintain.
 
 Prerequisites:
 
@@ -33,7 +33,7 @@ bash mkdocs build --clean
 
 ## Project structure
 
-- `mkdocs.yml` – main MkDocs config
+- `mkdocs.yml` – main mkdocs config
 - `docs/` – documentation sources (Markdown, media)
 - `docs/assets/` – images, styles, extra assets
 - `docs/halguru-cli` - hal.guru CLI documentation (mostly [auto-generated](#auto-generated-documentation))
@@ -44,13 +44,13 @@ bash mkdocs build --clean
 
 ## Auto-generated documentation
 
-Use [halguru-generate-manual.sh](halguru-generate-manual.sh) to generate documentation for hal.guru CLI, YAML files and JSON schemas for Visual Studio Code.
+Use `halguru-generate-manual.sh` to generate documentation for hal.guru CLI, YAML files and JSON schemas for Visual Studio Code.
 
 After running the script:
 
 1. Files will be generated in the `docs/halguru-cli` and `docs/models` folders. The generated file names will start with the character `(`.
 2. YAML schemas will be generated in the `docs/schemas` folder (their names will end with `-schema.json`).
-3. The `nav` section in the [mkdocs.yml](mkdocs.yml) configuration file will be populated with the generated entries, and documentation version number will be updated.
+3. The `nav` section in the `mkdocs.yml` configuration file will be populated with the generated entries, and documentation version number will be updated.
 
 Automatically generated files are not versioned in the GitHub repository (see [.gitignore](.gitignore)
 
@@ -63,7 +63,7 @@ Each updated section is located between two comments:
 
 ## Macros – quick start
 
-- Define macros and global variables in [macros.py](macros.py) (at project root).
+- Define macros and global variables in `macros.py` (at project root).
 - Use Jinja2 in .md files, e.g., `{{ variable }}` or `{% if %}…{% endif %}`.
 
 Example macros and variables:
@@ -98,7 +98,7 @@ Version: {{ version_label("1.2.0") }}
 Working with data
 
 - You can load JSON/YAML files and expose them as variables.
-- Easiest is to load files from docs/ (or include_dir) inside macros.py and assign to env.variables.
+- Easiest is to load files from `docs/data` (or include_dir) inside `macros.py` and assign to `env.variables`.
 
 Example:
 
@@ -135,7 +135,6 @@ Debugging
 - Jinja errors are printed in the mkdocs serve console.
 - If a macro fails, verify macros.py path/name and the plugins section in mkdocs.yml.
 
-
 ## Links
 
-1. [mkdocs](https://www.mkdocs.org/getting-started/)
+1. [mkdocs - getting started](https://www.mkdocs.org/getting-started/)
