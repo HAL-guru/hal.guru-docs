@@ -1,2 +1,2 @@
 
-Documentation agents core version: {{ config.extra.version }}
+Documentation for AI Agents core version: **{{ config.extra.version }}**
