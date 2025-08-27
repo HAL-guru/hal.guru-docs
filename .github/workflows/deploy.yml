@@ -54,7 +54,10 @@ jobs:
           halguru about
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
-          halguru --version > docs/version.txt
+          halguru --version > docs/halguru-cli/version.txt
+          docs/halguru-install.sh --pre-release --no-run
+          halguru about
+          halguru --version > docs/halguru-cli/version-prerelease.txt
 
       - name: Build website
         run: |
