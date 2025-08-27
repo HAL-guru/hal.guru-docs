@@ -37,7 +37,7 @@ bash mkdocs build --clean
 - `docs/` – documentation sources (Markdown, media)
 - `docs/assets/` – images, styles, extra assets
 - `docs/halguru-cli` - hal.guru CLI documentation (mostly [auto-generated](#auto-generated-documentation))
-- `docs/models` - hal.guru YAML files documentation (mostly [auto-generated](#auto-generated-documentation))`
+- `docs/models` - hal.guru YAML files documentation (mostly [auto-generated](#auto-generated-documentation))
 - `docs/schemas` - hal.guru YAML schemas for Visual Studio Code ([auto-generated](#auto-generated-documentation))
 - `macros.py` – macro and variable definitions for `mkdocs-macros-plugin`
 - `site/` – build output (usually not committed unless you serve statically)
@@ -50,7 +50,7 @@ After running the script:
 
 1. Files will be generated in the `docs/halguru-cli` and `docs/models` folders. The generated file names will start with the character `(`.
 2. YAML schemas will be generated in the `docs/schemas` folder (their names will end with `-schema.json`).
-3. The `nav` section in the `mkdocs.yml` configuration file will be populated with the generated entries, and documentation version number will be updated.
+3. The `nav` section in the `mkdocs.yml` configuration file will be populated with the generated entries, and documentation **version** number will be updated.
 
 Automatically generated files are not versioned in the GitHub repository (see `.gitignore`)
 
