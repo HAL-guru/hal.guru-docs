@@ -10,6 +10,8 @@ AI Agents Core version **{{ config.extra.version }}**
   <p>Loading versions...</p>
 </div>
 
+---
+
 <div id="versions-prerelease">
   <p>Loading pre-release versions...</p>
 </div>
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const status = await getStatus('https://api.hal.guru/platform/status');
 
     if (status === 'OK') {
-        await getVersions(
+        await getApiVersions(
             'versions',
             'The Stable Web Platform',
             '');
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const statusPrerelease = await getStatus('https://api-dev.hal.guru/platform/status');
 
     if (statusPrerelease === 'OK') {
-        await getVersions(
+        await getApiVersions(
             'versions-prerelease',
             'The Pre-release Web Platform',
             '-dev');
@@ -61,7 +63,7 @@ async function getStatus(url)
         }
 }
 
-async function getVersions(id, title, subDomainPostfix)
+async function getApiVersions(id, title, subDomainPostfix)
 {
     const versionsDiv = document.getElementById(id);
     versionsDiv.innerText = 'Processing...';
