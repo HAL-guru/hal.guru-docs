@@ -54,6 +54,7 @@ jobs:
           halguru about
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
+          halguru --version > docs/version.txt
 
       - name: Build website
         run: |
