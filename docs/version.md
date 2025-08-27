@@ -1,4 +1,4 @@
-A live overview of the stable and pre-release environments. It shows the availability and versions of the documentation, CLI, and API, with direct links to releases and Swagger. The data refreshes automatically to keep you up to date.
+A live overview of the stable and pre-release environments. It shows the availability and versions of the documentation, CLI, and API, with direct links to releases, Swagger and AI Agent Orchestrator (Admin). The data refreshes automatically to keep you up to date.
 
 
 ## Stable
