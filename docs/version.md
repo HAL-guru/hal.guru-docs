@@ -1,6 +1,7 @@
-This page displays the **AI Agents Core** version and dynamically checks the availability of both the Stable and Pre-release Web Platforms. It fetches version data from the hal.guru APIs, shows whether each platform is active or inactive (with emoji indicators), and provides quick links to the API, Chat, and Admin interfaces. Errors are handled gracefully with clear status messages.
+A live overview of the stable and pre-release environments. It shows the availability and versions of the documentation, CLI, and API, with direct links to releases and Swagger. The data refreshes automatically to keep you up to date.
 
-## AI Agents Core Stable
+
+## Stable
 
 | Name | Status                                                                       | Version                                   |
 |------|------------------------------------------------------------------------------|-------------------------------------------|
@@ -8,7 +9,7 @@ This page displays the **AI Agents Core** version and dynamically checks the ava
 | CLI  | 🟢 <a href="https://github.com/HAL-guru/hal.guru-docs/releases">Released</a> | <span id="cli-version">No data</span> |
 | API  | <span id="api-status">⚪ No data</span>                                       | <span id="api-version">No data</span> |
 
-## AI Agents Core Pre-release
+## Pre-release
 
 | Name | Status                                            | Version                                              |
 |------|---------------------------------------------------|------------------------------------------------------|
