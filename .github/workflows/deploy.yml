@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Auto-generate manual
+      - name: Auto-generate manual and version files
         shell: bash
         run: |
           chmod +x docs/halguru-install.sh
