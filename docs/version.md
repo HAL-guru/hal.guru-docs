@@ -1,3 +1,4 @@
+This page displays the AI Agents Core version and dynamically checks the availability of both the Stable and Pre-release Web Platforms. It fetches version data from the hal.guru APIs, shows whether each platform is active or inactive (with emoji indicators), and provides quick links to the API, Chat, and Admin interfaces. Errors are handled gracefully with clear status messages.
 
 ## The Documentation 
 
