@@ -6,7 +6,7 @@ The repository contains a technical description of creating AI agents on the hal
 
 ## Installation
 
-The documentation is built with `mkdocs`ś (material theme) and `mkdocs-macros-plugin`. Macros let you inject variables, simple logic, and external data into Markdown pages, making docs more dynamic and easier to maintain.
+The documentation is built with `mkdocs` (material theme) and `mkdocs-macros-plugin`. Macros let you inject variables, simple logic, and external data into Markdown pages, making docs more dynamic and easier to maintain.
 
 Prerequisites:
 
