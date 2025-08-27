@@ -26,71 +26,63 @@ A live overview of the stable and pre-release environments. It shows the availab
 
 document.addEventListener('DOMContentLoaded', async function() {
 
-    const status = await getStatus(
+    await checkPlatformStatusAndVersion(
         'api-status', 
-        'https://api.hal.guru/platform/status');
+        'https://api.hal.guru/platform/status',
+        'api-version',
+        'https://api.hal.guru/platform/versions',
+        'warning-message');
 
-    if (status) {
-        await getApiVersion(
-            'api-version',
-            'https://api.hal.guru/platform/versions');
-    } else {
-        setMessage('api-version', '🛑 Inactive');
-        setWarningMessage('warning-message');
-    }
+    await checkFileVersion('cli-version', 
+        'https://docs.hal.guru/halguru-cli/version.txt',
+        'warning-message');
 
-    if (!await getFileVersion('cli-version', 
-        'https://docs.hal.guru/halguru-cli/version.txt')) {
-        setWarningMessage('warning-message');
-    }
-
-    const adminStatus = await getStatus(
+    await checkPlatformStatusAndVersion(
         'admin-status', 
-        'https://admin.hal.guru/platform/status');
+        'https://admin.hal.guru/platform/status',
+        'admin-version',
+        'https://admin.hal.guru/platform/versions',
+        'warning-message');
 
-    if (adminStatus) {
-        await getApiVersion(
-            'admin-version',
-            'https://admin.hal.guru/platform/versions');
-    } else {
-        document.getElementById('admin-version').innerHTML = 'Unknown';
-        setWarningMessage('warning-message');
-    }
-
-    const statusPrerelease = await getStatus(
+    await checkPlatformStatusAndVersion(
         'api-prerelease-status', 
-        'https://api-dev.hal.guru/platform/status');
+        'https://api-dev.hal.guru/platform/status',
+        'api-prerelease-version',
+        'https://admin-dev.hal.guru/platform/versions',
+        'warning-prerelease-message');
 
-    if (statusPrerelease) {
-        await getApiVersion(
-            'api-prerelease-version',
-            'https://api-dev.hal.guru/platform/versions');
-    } else {
-        document.getElementById('api-prerelease-version').innerHTML = `Unknown`;
-        setWarningMessage('warning-prerelease-message');
-    }
+    await checkFileVersion('cli-prerelease-version', 
+        'https://docs.hal.guru/halguru-cli/version-prerelease.txt',
+        'warning-prerelease-message');
 
-    if (!await getFileVersion('cli-prerelease-version', 
-        'https://docs.hal.guru/halguru-cli/version-prerelease.txt')) {
-        setWarningMessage('warning-prerelease-message');
-    }
-
-    const adminPrereleaseStatus = await getStatus(
+    await checkPlatformStatusAndVersion(
         'admin-prerelease-status', 
-        'https://admin-dev.hal.guru/platform/status');
+        'https://admin-dev.hal.guru/platform/status',
+        'admin-prerelease-version',
+        'https://admin-dev.hal.guru/platform/versions',
+        'warning-prerelease-message');
 
-    if (adminPrereleaseStatus) {
-        await getApiVersion(
-            'admin-prerelease-version',
-            'https://admin-dev.hal.guru/platform/versions');
-    } else {
-        document.getElementById('admin-prerelease-version').innerHTML = 'Unknown';
-        setWarningMessage('warning-prerelease-message');
-    }
 });
 
-async function getStatus(id, url)
-{
+async function checkPlatformStatusAndVersion(statusId, statusUrl, versionId, versionUrl, warningId) {
+    const status = await getStatus(statusId, statusUrl);
+
+    if (status) {
+        await getApiVersion(versionId, versionUrl);
+    } else {
+        setMessage(versionId, '🛑 Inactive');
+        setWarningMessage(warningId);
+    }
+}
+
+async function checkFileVersion(id, url, warningId) {
+
+    if (!await getFileVersion(id, url)) {
+        setWarningMessage(warningId);
+    }
+}
+
+async function getStatus(id, url) {
     setMessage(id, '🔄 Updating...');
     try { 
         const response = await fetch(url, {
@@ -116,8 +108,7 @@ async function getStatus(id, url)
         }
 }
 
-async function getApiVersion(id, url)
-{
+async function getApiVersion(id, url) {
     setMessage(id, 'Updating...');
 
     try { 
