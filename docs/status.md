@@ -21,9 +21,7 @@ A live overview of the stable and pre-release environments. It shows the availab
 
 ## Pre-release
 
-This build is for internal QA purposes. The functionality is experimental and may be incomplete. Do not use in production.
-
-
+This deployment is for internal QA purposes only. The functionality is experimental and may be incomplete. Do not use in production.
 
 | Name                                                                 | Status                                                 | App                                                    | Core                                                       | Description                    |
 |----------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------|--------------------------------|
