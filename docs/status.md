@@ -1,6 +1,5 @@
 A live overview of the stable and pre-release environments. It shows the availability and versions of the documentation, CLI, and API, with direct links to releases, Swagger and AI Agent Orchestrator (Admin). The data refreshes automatically to keep you up to date.
 
-
 ## Stable
 
 | Name                                                                 | Status                                                 | App                                                    | Core                                            | Description                    |
@@ -16,9 +15,15 @@ A live overview of the stable and pre-release environments. It shows the availab
 
 <div id="warning-message"></div>
 
+<div class="page-refresh" style="margin: 0.75rem 0; text-align: center;">
+  <button id="refresh-button" type="button" title="Refresh data" style="padding: 0.35rem 0.75rem; cursor: pointer;" onclick="checkAllPlatforms()">🔄 Refresh Status</button>
+</div>
+
 ## Pre-release
 
 This build is for internal QA purposes. The functionality is experimental and may be incomplete. Do not use in production.
+
+
 
 | Name                                                                 | Status                                                 | App                                                    | Core                                                       | Description                    |
 |----------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------|--------------------------------|
@@ -32,14 +37,23 @@ This build is for internal QA purposes. The functionality is experimental and ma
 
 <div id="warning-prerelease-message"></div>
 
+<div class="page-refresh" style="margin: 0.75rem 0; text-align: center;">
+  <button id="refresh-button" type="button" title="Refresh data" style="padding: 0.35rem 0.75rem; cursor: pointer;" onclick="checkAllPlatforms()">🔄 Refresh Status</button>
+</div>
+
 <script type="text/javascript">
 
 document.addEventListener('DOMContentLoaded', async function() {
+    await checkAllPlatforms();
+});
+
+async function checkAllPlatforms() {
 
     await checkPlatformEnvironment('', '');
 
     await checkPlatformEnvironment('-prerelease', '-dev');
-});
+
+}
 
 async function checkPlatformEnvironment(idPostfix, subdomainPostfix) 
 {
