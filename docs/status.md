@@ -3,22 +3,30 @@ A live overview of the stable and pre-release environments. It shows the availab
 
 ## Stable
 
-| Name                                                                 | Status                                                                       | Version                                 |
-|----------------------------------------------------------------------|------------------------------------------------------------------------------|-----------------------------------------|
-| <a href="https://docs.hal.guru">Docs</a>                             | 🟢 Published                             | **{{ config.extra.version }}**          |
-| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">CLI</a> | 🟢 Released | <span id="cli-version">No data</span>   |
-| <a href="https://api.hal.guru/swagger/index.html">API</a>            | <span id="api-status">⚪ No data</span>                                       | <span id="api-version">No data</span>   |
-| <a href="https://admin.hal.guru">Admin</a>                           | <span id="admin-status">⚪ No data</span>                                     | <span id="admin-version">No data</span> |
+| Name                                                                 | Status                                                 | App                                                    | Core                                                  | Description                    |
+|----------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|-------------------------------------------------------|--------------------------------|
+| <a href="https://docs.hal.guru">Docs</a>                             | 🟢 Published                             | **{{ config.extra.version }}**          | **{{ config.extra.version }}** | This documentation                    |
+| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">CLI</a> | 🟢 Released                                            | <span id="cli-app-version">No data</span>   | <span id="cli-core-version">No data</span> | Command-line application       |
+| <a href="https://api-dev.hal.guru/swagger/index.html">API</a>        | <span id="api-status">⚪ No data</span>      | <span id="api-app-version">No data</span>   | <span id="api-core-version">No data</span> | Web API (OpenAPI/Swagger)      |
+| <a href="https://admin-dev.hal.guru">Admin</a>                       | <span id="admin-status">⚪ No data</span>    | <span id="admin-app-version">No data</span> | <span id="admin-core-version">No data</span> | AI Agent Management            |
+| <a href="https://chat-dev.hal.guru">Chat</a>                         | <span id="chat-status">⚪ No data</span>     | <span id="chat-app-version">No data</span> | <span id="chat-core-version">No data</span> | Chat Web Application           |
+| <a href="https://login-dev.hal.guru">Login</a>                       | <span id="login-status">⚪ No data</span> | <span id="login-app-version">No data</span> | <span id="login-core-version">No data</span> | Login and Registration service |
+| <a href="https://webhook-dev.hal.guru">WebHook</a>                   | <span id="webhook-status">⚪ No data</span>  | <span id="webhook-app-version">No data</span> | <span id="webhook-core-version">No data</span> | Multi-Channel Webhook Router   |
+| <a href="https://internal-dev.hal.guru">Internal</a>                 | <span id="internal-status">⚪ No data</span> | <span id="internal-app-version">No data</span> | <span id="internal-core-version">No data</span> | AI Messaging Backend           |
 
 <div id="warning-message"></div>
 
 ## Pre-release
 
-| Name                                                                        | Status                                                                       | Version                                            |
-|-----------------------------------------------------------------------------|------------------------------------------------------------------------------|----------------------------------------------------|
-| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">CLI</a> | 🟢 Released | <span id="cli-prerelease-version">No data</span>   |
-| <a href="https://api-dev.hal.guru/swagger/index.html">API</a>               | <span id="api-prerelease-status">⚪ No data</span>                            | <span id="api-prerelease-version">No data</span>   |
-| <a href="https://admin-dev.hal.guru">Admin</a>                              | <span id="admin-prerelease-status">⚪ No data</span>                          | <span id="admin-prerelease-version">No data</span> |
+| Name                                                                 | Status                                                 | App                                                    | Core                                                    | Description                    |
+|----------------------------------------------------------------------|--------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------|--------------------------------|
+| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">CLI</a> | 🟢 Released                                            | <span id="cli-prerelease-app-version">No data</span>   | <span id="cli-prerelease-core-version">No data</span>   | Command-line application       |
+| <a href="https://api-dev.hal.guru/swagger/index.html">API</a>        | <span id="api-prerelease-status">⚪ No data</span>      | <span id="api-prerelease-app-version">No data</span>   | <span id="api-prerelease-core-version">No data</span>   | Web API (OpenAPI/Swagger)      |
+| <a href="https://admin-dev.hal.guru">Admin</a>                       | <span id="admin-prerelease-status">⚪ No data</span>    | <span id="admin-prerelease-app-version">No data</span> | <span id="admin-prerelease-core-version">No data</span> | AI Agent Management            |
+| <a href="https://chat-dev.hal.guru">Chat</a>                         | <span id="chat-prerelease-status">⚪ No data</span>     | <span id="chat-prerelease-app-version">No data</span> | <span id="chat-prerelease-core-version">No data</span> | Chat Web Application           |
+| <a href="https://login-dev.hal.guru">Login</a>                       | <span id="login-prerelease-status">⚪ No data</span> | <span id="login-prerelease-app-version">No data</span> | <span id="login-prerelease-core-version">No data</span> | Login and Registration service |
+| <a href="https://webhook-dev.hal.guru">WebHook</a>                   | <span id="webhook-prerelease-status">⚪ No data</span>  | <span id="webhook-prerelease-app-version">No data</span> | <span id="webhook-prerelease-core-version">No data</span> | Multi-Channel Webhook Router   |
+| <a href="https://internal-dev.hal.guru">Internal</a>                 | <span id="internal-prerelease-status">⚪ No data</span> | <span id="internal-prerelease-app-version">No data</span> | <span id="internal-prerelease-core-version">No data</span> | AI Messaging Backend           |
 
 <div id="warning-prerelease-message"></div>
 
@@ -26,64 +34,76 @@ A live overview of the stable and pre-release environments. It shows the availab
 
 document.addEventListener('DOMContentLoaded', async function() {
 
-    await checkPlatformStatusAndVersion(
-        'api-status', 
-        'https://api.hal.guru/platform/status',
-        'api-version',
-        'https://api.hal.guru/platform/versions',
-        'warning-message');
+    await checkPlatformEnvironment('', '');
 
-    await checkFileVersion('cli-version', 
-        'https://docs.hal.guru/halguru-cli/version.txt',
-        'warning-message');
-
-    await checkPlatformStatusAndVersion(
-        'admin-status', 
-        'https://admin.hal.guru/platform/status',
-        'admin-version',
-        'https://admin.hal.guru/platform/versions',
-        'warning-message');
-
-    await checkPlatformStatusAndVersion(
-        'api-prerelease-status', 
-        'https://api-dev.hal.guru/platform/status',
-        'api-prerelease-version',
-        'https://admin-dev.hal.guru/platform/versions',
-        'warning-prerelease-message');
-
-    await checkFileVersion('cli-prerelease-version', 
-        'https://docs.hal.guru/halguru-cli/version-prerelease.txt',
-        'warning-prerelease-message');
-
-    await checkPlatformStatusAndVersion(
-        'admin-prerelease-status', 
-        'https://admin-dev.hal.guru/platform/status',
-        'admin-prerelease-version',
-        'https://admin-dev.hal.guru/platform/versions',
-        'warning-prerelease-message');
-
+    await checkPlatformEnvironment('-prerelease', '-dev');
 });
 
-async function checkPlatformStatusAndVersion(statusId, statusUrl, versionId, versionUrl, warningId) {
-    const status = await getStatus(statusId, statusUrl);
+async function checkPlatformEnvironment(idPostfix, subdomainPostfix) 
+{
+    await checkFileVersion(
+        'cli' + idPostfix,
+        'https://docs.hal.guru/halguru-cli/version' + idPostfix + '.txt',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'api' + idPostfix,  
+        'https://api' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://api' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'admin' + idPostfix,
+        'https://admin' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://admin' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'chat' + idPostfix,
+        'https://chat' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://chat' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'webhook' + idPostfix,
+        'https://webhook' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://webhook' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'internal' + idPostfix,
+        'https://internal' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://internal' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
+        'login' + idPostfix,
+        'https://login' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://login' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+}
+
+async function checkPlatformStatusAndVersion(idPrefix, statusUrl, versionUrl, warningId) {
+    const status = await getStatus(idPrefix + '-status', statusUrl);
 
     if (status) {
-        await getApiVersion(versionId, versionUrl);
+        await getApiVersion(idPrefix, versionUrl);
     } else {
-        setMessage(versionId, '🛑 Inactive');
+        setMessage(idPrefix + '-app-version', '🛑 Inactive');
+        setMessage(idPrefix + '-core-version', '🛑 Inactive');
         setWarningMessage(warningId);
     }
 }
 
-async function checkFileVersion(id, url, warningId) {
+async function checkFileVersion(idPrefix, url, warningId) {
 
-    if (!await getFileVersion(id, url)) {
+    if (!await getFileVersion(idPrefix, url)) {
         setWarningMessage(warningId);
     }
 }
 
-async function getStatus(id, url) {
-    setMessage(id, '🔄 Updating...');
+async function getStatus(statusId, url) {
+    setMessage(statusId, '🔄 Updating...');
     try { 
         const response = await fetch(url, {
             method: 'GET',
@@ -96,20 +116,21 @@ async function getStatus(id, url) {
         }
         const result = await response.text();
         if (result === 'OK') {
-            setMessage(id, '🟢 Active');
+            setMessage(statusId, '🟢 Active');
             return true;
         } 
-        setMessage(id, '🛑 ' + result);
+        setMessage(statusId, '🛑 ' + result);
         return false;
         } catch (error) {
             console.error('Error occurred during downloading:', error);
-            setMessage(id, '🛑 Inactive');
+            setMessage(statusId, '🛑 Inactive');
             return false;
         }
 }
 
-async function getApiVersion(id, url) {
-    setMessage(id, 'Updating...');
+async function getApiVersion(idPrefix, url) {
+    setMessage(idPrefix + '-app-version', 'Updating...');
+    setMessage(idPrefix + '-core-version', 'Updating...');
 
     try { 
         const versionsResponse = await fetch(url, {
@@ -126,24 +147,21 @@ async function getApiVersion(id, url) {
         const versions = await versionsResponse.json();
         if (versions && typeof versions === 'object') {
             for (const [key, value] of Object.entries(versions)) {
-                if (key.toLocaleUpperCase() === 'AI AGENTS CORE' && value !== '' ) {
-                    setMessage(id, '<strong>' + value + '</strong>');
-                    return value; 
-                }
+                setMessage(idPrefix + '-' + key + '-version', '<strong>' + value + '</strong>');
             }
         } 
-        setMessage(id, 'Unknown');
-        return 'Unknown'; 
+        return true; 
     } catch (error) {
         console.error('Error occurred during downloading:', error);
-        setMessage(id, 'Unknown');
-        return 'Error: ' + error.message;
+        setMessage(idPrefix + '-app-version', 'Unknown');
+        setMessage(idPrefix + '-core-version', 'Unknown');
+        return false;
     }
 }
 
-async function getFileVersion(id, url)
+async function getFileVersion(idPrefix, url)
 {
-    setMessage(id, 'Updating...');
+    setMessage(idPrefix, 'Updating...');
     try { 
         const response = await fetch(url, {
             method: 'GET',
@@ -154,12 +172,14 @@ async function getFileVersion(id, url)
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-        const result = await response.text();
-        setMessage(id, '<strong>' + result.split(' ')[1] ?? 'Unknown' + '</strong>');
+        const version = (await response.text()).split(' ')[1] ?? 'Unknown';
+        setMessage(idPrefix + '-app-version', '<strong>' + version + '</strong>');
+        setMessage(idPrefix + '-core-version', '<strong>' + version + '</strong>');
         return true;
         } catch (error) {
             console.error('Error occurred during downloading:', error);
-            setMessage(id, 'Unknown');
+            setMessage(idPrefix + '-app-version', 'Unknown');
+            setMessage(idPrefix + '-core-version', 'Unknown');
             return false;
         }
 }
