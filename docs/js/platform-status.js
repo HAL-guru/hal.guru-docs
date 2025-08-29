@@ -107,6 +107,38 @@ async function checkFileVersion(idPrefix, url, warningId) {
 }
 
 /**
+ * Fetches the file version from the specified URL and updates the corresponding elements with the retrieved version.
+ *
+ * @param {string} idPrefix - The prefix for the IDs of the elements to be updated with the version.
+ * @param {string} url - The URL from which the version information will be fetched.
+ * @return {Promise<boolean>} - A promise that resolves to `true` if the version was successfully fetched and updated, or `false` if an error occurred.
+ */
+async function getFileVersion(idPrefix, url) {
+    setMessage(idPrefix + '-app-version', 'Updating...');
+    setMessage(idPrefix + '-core-version', 'Updating...');
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'text/plain'
+            }
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        const version = (await response.text()).split(' ')[1] ?? 'Unknown';
+        setMessage(idPrefix + '-app-version', '<strong>' + version + '</strong>');
+        setMessage(idPrefix + '-core-version', '<strong>' + version + '</strong>');
+        return true;
+    } catch (error) {
+        console.error('Error occurred during downloading:', error);
+        setMessage(idPrefix + '-app-version', 'Unknown');
+        setMessage(idPrefix + '-core-version', 'Unknown');
+        return false;
+    }
+}
+
+/**
  * Fetches a status update from a given URL and updates the message based on the response.
  *
  * @param {string} statusId - The ID used to identify the status message to update.
@@ -168,37 +200,6 @@ async function getApiVersion(idPrefix, url) {
                 setMessage(idPrefix + '-' + key + '-version', '<strong>' + value + '</strong>');
             }
         }
-        return true;
-    } catch (error) {
-        console.error('Error occurred during downloading:', error);
-        setMessage(idPrefix + '-app-version', 'Unknown');
-        setMessage(idPrefix + '-core-version', 'Unknown');
-        return false;
-    }
-}
-
-/**
- * Fetches the file version from the specified URL and updates the corresponding elements with the retrieved version.
- *
- * @param {string} idPrefix - The prefix for the IDs of the elements to be updated with the version.
- * @param {string} url - The URL from which the version information will be fetched.
- * @return {Promise<boolean>} - A promise that resolves to `true` if the version was successfully fetched and updated, or `false` if an error occurred.
- */
-async function getFileVersion(idPrefix, url) {
-    setMessage(idPrefix, 'Updating...');
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Accept': 'text/plain'
-            }
-        });
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        const version = (await response.text()).split(' ')[1] ?? 'Unknown';
-        setMessage(idPrefix + '-app-version', '<strong>' + version + '</strong>');
-        setMessage(idPrefix + '-core-version', '<strong>' + version + '</strong>');
         return true;
     } catch (error) {
         console.error('Error occurred during downloading:', error);
