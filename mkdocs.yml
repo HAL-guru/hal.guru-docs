@@ -67,6 +67,8 @@ theme:
   extra_css:
     - overrides/custom.css
   custom_dir: overrides
+extra_javascript:
+  - js/platform-status.js
 markdown_extensions:
   - toc:
       permalink: "#"
