@@ -26,4 +26,16 @@ The **stable** environment status can be viewed on the dedicated page [here](sta
         await checkPlatformPrereleaseEnvironment();
     });
 
+    if (typeof document$ !== 'undefined') {
+      document$.subscribe(() => {
+        checkPlatformPrereleaseEnvironment();
+      });
+    }
+    
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        checkPlatformPrereleaseEnvironment();
+      }
+    });
+
 </script>

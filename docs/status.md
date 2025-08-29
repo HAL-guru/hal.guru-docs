@@ -27,4 +27,16 @@ The **pre-release** environment status can be viewed on the dedicated page [here
         await checkPlatformStableEnvironment();
     });
 
+    if (typeof document$ !== 'undefined') {
+      document$.subscribe(() => {
+        checkPlatformStableEnvironment();
+      });
+    }
+    
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        checkPlatformStableEnvironment();
+      }
+    });
+
 </script>
