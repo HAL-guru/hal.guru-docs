@@ -51,6 +51,12 @@ async function checkPlatformEnvironment(idPostfix, subdomainPostfix) {
         'warning' + idPostfix + '-message');
 
     await checkPlatformStatusAndVersion(
+        'login' + idPostfix,
+        'https://login' + subdomainPostfix + '.hal.guru/platform/status',
+        'https://login' + subdomainPostfix + '.hal.guru/platform/versions',
+        'warning' + idPostfix + '-message');
+
+    await checkPlatformStatusAndVersion(
         'webhook' + idPostfix,
         'https://webhook' + subdomainPostfix + '.hal.guru/platform/status',
         'https://webhook' + subdomainPostfix + '.hal.guru/platform/versions',
@@ -60,12 +66,6 @@ async function checkPlatformEnvironment(idPostfix, subdomainPostfix) {
         'internal' + idPostfix,
         'https://internal' + subdomainPostfix + '.hal.guru/platform/status',
         'https://internal' + subdomainPostfix + '.hal.guru/platform/versions',
-        'warning' + idPostfix + '-message');
-
-    await checkPlatformStatusAndVersion(
-        'login' + idPostfix,
-        'https://login' + subdomainPostfix + '.hal.guru/platform/status',
-        'https://login' + subdomainPostfix + '.hal.guru/platform/versions',
         'warning' + idPostfix + '-message');
 }
 
