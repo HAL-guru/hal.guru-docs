@@ -5,8 +5,6 @@ date: 2025-03-07
 author: Chris Prusik
 ---
 
-halguru installation is a straightforward process that can be completed in just a few steps.
-
 For developing AI agents, we recommend using the **Visual Studio Code** editor, which can be downloaded from [Microsoft's website](https://code.visualstudio.com/download). 
 Next, you need to install the halguru application along with its extension for this editor.
 
