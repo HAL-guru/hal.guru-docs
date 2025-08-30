@@ -70,7 +70,8 @@ def define_env(env):
         :rtype: str
         """
         try:
-            base = Path(__file__).resolve().parent / "docs"
+            docs_dir = env.conf.get("docs_dir", "docs")
+            base = Path(env.project_dir) / docs_dir
             path = base / filename
             if not path.exists():
                 return default

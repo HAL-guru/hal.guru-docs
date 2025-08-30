@@ -10,7 +10,7 @@ halguru --version || {
     exit 1
 }
 
-halguru manual --generate-version-file docs/autogen-cli-version.txt --overwrite || {
+halguru manual --generate-version-file docs/autogen-docs-version.txt --overwrite || {
     exit 2
 }
 
