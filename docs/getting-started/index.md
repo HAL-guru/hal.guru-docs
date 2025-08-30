@@ -1,4 +1,8 @@
-## Getting started with halguru
+---
+title: Getting started with halguru
+description: Getting started with halguru
+author: Chris Prusik
+---
 
 ### Create your first AI agent
 

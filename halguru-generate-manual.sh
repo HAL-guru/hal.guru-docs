@@ -10,23 +10,18 @@ halguru --version || {
     exit 1
 }
 
-cd docs || {
+halguru manual --generate-version-file docs/autogen-cli-version.txt --overwrite || {
     exit 2
 }
 
-halguru manual --generate-schemas --overwrite || {
-    cd ..
+halguru manual --generate-cli-docs docs/cli --overwrite || {
     exit 3
 }
-halguru manual --generate-models-docs --overwrite || {
-    cd ..
+
+halguru manual --generate-schemas docs/schemas --overwrite || {
     exit 4
 }
-halguru manual --generate-cli-commands-docs --overwrite || {
-    cd ..
-    exit 5
-}
-halguru manual --update-mkdocs --overwrite || {
-    cd ..
-    exit 6
-}
+
+#halguru manual --generate-models-docs --overwrite || {
+#    exit 5
+#}

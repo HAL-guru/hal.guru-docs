@@ -1,3 +1,9 @@
+---
+title: Status of the Pre-release Environment
+description: Configuring AI Agents
+author: Chris Prusik
+---
+
 A live overview of the pre-release environment. It shows the availability and versions of the documentation, CLI, and API, with direct links to releases, Swagger, AI Agent Management and Orchestration (Admin), and other web applications used by hal.guru. The data refreshes automatically to keep you up to date.
 
 This deployment is for internal QA purposes only. The functionality is experimental and may be incomplete. Do not use in production.

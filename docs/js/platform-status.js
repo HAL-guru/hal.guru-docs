@@ -126,7 +126,7 @@ async function getFileVersion(idPrefix, url) {
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-        const version = (await response.text()).split(' ')[1] ?? 'Unknown';
+        const version = await response.text() ?? 'Unknown';
         setMessage(idPrefix + '-app-version', '<strong>' + version + '</strong>');
         setMessage(idPrefix + '-core-version', '<strong>' + version + '</strong>');
         return true;

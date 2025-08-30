@@ -55,15 +55,14 @@ jobs:
           docs/halguru-install.sh --no-run
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
-          halguru --version
-          halguru --version > docs/autogen-cli-version.txt
           docs/halguru-install.sh --pre-release --no-run
-          halguru --version
-          halguru --version > docs/autogen-cli-prerelease-version.txt
+          halguru manual --generate-version-file docs/autogen-cli-prerelease-version.txt --overwrite
 
       - name: Build website
         run: |
-          pip install mkdocs-material mkdocs-macros-plugin
+          pip install mkdocs-material
+          pip install mkdocs-macros-plugin
+          pip install mkdocs-git-revision-date-localized-plugin
           mkdocs build
           test -d site && echo "Site directory exists" || echo "Missing site directory"
           ls -la site

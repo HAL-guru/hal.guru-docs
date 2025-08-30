@@ -1,11 +1,10 @@
 ---
 title: Advanced installation guide
 description: Advanced installation guide
-date: 2025-03-07
 author: Chris Prusik
 ---
 
-We strongly recommend using the [default installer](install.md). The following guide is for advanced users who want to fully understand the installation process.
+We strongly recommend using the [default installer](index.md). The following guide is for advanced users who want to fully understand the installation process.
 
 For developing AI agents, we recommend using the **Visual Studio Code** editor, which can be downloaded from [Microsoft's website](https://code.visualstudio.com/download).
 Next, you need to install the halguru application along with its extension for this editor.
