@@ -56,10 +56,10 @@ jobs:
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
           halguru --version
-          halguru --version > docs/halguru-cli/-version.txt
+          halguru --version > docs/autogen-cli-version.txt
           docs/halguru-install.sh --pre-release --no-run
           halguru --version
-          halguru --version > docs/halguru-cli/-version-prerelease.txt
+          halguru --version > docs/autogen-cli-prerelease-version.txt
 
       - name: Build website
         run: |
