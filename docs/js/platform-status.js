@@ -29,7 +29,7 @@ async function checkPlatformPrereleaseEnvironment() {
 async function checkPlatformEnvironment(idPostfix, subdomainPostfix) {
     await checkFileVersion(
         'cli' + idPostfix,
-        'https://docs.hal.guru/halguru-cli/version' + idPostfix + '.txt',
+        'https://docs.hal.guru/halguru-cli/-version' + idPostfix + '.txt',
         'warning' + idPostfix + '-message');
 
     await checkPlatformStatusAndVersion(

@@ -7,3 +7,5 @@ docs/*/**/(*)*\.md
 docs/**/*-schema.json
 docs/halguru-cli/version.txt
 docs/halguru-cli/version-prerelease.txt
+docs/*/-*
+docs/*/**/-*
