@@ -5,7 +5,7 @@
  * @return {Promise<void>} A promise that resolves once the platform environment has been checked.
  */
 async function checkPlatformStableEnvironment() {
-    await checkFileVersion('', 'https://docs.hal.guru/autogen-docs-version.txt', 'warning-message');
+    await checkFileVersion('docs', 'https://docs.hal.guru/autogen-docs-version.txt', 'warning-message');
     await checkPlatformEnvironment('', '');
 }
 
