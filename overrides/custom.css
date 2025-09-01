@@ -1,1 +1,11 @@
+.compact-table {
+    border-collapse: collapse;      /* usuwa przerwy między komórkami */
+    border-spacing: 0;
+}
 
+.compact-table td,
+.compact-table th {
+    padding: 2px 6px;               /* zmniejsz odstępy wewnętrzne */
+    line-height: 1.2;               /* ciaśniejsza interlinia */
+    border: 1px solid var(--md-default-fg-color--lightest); /* subtelna ramka (opcjonalnie) */
+}

@@ -1,7 +1,6 @@
 ---
 title: Installation halguru on macOS and Linux
 description: Installation halguru on macOS and Linux
-date: 2025-03-07
 author: Chris Prusik
 ---
 
@@ -31,7 +30,7 @@ curl -sSL https://docs.hal.guru/halguru-install.sh | bash
  
 The script will automatically:
 
-1. Download the latest version of HAL.guru
+1. Download the latest version of hal.guru
 2. Install it in your home directory under `.halguru`
 3. Create a symbolic link in `/usr/local/bin`
 4. Set appropriate permissions

@@ -65,7 +65,7 @@ theme:
     - overrides/custom.css
   custom_dir: overrides
 extra_javascript:
-  - js/platform-status.js
+  - assets/platform-status.js
 markdown_extensions:
   - toc:
       permalink: "#"
@@ -78,15 +78,17 @@ plugins:
       include_dir: .
   - git-revision-date-localized:
       enable_creation_date: false
-      type: date
+      type: iso_date
       fallback_to_build_date: true
       locale: en
       timezone: Europe/Warsaw
+      exclude:
+        - '**/autogen-*.md'
 nav:
   - 'Welcome': 'index.md'
-  - 'Installation': 'installation/index.md'
+  - 'Introduction': 'introduction/index.md'
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
   - 'AI Agent Config': 'agent-configuration/index.md'
   - 'Schemas': 'schemas/index.md'
-  - 'Status': 'status.md'
+  - 'Status': 'status/index.md'

@@ -1,7 +1,6 @@
 ---
 title: Installation halguru on Windows
 description: Installation halguru on Windows
-date: 2025-03-07
 author: Chris Prusik
 ---
 

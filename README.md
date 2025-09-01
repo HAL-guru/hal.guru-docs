@@ -1,17 +1,30 @@
 # hal.guru
 
-The repository contains a technical description of creating AI agents on the hal.guru platform. You can view the generated documentation at: [https://docs.hal.guru/](https://docs.hal.guru/)
+The [hal.guru-docs](https://github.com/HAL-guru/hal.guru-docs) repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](httpa://docs.hal.guru). 
 
-> NOTE: Feel free to submit **Pull Request**!
+### Contributions are welcome
+
+[Open an issue](https://github.com/HAL-guru/hal.guru-docs) to propose changes or submit a pull request to improve [the content](https://github.com/HAL-guru/hal.guru-docs).
+
+### Releases
+
+Published builds of the halguru CLI are available under this repository’s [Releases](https://github.com/HAL-guru/hal.guru-docs/releases) page.
 
 ## Installation
 
-The documentation is built with `mkdocs` (material theme), `mkdocs-macros-plugin` and `mkdocs-git-revision-date-localized-plugin`. Macros let you inject variables, simple logic, and external data into Markdown pages, making docs more dynamic and easier to maintain.
+The tools required to **build** and **serve** this documentation locally are: 
 
-Prerequisites:
+* [MkDocs](https://www.mkdocs.org) (a static site generator for Markdown); 
+* [the Material for MkDocs theme](https://squidfunk.github.io/mkdocs-material/) (providing UI, navigation, search, and components); 
+* [mkdocs-macros-plugin](https://mkdocs-macros-plugin.readthedocs.io/en/latest/) (enabling Jinja2-powered macros and variables for dynamic content in Markdown); 
+* [mkdocs-git-revision-date-localized-plugin](https://timvink.github.io/mkdocs-git-revision-date-localized-plugin/) (showing localized “last updated” dates based on Git metadata).
 
-- Python 3.8+
-- pip or pipx
+### Prerequisites
+
+- [Python](https://www.python.org) 3.8+
+- [pip](https://pypi.org/project/pip/) or [pipx](https://pipx.pypa.io/stable/)
+
+### Install MkDocs theme and plugins
 
 ```bash
 pip install mkdocs-material 
@@ -21,57 +34,91 @@ pip install mkdocs-git-revision-date-localized-plugin
 
 ## Run locally
 
-Live-reload dev server:
+Start a live‑reload development server to preview changes as you edit. From the project root, run:
 
 ```bash
 mkdocs serve
 ```
 
-Production build (to `site/`):
+- Open the URL shown in the terminal (typically http://127.0.0.1:8000).
+- Edits to Markdown, assets, and configuration trigger an automatic rebuild.
+- Press **Ctrl+C** to stop the server.
+
+## Build for production
+
+Build the site for deployment. From the project root, run:
 
 ```bash
-bash mkdocs build --clean
+mkdocs build
 ```
+
+- Output files will be written to `site/`.
+- Use `--clean` to remove stale files from previous builds:
+  ```bash
+  mkdocs build --clean
+  ```
+- Use `--strict` to treat warnings as errors (recommended for Continuous Integration):
+  ```bash
+  mkdocs build --strict
+  ```
+- Serve the built site with any static file server (e.g., Python’s http.server):
+  ```bash
+  python -m http.server -d site 8000
 
 ## Project structure
 
 - `mkdocs.yml` – main mkdocs config
+- `macros.py` – [macro and variable definitions](#macros--quick-start)
 - `docs/` – documentation sources (Markdown, media)
-- `docs/assets/` – images, styles, extra assets
-- `docs/cli` - hal.guru CLI documentation (mostly [auto-generated](#auto-generated-documentation))
-- `docs/models` - hal.guru YAML files documentation (mostly [auto-generated](#auto-generated-documentation))
+- `docs/assets/` – images, java script files, extra assets
 - `docs/schemas` - hal.guru YAML schemas for Visual Studio Code ([auto-generated](#auto-generated-documentation))
-- `macros.py` – macro and variable definitions for `mkdocs-macros-plugin`
-- `site/` – build output (usually not committed unless you serve statically)
 
 ## Auto-generated documentation
 
-Use `halguru-generate-manual.sh` to generate documentation for hal.guru CLI, YAML files and JSON schemas for Visual Studio Code.
+If you want to include auto-generated files in the documentation, install the `halguru` command-line tool. 
 
-After running the script:
+It can produce documentation artifacts prefixed with `autogen-` directly from your project configuration, keeping the docs in sync with your CLI commands, YAML models, and schema definitions.
 
-1. Files will be generated in the `docs/halguru-cli` and `docs/models` folders. The generated file names will start with the prefix `autogen-`.
-2. YAML schemas will be generated in the `docs/schemas` folder (their names will end with `-schema.json`).
-3. The `nav` section in the `mkdocs.yml` configuration file will be populated with the generated entries, and documentation **version** number will be updated.
+### [Installation on macOS and Linux](https://docs.hal.guru/installation/macos-and-linux/)
 
-Automatically generated files are not versioned in the GitHub repository (see `.gitignore`)
+To install the **stable** release of the `halguru` CLI:
 
-Each updated section is located between two comments:
-
-```yaml
-# Autogenerated SectionName Begin
-# Autogenerated SectionName End
+```bash
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash
 ```
 
-### CLI Versions
+To install the **pre-release** release of the `halguru` CLI:
 
-There are two additional auto-generated files that are not tracked in version control (generated by GitHub Actions):
-* [autogen-cli-version.txt](https://docs.hal.guru/autogen-cli-version.txt) - latest stable version of the hal.guru CLI
-* [autogen-cli-prerelease-version.txt](https://docs.hal.guru/autogen-cli-prerelease-version.txt) - latest prerelease version of the hal.guru CLI
+```bash
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --prerelease
+```
 
-## Macros
+#### [Installation on Windows](https://docs.hal.guru/installation/windows/)
 
+To install the **stable** release of the `halguru` CLI:
 
+```powershell
+irm https://docs.hal.guru/halguru-install.ps1 | iex
+```
+
+To install the **pre-release** release of the `halguru` CLI:
+
+```powershell
+iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
+```
+
+### Generate documentation
+
+To generate documentation for hal.guru CLI, YAML files and JSON schemas for Visual Studio Code, from the project root, run:
+
+```bash
+halguru manual --generate-version-file docs/autogen-docs-version.txt --overwrite
+halguru manual --generate-cli-docs docs/cli --overwrite
+halguru manual --generate-schemas docs/schemas --overwrite
+```
+
+- All generated files start with the `autogen-` prefix.
+- These files are not tracked in the GitHub repository (see the file). `.gitignore`
 
 ## Html in Markdown
 
@@ -158,7 +205,3 @@ In Markdown:
 
 - Inspect variables by temporarily printing {{ variables | pprint }} in a .md file.
 - Jinja errors are printed in the `mkdocs serve` console.
-
-## Links
-
-1. [mkdocs - getting started](https://www.mkdocs.org/getting-started/)
