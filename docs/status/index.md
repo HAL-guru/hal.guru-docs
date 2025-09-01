@@ -25,13 +25,8 @@ A live overview of the stable environment. It shows the availability and version
   <button id="refresh-button" class="md-button md-button--gray" type="button" title="Refresh data" onclick="updateStablePlatformStatusAndVersions()">Refresh Status</button>
 </div>
 
-### Status History
-
-The status history is available on [UptimeRobot](https://stats.uptimerobot.com/RlcI7xLSp8).
-
-### Pre-release Status
-
-The pre-release status is available [here](prerelease.md).
+### [Status History](https://stats.uptimerobot.com/RlcI7xLSp8)
+### [Pre-release Status](prerelease.md)
 
 <script type="text/javascript">
 

@@ -66,6 +66,7 @@ theme:
   custom_dir: overrides
 extra_javascript:
   - assets/platform-status.js
+  - assets/toc-forward-links.js
 markdown_extensions:
   - toc:
       permalink: "#"
@@ -89,6 +90,6 @@ nav:
   - 'Introduction': 'introduction/index.md'
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
-  - 'AI Agent Config': 'agent-configuration/index.md'
+  - 'AI Agent Config': 'yaml-agent/index.md'
   - 'Schemas': 'schemas/index.md'
   - 'Status': 'status/index.md'
