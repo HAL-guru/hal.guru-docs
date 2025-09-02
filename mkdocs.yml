@@ -77,6 +77,10 @@ plugins:
   - macros:
       on_undefined: lax
       include_dir: .
+  - exclude:
+      glob:
+        - "drafts/**"
+        - "**/*.draft.md"
   - git-revision-date-localized:
       enable_creation_date: false
       type: iso_date
@@ -92,5 +96,5 @@ nav:
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
   - 'AI Agent Config': 'yaml-agent/index.md'
-  - 'Schemas': 'schemas/index.md'
+  - 'YAML Schemas': 'schemas/index.md'
   - 'Status': 'status/index.md'

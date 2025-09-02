@@ -1,8 +1,6 @@
 ---
-title: Welcome to halguru
+title: Secrets configuration
 description: 
 author: Chris Prusik
 draft: true
 ---
-
-![Logo](logo.png)

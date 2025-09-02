@@ -2,6 +2,7 @@
 title: Getting started with hal.guru
 description: Getting started with halguru
 author: Chris Prusik
+draft: true
 ---
 
 Generating your first AI Agent takes no more than an hour. 

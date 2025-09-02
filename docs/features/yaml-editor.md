@@ -2,6 +2,7 @@
 title: YAML Configuration Editor
 description: Installation
 author: Chris Prusik
+draft: true
 ---
 
 You can edit AI agent configuration files with any text editor, but we recommend **Visual Studio Code**. It offers schema‑based autocompletion, inline validation, and helpful command suggestions by automatically installing and activating YAML schemas for your agent files. This makes editing faster, safer, and less error‑prone.
