@@ -1,9 +1,11 @@
 ---
-title: Configuration Files
+title: Configuration Files for AI Agents
 description:
 author: Chris Prusik
 draft: true
 ---
+
+Wszystkie 
 
 YAML schemas define the structure, allowed fields, data types, and validation rules for 
 AI Agent configurations. 
@@ -35,10 +37,10 @@ A comprehensive configuration covers:
 
 Such a configuration ensures the agent remains reliable, secure, and consistent across environments while enabling predictable and testable behavior.
 
-1. **[halguru-schema.json](halguru-schema.json)** -  The full configuration of an agent. See also: [*.halguru.yaml](https://docs.hal.guru/models/%28halguru%29/) files
-2. **[halguru-state-schema.json](halguru-state-schema.json)** - Defines the operational state and associated metadata for a session of an AI agent. See also: [*.halguru-state.yaml](https://docs.hal.guru/models/%28state%29/) files
-3. **[halguru-action-schema.json](halguru-action-schema.json)** - Represents an action executed by an AI agent in the system. See also: [*.halguru-action.yaml](https://docs.hal.guru/models/%28action%29/) files
-4. **[halguru-website-schema.json](halguru-website-schema.json)** - Represents the configuration settings for a website crawler or scraper. Defines parameters such as the name of the website, the starting URL, maximum allowed levels and pages, specific URL patterns to process, and connectors required for linking external components like LLMs and file systems. See also: [*.halguru-website.yaml](https://docs.hal.guru/models/%28website%29/) files
+1. The full configuration of an agent. See also: *.halguru.yaml files
+2. Defines the operational state and associated metadata for a session of an AI agent. See also: *.halguru-state.yaml files
+3. Represents an action executed by an AI agent in the system. See also: *.halguru-action.yaml files
+4. Represents the configuration settings for a website crawler or scraper. Defines parameters such as the name of the website, the starting URL, maximum allowed levels and pages, specific URL patterns to process, and connectors required for linking external components like LLMs and file systems. See also: *.halguru-website.yaml files
 
 ## Install Schema
 
@@ -46,4 +48,3 @@ Such a configuration ensures the agent remains reliable, secure, and consistent 
 
 ### ⮕ [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
 ### ⮕ [YAML Official Manual](https://yaml.org/spec/1.2.2/)
-### ⮕ [Understanding Schema](https://json-schema.org/understanding-json-schema/reference/schema.html)

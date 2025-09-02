@@ -13,3 +13,4 @@ With deep platform integration, users can publish agents, check statuses, list a
 ### ⮕ [Installation Instructions](../installation/index.md)
 ### ⮕ [Continous Integration and Deployment](ci-cd.md)
 ### ⮕ [Secrets Configuration](secrets.md)
+### ⮕ [Installation](installation/index.md)

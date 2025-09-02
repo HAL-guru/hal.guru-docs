@@ -1,5 +1,5 @@
 ---
-title: Configuration Files
+title: Schemas for hal.guru Configuration Files
 description:
 author: Chris Prusik
 ---
@@ -18,12 +18,12 @@ can rely on when creating, validating, and processing YAML files.
 
 ## Available Schemas
 
-| File extension | Schema | Status                                            | Core Version                                     |
-|----------------|-------|---------------------------------------------------|--------------------------------------------------|
-| <a href="https://docs.hal.guru/yaml-agent/">.halguru.yaml</a>           | [halguru-schema.json](halguru-schema.json)               | <span id="agent-schema-status">⚪ No data</span>   | <span id="agent-schema-version">No data</span>   |
-| <a href="https://docs.hal.guru/yaml-state/">.halguru-state.yaml</a>     | [halguru-state-schema.json](halguru-state-schema.json)   | <span id="state-schema-status">⚪ No data</span>   | <span id="state-schema-version">No data</span>   |
-| <a href="https://docs.hal.guru/yaml-action/">.halguru-action.yaml</a>   | [halguru-action-schema.json](halguru-action-schema.json) | <span id="action-schema-status">⚪ No data</span>  | <span id="action-schema-version">No data</span>  |
-| <a href="https://docs.hal.guru/yaml-website/">.halguru-website.yaml</a> | [halguru-schema.json](halguru-schema.json)               | <span id="website-schema-status">⚪ No data</span> | <span id="website-schema-version">No data</span> |
+| File extension | Schema                                                     | Status                                            | Core Version                                     |
+|----------------|------------------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
+| <a href="https://docs.hal.guru/yaml-agent/">.halguru.yaml</a>           | [halguru-schema.json](halguru-schema.json)                 | <span id="agent-schema-status">⚪ No data</span>   | <span id="agent-schema-version">No data</span>   |
+| <a href="https://docs.hal.guru/yaml-state/">.halguru-state.yaml</a>     | [halguru-state-schema.json](halguru-state-schema.json)     | <span id="state-schema-status">⚪ No data</span>   | <span id="state-schema-version">No data</span>   |
+| <a href="https://docs.hal.guru/yaml-action/">.halguru-action.yaml</a>   | [halguru-action-schema.json](halguru-action-schema.json)   | <span id="action-schema-status">⚪ No data</span>  | <span id="action-schema-version">No data</span>  |
+| <a href="https://docs.hal.guru/yaml-website/">.halguru-website.yaml</a> | [halguru-website-schema.json](halguru-website-schema.json) | <span id="website-schema-status">⚪ No data</span> | <span id="website-schema-version">No data</span> |
 
 <div id="warning-message"></div>
 
@@ -31,14 +31,8 @@ can rely on when creating, validating, and processing YAML files.
   <button id="refresh-button" class="md-button md-button--gray" type="button" title="Refresh data" onclick="updateAllSchemasStatusAndVersions()">Refresh Status</button>
 </div>
 
-## Install Schema
-
-To install these schemas in **Visual Studio Code**, run the following command:
-```bash
-halguru install
-```
-
-## ⮕ [Understanding Schema](https://json-schema.org/understanding-json-schema/reference/schema.html)
+## ⮕ [Schemas Installation](install-schemas.md)
+## ⮕ [Deep Understanding Schema](https://json-schema.org/understanding-json-schema/reference/schema.html)
 
 <script type="text/javascript">
 
