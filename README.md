@@ -150,12 +150,16 @@ iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
 
 ### Generate documentation
 
-To generate documentation for hal.guru CLI, YAML files and JSON schemas for Visual Studio Code, from the project root, run:
+To generate documentation for hal.guru CLI, YAML documentation files, and JSON schemas for Visual Studio Code, from the project root, run:
 
 ```bash
 halguru manual --generate-version-file docs/autogen-docs-version.txt --overwrite
 halguru manual --generate-cli-docs docs/cli --overwrite
 halguru manual --generate-schemas docs/schemas --overwrite
+halguru manual --generate-agent-yaml-docs docs/yaml-agent --overwrite
+halguru manual --generate-state-yaml-docs docs/yaml-state --overwrite
+halguru manual --generate-action-yaml-docs docs/yaml-action --overwrite
+halguru manual --generate-website-yaml-docs docs/yaml-website --overwrite
 ```
 
 - All generated files start with the `autogen-` prefix.
