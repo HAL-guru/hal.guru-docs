@@ -74,6 +74,7 @@ mkdocs build
 - `overrides/custom.css` - additional CSS settings for the generated site
 - `overrides/partials/` - custom HTML partials
 - `docs/**` – documentation sources (Markdown, media)
+- `docs/drafts/**` - work-in-progress documents
 - `docs/assets/` – images, java script files, extra assets
 - `docs/schemas/*-schema.json` - hal.guru YAML schemas for Visual Studio Code ([auto-generated](#auto-generated-documentation))
 

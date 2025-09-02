@@ -21,6 +21,27 @@ async function updatePrereleasePlatformStatusAndVersions() {
 }
 
 /**
+ * Updates the status and version of multiple schema files by calling the `updateSchemaFileStatusAndVersion` method
+ * with predefined URLs and corresponding status and version keys.
+ *
+ * @return {Promise<void>} A promise that resolves when all schema file statuses and versions have been updated.
+ */
+async function updateAllSchemasStatusAndVersions() {
+    await updateSchemaFileStatusAndVersion(
+        'https://docs.hal.guru/schemas/halguru-schema.json',
+        'agent-schema-status', 'agent-schema-version');
+    await updateSchemaFileStatusAndVersion(
+        'https://docs.hal.guru/schemas/halguru-state-schema.json',
+        'state-schema-status', 'state-schema-version');
+    await updateSchemaFileStatusAndVersion(
+        'https://docs.hal.guru/schemas/halguru-action-schema.json',
+        'action-schema-status', 'action-schema-version');
+    await updateSchemaFileStatusAndVersion(
+        'https://docs.hal.guru/schemas/halguru-website-schema.json',
+        'website-schema-status', 'website-schema-version');
+}
+
+/**
  * Updates the platform's status and versions for various subdomains based on the specified environment.
  *
  * @param {string} [environment='stable'] - The environment to be used for the platform update. Valid values are 'stable' and 'prerelease'. Defaults to 'stable'.
@@ -78,7 +99,7 @@ async function updatePlatformStatusAndVersions(environment = 'stable') {
         'internal-status', 'internal-app-version', 'internal-core-version');
 
     if (environment === 'stable') {
-        await updateSchemasStatusAndVersion(
+        await updateSchemaFileStatusAndVersion(
             'https://docs.hal.guru/schemas/halguru-schema.json',
             'schemas-status', 'schemas-core-version');
     }
@@ -200,7 +221,7 @@ async function updatePlatformVersions(url, appVersionId, coreVersionId) {
  * @param {string} coreVersionId - The ID of the core version being updated, used to display messages.
  * @return {Promise<boolean>} A promise that resolves to true if the update was successful, or false if an error occurred.
  */
-async function updateSchemasStatusAndVersion(url, statusId, coreVersionId) {
+async function updateSchemaFileStatusAndVersion(url, statusId, coreVersionId) {
     setMessage('🔄 Updating...', statusId);
     setMessage('Updating...', coreVersionId);
 

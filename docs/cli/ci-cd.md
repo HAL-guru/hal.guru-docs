@@ -5,5 +5,4 @@ author: Chris Prusik
 draft: true
 ---
 
-Tak jak przy klasycznych językach programowania, gdzie używanie systemu kontroli wersji jak Git, 
-czy stosowanie zautomatyzowanych testów oraz publikacji jest niezbędne 
+How tu use the CLI in CI/CD pipelines.
