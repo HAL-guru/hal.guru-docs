@@ -9,6 +9,6 @@ If you’d like to understand the platform’s core features, we recommend readi
 It will walk you through the essential concepts, show you how to configure and deploy an agent, 
 and highlight best practices so you can build confidently from the very beginning.
 
-## Installation
+## ⮕ [Installation](../installation/index.md)
 
-[Details](../installation/index.md)
+<!-- TODO: Build an agent step by step -->

@@ -24,7 +24,7 @@ A live overview of the pre-release environment. It shows the availability and ve
   <button id="refresh-button" class="md-button md-button--gray" type="button" title="Refresh data" onclick="updatePrereleasePlatformStatusAndVersions()">Refresh Status</button>
 </div>
 
-## [Stable Environment](index.md)
+## ⮕ [Stable Environment](index.md)
 
 <script type="text/javascript">
 

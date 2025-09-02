@@ -14,4 +14,4 @@ With VS Code you get:
 - Quick fixes and snippets to speed up common edits
 - Seamless setup: the recommended extension can auto‑configure the YAML schemas for you
 
-Prefer a different editor? That’s fine—YAML schemas can be installed and mapped manually in most popular editors (e.g., by enabling a YAML language server and pointing it to the appropriate schema files). Once configured, you’ll get similar benefits: completion, validation, and hints tailored to your agent configuration.
+Prefer a different editor? That’s fine —- [YAML schemas](../schemas/index.md) can be installed and mapped manually in most popular editors (e.g., by enabling a YAML language server and pointing it to the appropriate schema files). Once configured, you’ll get similar benefits: completion, validation, and hints tailored to your agent configuration.

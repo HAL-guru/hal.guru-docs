@@ -87,7 +87,8 @@ plugins:
         - '**/autogen-*.md'
 nav:
   - 'Welcome': 'index.md'
-  - 'Introduction': 'introduction/index.md'
+  - 'Our Why': 'why/index.md'
+  - 'Platform Features': 'features/index.md'
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
   - 'AI Agent Config': 'yaml-agent/index.md'

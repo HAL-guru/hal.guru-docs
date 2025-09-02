@@ -1,10 +1,7 @@
 ---
-title: halguru documentation
-description: halguru documentation
-date: 2024-01-25
+title: Welcome to halguru
+description: 
 author: Chris Prusik
 ---
-
-halguru documentation
 
 ![Logo](logo.png)
