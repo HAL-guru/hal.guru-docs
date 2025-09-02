@@ -1,8 +1,8 @@
 ---
-title: Configuring AI Agents
-description: Configuring AI Agents
+title: YAML Agent
+description:
 author: Chris Prusik
 draft: true
 ---
 
-Configuring AI Agents
+YAML Agent
