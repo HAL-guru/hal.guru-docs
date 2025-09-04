@@ -34,6 +34,6 @@ halguru manual --generate-action-yaml-docs docs/yaml-action --overwrite || {
   exit 7
 }
 
-halguru manual --generate-website-yaml-docs docs/yaml-website --overwrite || {
+halguru manual --generate-webscraping-yaml-docs docs/yaml-webscraping --overwrite || {
   exit 8
 }

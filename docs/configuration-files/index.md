@@ -40,8 +40,8 @@ An agent supports toggleable behaviors that define goals, tone, constraints, and
 
 ## Website Scraping Configuration
 
-### → [Introduction](../yaml-website/index.md)
-### → [Specification](../yaml-website/autogen-root.md)
+### → [Introduction](../yaml-webscraping/index.md)
+### → [Specification](../yaml-webscraping/autogen-root.md)
 
 ## References
 

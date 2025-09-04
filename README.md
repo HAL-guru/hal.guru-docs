@@ -160,7 +160,7 @@ halguru manual --generate-schemas docs/schemas --overwrite
 halguru manual --generate-agent-yaml-docs docs/yaml-agent --overwrite
 halguru manual --generate-state-yaml-docs docs/yaml-state --overwrite
 halguru manual --generate-action-yaml-docs docs/yaml-action --overwrite
-halguru manual --generate-website-yaml-docs docs/yaml-website --overwrite
+halguru manual --generate-webscraping-yaml-docs docs/yaml-webscraping --overwrite
 ```
 
 - All generated files start with the `autogen-` prefix.

@@ -37,8 +37,8 @@ async function updateAllSchemasStatusAndVersions() {
         'https://docs.hal.guru/schemas/halguru-action-schema.json',
         'action-schema-status', 'action-schema-version');
     await updateSchemaFileStatusAndVersion(
-        'https://docs.hal.guru/schemas/halguru-website-schema.json',
-        'website-schema-status', 'website-schema-version');
+        'https://docs.hal.guru/schemas/halguru-webscraping-schema.json',
+        'webscraping-schema-status', 'webscraping-schema-version');
 }
 
 /**
