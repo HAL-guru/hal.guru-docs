@@ -18,12 +18,12 @@ can rely on when creating, validating, and processing YAML files.
 
 ## Available Schemas
 
-| File extension | Schema                                                         | Status                                            | Core Version                                     |
-|----------------|----------------------------------------------------------------|---------------------------------------------------|--------------------------------------------------|
-| <a href="https://docs.hal.guru/yaml-agent/">.halguru.yaml</a>           | [halguru-schema.json](halguru-schema.json)                     | <span id="agent-schema-status">⚪ No data</span>   | <span id="agent-schema-version">No data</span>   |
-| <a href="https://docs.hal.guru/yaml-state/">.halguru-state.yaml</a>     | [halguru-state-schema.json](halguru-state-schema.json)         | <span id="state-schema-status">⚪ No data</span>   | <span id="state-schema-version">No data</span>   |
-| <a href="https://docs.hal.guru/yaml-action/">.halguru-action.yaml</a>   | [halguru-action-schema.json](halguru-action-schema.json)       | <span id="action-schema-status">⚪ No data</span>  | <span id="action-schema-version">No data</span>  |
-| <a href="https://docs.hal.guru/yaml-webscraping/">.halguru-webscraping.yaml</a> | [halguru-webscraping-schema.json](halguru-website-schema.json) | <span id="website-schema-status">⚪ No data</span> | <span id="webscraping-schema-version">No data</span> |
+| File extension | Schema                                                             | Status                                                | Core Version                                     |
+|----------------|--------------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------|
+| <a href="https://docs.hal.guru/yaml-agent/">.halguru.yaml</a>           | [halguru-schema.json](halguru-schema.json)                         | <span id="agent-schema-status">⚪ No data</span>       | <span id="agent-schema-version">No data</span>   |
+| <a href="https://docs.hal.guru/yaml-state/">.halguru-state.yaml</a>     | [halguru-state-schema.json](halguru-state-schema.json)             | <span id="state-schema-status">⚪ No data</span>       | <span id="state-schema-version">No data</span>   |
+| <a href="https://docs.hal.guru/yaml-action/">.halguru-action.yaml</a>   | [halguru-action-schema.json](halguru-action-schema.json)           | <span id="action-schema-status">⚪ No data</span>      | <span id="action-schema-version">No data</span>  |
+| <a href="https://docs.hal.guru/yaml-webscraping/">.halguru-webscraping.yaml</a> | [halguru-webscraping-schema.json](halguru-webscraping-schema.json) | <span id="webscraping-schema-status">⚪ No data</span> | <span id="webscraping-schema-version">No data</span> |
 
 <div id="warning-message"></div>
 
