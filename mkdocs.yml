@@ -68,6 +68,13 @@ extra_javascript:
   - assets/platform-status.js
   - assets/toc-forward-links.js
 markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
   - toc:
       permalink: "#"
       baselevel: 2

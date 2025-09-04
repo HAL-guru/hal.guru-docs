@@ -20,31 +20,30 @@ In practice, a schema acts as a contract that both authors and automated systems
 can rely on when creating, validating, and processing YAML files.
 -->
 
-## AI Agent Configuration File
+## Agent Configuration
 
-A set of agent behaviors that can be toggled during a session. Each behavior specifies goals, tone, constraints, and switching commands. Behaviors can be combined, and the most recently activated behavior takes precedence on conflicts.
+An agent supports toggleable behaviors that define goals, tone, constraints, and switching commands, with the most recently activated behavior taking precedence on conflicts. A complete configuration includes prompts, LLM connectors, RAG integrations, safety and usage policies, UX/persona, secrets, metadata, testing/validation, and operational settings (rate limits, error handling).
 
-A comprehensive configuration covers:
-
-- Prompts: System, developer, and task prompts that guide the agent’s tone, scope, and response style.
-- LLM connectors: Mapped providers, models, parameters (e.g., temperature, max tokens), and instruction sources.
-- RAG integrations: Connectors to vector stores, retrievers, indexing policies, and grounding strategies.
-- Behavior and policies: Rules for safety, confidentiality, escalation, tool usage, and fallback logic.
-- Appearance and UX: Name, description, persona, response formatting, and icons and color themes.
-- Secrets and credentials: Securely referenced tokens, API keys, and connection strings.
-- Metadata: Author, version, changelog, licensing, and compliance notes.
-- Testing and validation: Unit tests, prompt regression tests, evaluation metrics, and monitoring hooks.
-- Operational settings: Rate limits, caching, logging, observability, and error-handling policies.
+### → [Introduction](../yaml-agent/index.md)
+### → [Specification](../yaml-agent/autogen-root.md)
+<!-- ### →  [Reference](../yaml-agent/autogen-reference.md) -->
 
 ## Agent State
 
+### → [Introduction](../yaml-state/index.md)
+### → [Specification](../yaml-state/autogen-root.md)
+
 ## Agent Actions
+
+### → [Introduction](../yaml-action/index.md)
+### → [Specification](../yaml-action/autogen-root.md)
 
 ## Website Scraping Configuration
 
+### → [Introduction](../yaml-website/index.md)
+### → [Specification](../yaml-website/autogen-root.md)
+
 ## References
 
-
-### ⮕ [YAML Cheat Sheet](https://yamlcheatsheet.com/)
-### ⮕ [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
-### ⮕ [YAML Official Manual](https://yaml.org/spec/1.2.2/)
+### → [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+### → [YAML Official Manual](https://yaml.org/spec/1.2.2/)

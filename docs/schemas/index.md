@@ -31,8 +31,8 @@ can rely on when creating, validating, and processing YAML files.
   <button id="refresh-button" class="md-button md-button--gray" type="button" title="Refresh data" onclick="updateAllSchemasStatusAndVersions()">Refresh Status</button>
 </div>
 
-## ⮕ [Schemas Installation](install-schemas.md)
-## ⮕ [Deep Understanding Schema](https://json-schema.org/understanding-json-schema/reference/schema.html)
+## → [Schemas Installation](install-schemas.md)
+## ↗ [Deep Understanding Schema](https://json-schema.org/understanding-json-schema/reference/schema.html)
 
 <script type="text/javascript">
 
