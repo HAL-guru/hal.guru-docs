@@ -45,5 +45,5 @@ An agent supports toggleable behaviors that define goals, tone, constraints, and
 
 ## References
 
-### → [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
-### → [YAML Official Manual](https://yaml.org/spec/1.2.2/)
+### ↗ [YAML Tutorial](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
+### ↗ [YAML Official Manual](https://yaml.org/spec/1.2.2/)
