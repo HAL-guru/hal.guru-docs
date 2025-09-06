@@ -6,7 +6,7 @@ author: Chris Prusik
 
 YAML schemas define the structure, allowed fields, data types, and validation rules for 
 hal.guru [configurations files](../configuration-files/index.md). They are used to validate and process YAML files. 
-
+    
 By describing what a valid configuration should look like, schemas help catch errors early, 
 ensure consistency across environments, and enable richer tooling such as auto-completion, 
 linting, and documentation hints in editors. 

@@ -1,6 +1,6 @@
 # hal.guru
 
-The [hal.guru-docs](https://github.com/HAL-guru/hal.guru-docs) repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](httpa://docs.hal.guru). 
+The [hal.guru-docs](https://github.com/HAL-guru/hal.guru-docs) repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](https://docs.hal.guru). 
 
 ### Contributions are welcome
 
@@ -251,3 +251,19 @@ In Markdown:
 
 - Inspect variables by temporarily printing `{{ variables | pprint }}` in a `.md` file.
 - Jinja errors are printed in the `mkdocs serve` console.
+
+
+## Heading Symbol Guide
+
+For chapter titles, use the following symbols:
+
+| Symbol | Description |
+|--------|-------------|
+| ↗      | External links |
+| →      | Internal links |
+| ▶      | CLI command or option |
+
+You can prepend these symbols to headings to convey intent at a glance. For example:
+- `→ [Installation Guide](...)` indicates a section that links within this documentation.
+- `↗ [JSON Schema Reference](...)` points to authoritative external resources.
+- `▶ halguru about --system` marks a command-line option or usage section.
