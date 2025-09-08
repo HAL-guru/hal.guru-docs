@@ -264,6 +264,6 @@ For chapter titles, use the following symbols:
 | ▷       | CLI command or option |
 
 You can prepend these symbols to headings to convey intent at a glance. For example:
-- `→ [Installation Guide](...)` indicates a section that links within this documentation.
-- `↗ [JSON Schema Reference](...)` points to authoritative external resources.
+- `→ [Installation Guide](../installation/index.md)` indicates a section that links within this documentation.
+- `↗ [JSON Schema Reference](https://json-schema.org)` points to authoritative external resources.
 - `▷ halguru about --system` marks a command-line option or usage section.
