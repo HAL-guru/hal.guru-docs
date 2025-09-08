@@ -257,11 +257,11 @@ In Markdown:
 
 For chapter titles, use the following symbols:
 
-| Symbol | Description |
-|--------|-------------|
-| ↗      | External links |
-| →      | Internal links |
-| ▶      | CLI command or option |
+| Symbol  | Description           |
+|---------|-----------------------|
+| ↗       | External links        |
+| →       | Internal links        |
+| ▷       | CLI command or option |
 
 You can prepend these symbols to headings to convey intent at a glance. For example:
 - `→ [Installation Guide](...)` indicates a section that links within this documentation.
