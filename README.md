@@ -1,6 +1,6 @@
-# hal.guru
+# hal.guru-docs
 
-The [hal.guru-docs](https://github.com/HAL-guru/hal.guru-docs) repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](https://docs.hal.guru). 
+This repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](https://docs.hal.guru). 
 
 ### Contributions are welcome
 
@@ -251,7 +251,6 @@ In Markdown:
 
 - Inspect variables by temporarily printing `{{ variables | pprint }}` in a `.md` file.
 - Jinja errors are printed in the `mkdocs serve` console.
-
 
 ## Heading Symbol Guide
 
