@@ -5,7 +5,7 @@ author: Chris Prusik
 draft: true
 ---
 
-[login.hal.guru](https://login.hal.guru) - a centralized authentication service
+A centralized [authentication service](https://login.hal.guru)
 that handles user login and registration processes for individuals interacting with AI agents. This service manages user credentials, authentication flows,
 and secure access control for the AI communication platform.
 
