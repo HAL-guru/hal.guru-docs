@@ -65,7 +65,7 @@ jobs:
           pip install mkdocs-macros-plugin
           pip install mkdocs-exclude
           pip install mkdocs-git-revision-date-localized-plugin
-          mkdocs build
+          mkdocs build --strict
           test -d site && echo "Site directory exists" || echo "Missing site directory"
           ls -la site
 

@@ -79,7 +79,7 @@ mkdocs build
 - `docs/assets/` – images, java script files, extra assets
 - `docs/schemas/*-schema.json` - schemas for YAML files ([auto-generated](#auto-generated-documentation))
 
-> **Note:** The `*.draft.md` and `docs/**` files are excluded from the build by default.
+> **Note:** The `*.draft.md` and `docs/drafts/**` files are excluded from the build by default.
 
 ## Markdown file headers
 
@@ -243,7 +243,7 @@ In Markdown:
 - Keep logic inside `macros.py` to keep Markdown clean.
 - Use short, clear macro names.
 - Centralize globals (e.g., project, author, links) in one place.
-- Store reusable data (tables, lists) in JSON/YAML under docs/data/.
+- Store reusable data (tables, lists) in JSON/YAML under `docs/data/`.
 - Leverage admonitions (note, tip, warning) for highlights.
 - Enable code highlight and copy features in Material.
 
