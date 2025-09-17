@@ -1,6 +1,6 @@
 ---
 title: YAML Configuration Editor
-description: Installation
+description: 
 author: Chris Prusik
 draft: true
 ---

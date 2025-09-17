@@ -240,7 +240,7 @@ In Markdown:
 
 ### Best practices
 
-- Keep logic inside macros.py to keep Markdown clean.
+- Keep logic inside `macros.py` to keep Markdown clean.
 - Use short, clear macro names.
 - Centralize globals (e.g., project, author, links) in one place.
 - Store reusable data (tables, lists) in JSON/YAML under docs/data/.
@@ -263,6 +263,6 @@ For chapter titles, use the following symbols:
 | ▷       | CLI command or option |
 
 You can prepend these symbols to headings to convey intent at a glance. For example:
-- `→ [Installation Guide](../installation/index.md)` indicates a section that links within this documentation.
-- `↗ [JSON Schema Reference](https://json-schema.org)` points to authoritative external resources.
-- `▷ halguru about --system` marks a command-line option or usage section.
+- `## → [Installation Guide](../installation/index.md)` indicates a section that links within this documentation.
+- `## ↗ [JSON Schema Reference](https://json-schema.org)` points to authoritative external resources.
+- `## ▷ halguru about --system` marks a command-line option or usage section.
