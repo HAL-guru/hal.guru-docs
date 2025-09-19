@@ -58,6 +58,17 @@ If you want to install the latest pre-release version of halguru, you can use th
 curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --prerelease
 ```
 
+## Concrete version
+
+If you want to install a specific version of halguru, you can use the following command:
+
+```bash
+curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --version v1.55.16-beta.16
+```
+
+Where `v1.55.16-beta.16` is the version you want to install from the 
+[releases page](https://github.com/HAL-guru/hal.guru-docs/releases).
+
 ## Errror list
 
 | Code | Message                                                                       |

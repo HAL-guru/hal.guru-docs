@@ -180,14 +180,25 @@ parse_args() {
     PRERELEASE="false"
     while [ $# -gt 0 ]; do
         case "$1" in
-            --prerelease|--pre-release)
+            --prerelease|--pre-release|-p)
                 PRERELEASE="true"
                 ;;
-            --norun|--no-run)
+            --norun|--no-run|-n)
                 NORUN="true"
                 ;;
+            --version|-v)
+                shift
+                if [ -z "${1:-}" ]; then
+                    log_error 10 "No value for --version. Usage: --version <tag>"
+                    exit 10
+                fi
+                VERSION_OVERRIDE="$1"
+                if [ "${VERSION_OVERRIDE#v}" = "$VERSION_OVERRIDE" ]; then
+                    VERSION_OVERRIDE="v$VERSION_OVERRIDE"
+                fi
+                ;;
             --help|-h)
-                echo "Usage: halguru-install.sh [--pre-release|--no-run|--help]"
+                echo "Usage: halguru-install.sh [--pre-release|--no-run|--help|--version <tag>]"
                 exit 0
                 ;;
             *)
@@ -210,10 +221,14 @@ main() {
     OS=$(get_os)
     ARCH=$(get_arch)
 
-    if [ "$PRERELEASE" = "true" ]; then
-        VERSION=$(get_latest_prerelease_version)
+    if [ -n "$VERSION_OVERRIDE" ]; then
+        VERSION="$VERSION_OVERRIDE"
     else
+      if [ "$PRERELEASE" = "true" ]; then
+        VERSION=$(get_latest_prerelease_version)
+      else
         VERSION=$(get_latest_version)
+      fi
     fi
 
     log_info "Creating directory $INSTALL_DIR"
