@@ -1,5 +1,5 @@
 ---
-title: Natural-Language Software Development
+title: The Future of Programming is Natural Language
 description: 
 author: Chris Prusik
 ---
