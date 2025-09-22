@@ -58,9 +58,9 @@ If you want to install the latest pre-release version of halguru, you can use th
 curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --pre-release
 ```
 
-This will install the latest version of halguru that is not yet released and is available for testing purposes only within the `beta` channel. The version number will be suffixed with `-beta.XX` where `XX` is the number of the pre-release version. It is not recommended to use this version in production environments.
+This will install the latest version of halguru that is not yet released and is available for testing purposes only within the `beta` channel. The version number will be suffixed with `-beta.XX` where `XX` is the number of the pre-release version. 
 
-This version is working only with test environments of the hal.guru platform.
+This version is working only with [test environments](../status/prerelease.md) of the hal.guru platform.
 
 ## Specific version
 
