@@ -22,4 +22,4 @@ A comprehensive configuration covers:
 | Operational settings | Rate limits, caching, logging, observability, and error-handling policies. |
 
 ## → [Full Specification](autogen-root.md)
-### → [Reference Index](../yaml-agent/autogen-reference-index.md)
+## → [Reference Index](../yaml-agent/autogen-reference-index.md)
