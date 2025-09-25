@@ -2,7 +2,6 @@
 title: Why We Built an AI Agent Design Platform
 description: 
 author: Chris Prusik
-draft: true
 ---
 
 The purpose behind hal.guru.

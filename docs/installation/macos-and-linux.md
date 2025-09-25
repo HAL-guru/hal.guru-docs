@@ -64,7 +64,7 @@ This version is working only with [test environments](../status/prerelease.md) o
 
 ## Specific version
 
-If you want to install a specific version of halguru, you can use the following command:
+If you want to install a specific version of `halguru`, you can use the following command:
 
 ```bash
 curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --version v1.55.16-beta.16

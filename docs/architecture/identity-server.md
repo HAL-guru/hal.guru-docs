@@ -2,7 +2,6 @@
 title: Centralized Auth with OpenID Connect
 description: 
 author: Chris Prusik
-draft: true
 ---
 
 A centralized [authentication service](https://login.hal.guru)

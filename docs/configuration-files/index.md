@@ -2,7 +2,6 @@
 title: Configuration Files for AI Agents
 description:
 author: Chris Prusik
-draft: true
 ---
 
 We use YAML files to define the structure of AI agents, persist their runtime state, specify the actions they can execute, and configure web scraping workflows. This approach keeps configurations human-readable, versionable, and easy to validate, while separating logic from data for cleaner, more maintainable systems.
@@ -25,23 +24,23 @@ can rely on when creating, validating, and processing YAML files.
 An agent supports toggleable behaviors that define goals, tone, constraints, and switching commands, with the most recently activated behavior taking precedence on conflicts. A complete configuration includes prompts, LLM connectors, RAG integrations, safety and usage policies, UX/persona, secrets, metadata, testing/validation, and operational settings (rate limits, error handling).
 
 ### → [Introduction](../yaml-agent/index.md)
-### → [Specification](../yaml-agent/autogen-root.md)
+### → [Full Specification](../yaml-agent/autogen-root.md)
 <!-- ### →  [Reference](../yaml-agent/autogen-reference.md) -->
 
 ## Agent State
 
-### → [Introduction](../yaml-state/index.md)
-### → [Specification](../yaml-state/autogen-root.md)
+<!-- ### → [Introduction](../yaml-state/index.md) -->
+### → [Full Specification](../yaml-state/autogen-root.md)
 
 ## Agent Actions
 
-### → [Introduction](../yaml-action/index.md)
-### → [Specification](../yaml-action/autogen-root.md)
+<!-- ### → [Introduction](../yaml-action/index.md) -->
+### → [Full Specification](../yaml-action/autogen-root.md)
 
 ## Website Scraping Configuration
 
-### → [Introduction](../yaml-webscraping/index.md)
-### → [Specification](../yaml-webscraping/autogen-root.md)
+<!-- ### → [Introduction](../yaml-webscraping/index.md) -->
+### → [Full Specification](../yaml-webscraping/autogen-root.md)
 
 ## References
 

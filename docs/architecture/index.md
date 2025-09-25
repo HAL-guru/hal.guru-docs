@@ -2,7 +2,6 @@
 title: Platform Architecture
 description: Platform Architecture
 author: Chris Prusik
-draft: true
 ---
 
 The AI agent development platform consists of the following key components:

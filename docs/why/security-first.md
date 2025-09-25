@@ -2,7 +2,6 @@
 title: Security First
 description: 
 author: Chris Prusik
-draft: true
 ---
 
 An AI Agents solution must be security‑first. From day one,
