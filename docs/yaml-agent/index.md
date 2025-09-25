@@ -21,4 +21,5 @@ A comprehensive configuration covers:
 | Testing and validation | Unit tests, prompt regression tests, evaluation metrics, and monitoring hooks. |
 | Operational settings | Rate limits, caching, logging, observability, and error-handling policies. |
 
-## → [Full specification](autogen-root.md)
+## → [Full Specification](autogen-root.md)
+### → [Reference Index](../yaml-agent/autogen-reference-index.md)

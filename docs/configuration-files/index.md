@@ -25,22 +25,26 @@ An agent supports toggleable behaviors that define goals, tone, constraints, and
 
 ### → [Introduction](../yaml-agent/index.md)
 ### → [Full Specification](../yaml-agent/autogen-root.md)
+### → [Reference Index](../yaml-agent/autogen-reference-index.md)
 <!-- ### →  [Reference](../yaml-agent/autogen-reference.md) -->
 
 ## Agent State
 
 <!-- ### → [Introduction](../yaml-state/index.md) -->
 ### → [Full Specification](../yaml-state/autogen-root.md)
+### → [Reference Index](../yaml-state/autogen-reference-index.md)
 
 ## Agent Actions
 
 <!-- ### → [Introduction](../yaml-action/index.md) -->
 ### → [Full Specification](../yaml-action/autogen-root.md)
+### → [Reference Index](../yaml-action/autogen-reference-index.md)
 
 ## Website Scraping Configuration
 
 <!-- ### → [Introduction](../yaml-webscraping/index.md) -->
 ### → [Full Specification](../yaml-webscraping/autogen-root.md)
+### → [Reference Index](../yaml-webscraping/autogen-reference-index.md)
 
 ## References
 
