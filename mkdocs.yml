@@ -104,6 +104,6 @@ nav:
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
   - 'AI Agent Configuration': 'yaml-agent/index.md'
-  - 'Other Configurations': 'configuration-files/index.md'
+  - 'Configuration Files': 'configuration-files/index.md'
   - 'Schemas': 'schemas/index.md'
   - 'Status': 'status/index.md'
