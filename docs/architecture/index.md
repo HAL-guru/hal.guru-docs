@@ -71,7 +71,7 @@ allowing administrators to define permissions and maintain security across the A
 | **User Administration**                                                         | Comprehensive user management with role-based access control               
 | **Security Oversight** | Ensuring proper authorization and maintaining system integrity across all AI operations |
 
-> Currently in development.
+> Working in progress!
 
 ## Desktop Applications
 
@@ -88,7 +88,7 @@ for conversing with AI agents available through the hal.guru platform.
  
 ## Centralized Auth with OpenID Connect
 
-A centralized [authentication service](https://login.hal.guru) that handles user sign-in and registration for individuals interacting with AI agents. It manages user credentials, authentication flows, and secure access control for the AI communication platform. We provide out of the box “Sign in with Google” and “Sign in with Microsoft” for enterprise SSO, as well as support for Two‑Factor Authentication (2FA). 
+A centralized [authentication service](https://login.hal.guru) that handles user sign-in and registration for individuals interacting with AI agents. It manages user credentials, authentication flows, and secure access control for the AI communication platform. We provide out of the box “Sign in with Google” and “Sign in with Microsoft” for enterprise SSO, as well as support for Two‑Factor Authentication (**2FA**). 
 
 ### → [Details](identity-server.md)
 

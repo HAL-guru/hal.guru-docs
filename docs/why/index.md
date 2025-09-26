@@ -8,9 +8,10 @@ The purpose behind hal.guru.
 
 ## The Future of Programming is Natural Language
 
-In the AI era, programming shifts toward natural-language prompts that turn specifications
-into executable intent—models orchestrate code, data, and tools with guardrails and hybrid stacks (natural language for intent, DSLs for precision, traditional code for performance) —-
-while established methodologies like Scrum, Kanban, version control, CI/CD, testing,
+In the AI era, programming is shifting toward natural-language prompts that translate specifications
+into executable intent—models orchestrate code, data, and tools with guardrails and hybrid stacks.
+Use natural language for intent, DSLs for precision, and traditional code for performance.
+Established methodologies like Scrum, Kanban, version control, CI/CD, testing, 
 and DevOps remain in place, refined through standards, reviews, and quality gates.
 
 ### → [Details](natural-language.md)

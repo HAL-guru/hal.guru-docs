@@ -151,7 +151,7 @@ iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
 
 ### Generate documentation
 
-To generate documentation for hal.guru CLI, YAML documentation files, and JSON schemas for Visual Studio Code, from the project root, run:
+To generate documentation for `halguru` CLI, YAML documentation files, and JSON schemas for **Visual Studio Code**, from the project root, run:
 
 ```bash
 halguru manual --generate-version-file docs/autogen-docs-version.txt --overwrite
@@ -266,3 +266,14 @@ You can prepend these symbols to headings to convey intent at a glance. For exam
 - `## → [Installation Guide](../installation/index.md)` indicates a section that links within this documentation.
 - `## ↗ [JSON Schema Reference](https://json-schema.org)` points to authoritative external resources.
 - `## ▷ halguru about --system` marks a command-line option or usage section.
+
+### Rider Settings
+
+Instructions for **Rider** users:
+
+1. Open Settings/Preferences > Editor > Live Templates.
+2. Choose a group (or create one), then click “+” > Live Template.
+3. Set Abbreviation to `->` (for example) and Template text to `→` (for example).
+4. Click “Define” and select the languages/contexts where it should apply (e.g., “Everywhere”).
+5. Apply/OK.
+6. Now type `->` (for example) and press Tab to insert `→` (for example).
