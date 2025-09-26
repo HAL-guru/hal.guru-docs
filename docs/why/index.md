@@ -29,7 +29,7 @@ Imagine a StarTrek - inspired future in which the user interface materializes be
 An AI platform should be security‑first: built on open standards to avoid lock‑in 
 and integrate smoothly, with precise access control (RBAC) and per‑tenant isolation 
 to protect every customer’s data. It should offer seamless Sign‑in with **Google** 
-or **Microsoft** (including Azure **Active Directory**/Microsoft Entra ID) and **Single Sign‑On**,
+or **Microsoft** and **Single Sign‑On**,
 plus **Two‑Factor Authentication** (TOTP, Passkeys/WebAuthn, SMS/Email) 
 to raise security without adding friction. Continuous safeguards like rate limiting,
 anti‑brute‑force, audit trails, and real‑time alerts reduce risk and speed response,
@@ -42,6 +42,6 @@ commitments to customers.
 
 ### → [Details](security-first.md)
 
-## The solution
+## The Solution
 
 Therefore, we decided to create [hal.guru](../features/index.md) -- a platform for building AI agents designed to meet the challenges of the future. It empowers teams to prototype, deploy, and scale intelligent agents with reliability and speed, bridging the gap between cutting-edge research and real-world applications.

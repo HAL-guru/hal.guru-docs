@@ -13,8 +13,8 @@ so partners and internal apps connect easily without lock‑in or custom workaro
 
 You should control exactly who can do what, with clear roles and per‑tenant
 separation to keep every customer’s data isolated by design.
-Users can sign in with **Google** or **Microsoft** (including Azure **Active Directory**/Microsoft
-Entra ID) and enjoy Single Sign‑On across your tools. **Two‑Factor Authentication** (TOTP,
+Users can sign in with **Google** or **Microsoft** 
+and enjoy Single Sign‑On across your tools. **Two‑Factor Authentication** (TOTP,
 Passkeys/WebAuthn, SMS/Email codes) increases protection without adding
 friction—reducing support tickets and boosting satisfaction.
 
@@ -39,6 +39,6 @@ commitments to customers. Leveraging your private networks and existing controls
 incident response. You gain full cost transparency and can reuse current investments 
 in monitoring, backup, and capacity planning—avoiding data egress fees and vendor lock‑in.
 
-## The solution
+## The Solution
 
-Therefore, we decided to create [hal.guru](../features/index.md) -- a platform for building AI agents designed to meet the challenges of the future. It empowers teams to prototype, deploy, and scale intelligent agents with reliability and speed, bridging the gap between cutting-edge research and real-world applications.
+Therefore, we decided to create [hal.guru](../features/index.md) — a platform for building AI agents designed to meet the challenges of the future. It empowers teams to prototype, deploy, and scale intelligent agents with reliability and speed, bridging the gap between cutting-edge research and real-world applications.

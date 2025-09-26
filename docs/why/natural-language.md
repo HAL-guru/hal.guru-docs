@@ -37,6 +37,6 @@ As a result, paradigm shifts can be accommodated within existing processes by ad
 review practices, architectural guidelines, and quality gates,
 without discarding proven ways of organizing and delivering work.
 
-## The solution
+## The Solution
 
 Therefore, we decided to create [hal.guru](../features/index.md) - a platform for building AI agents designed to meet the challenges of the future. It empowers teams to prototype, deploy, and scale intelligent agents with reliability and speed, bridging the gap between cutting-edge research and real-world applications.
