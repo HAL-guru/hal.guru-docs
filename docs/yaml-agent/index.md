@@ -6,6 +6,9 @@ author: Chris Prusik
 
 A set of agent behaviors that can be toggled during a session. Each behavior specifies goals, tone, constraints, and switching commands. Behaviors can be combined, and the most recently activated behavior takes precedence on conflicts.
 
+## → [Full Specification](autogen-root.md)
+## → [Reference Index](../yaml-agent/autogen-reference-index.md)
+
 A comprehensive configuration covers:
 
 | Feature                                                                               | Description                                                                                    |
@@ -20,6 +23,3 @@ A comprehensive configuration covers:
 | Metadata | Author, version, changelog, licensing, and compliance notes. |
 | Testing and validation | Unit tests, prompt regression tests, evaluation metrics, and monitoring hooks. |
 | Operational settings | Rate limits, caching, logging, observability, and error-handling policies. |
-
-## → [Full Specification](autogen-root.md)
-## → [Reference Index](../yaml-agent/autogen-reference-index.md)
