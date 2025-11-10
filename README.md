@@ -271,7 +271,7 @@ You can prepend these symbols to headings to convey intent at a glance. For exam
 
 Instructions for **Rider** users:
 
-1. Open Settings/Preferences > Editor > Live Templates.
+1. Open **Settings/Preferences** > **Editor** > **Live Templates**.
 2. Choose a group (or create one), then click “+” > Live Template.
 3. Set Abbreviation to `->` (for example) and Template text to `→` (for example).
 4. Click “Define” and select the languages/contexts where it should apply (e.g., “Everywhere”).
