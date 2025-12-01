@@ -22,18 +22,6 @@ halguru manual --generate-schemas docs/schemas --overwrite || {
     exit 4
 }
 
-halguru manual --generate-agent-yaml-docs docs/yaml-agent --overwrite || {
+halguru manual --generate-yaml-docs docs --overwrite || {
   exit 5
-}
-
-halguru manual --generate-state-yaml-docs docs/yaml-state --overwrite || {
-  exit 6
-}
-
-halguru manual --generate-action-yaml-docs docs/yaml-action --overwrite || {
-  exit 7
-}
-
-halguru manual --generate-webscraping-yaml-docs docs/yaml-webscraping --overwrite || {
-  exit 8
 }
