@@ -60,7 +60,7 @@ function Install-Halguru {
         Write-Host "Installer for the 'halguru' CLI (Windows)"
 
         if ($help) {
-            Write-Host "Usage: halguru-install.ps1 [--prerelease|--help]"
+            Write-Host "Usage: halguru-install.ps1 [-prerelease|-help]"
             exit
         }
 

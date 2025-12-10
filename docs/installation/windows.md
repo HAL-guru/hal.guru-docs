@@ -53,5 +53,5 @@ If you want to install the latest pre-release version of halguru, you can use th
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
-iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
+iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } -prerelease"
 ```
