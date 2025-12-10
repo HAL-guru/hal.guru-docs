@@ -19,7 +19,7 @@ curl -sSL https://docs.hal.guru/halguru-install.sh | bash
 
 ## Windows users
 
-Open PowerShell as a regular user. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
+Open PowerShell as an administrator. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force

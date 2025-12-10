@@ -19,7 +19,7 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Installation Steps
 
-Open PowerShell as a regular user. Copy and paste the following command to download and run 
+Open PowerShell as an administrator. Copy and paste the following command to download and run 
 the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
 ```powershell
