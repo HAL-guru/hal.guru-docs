@@ -23,6 +23,7 @@ Open PowerShell as a regular user. Copy and paste the following command to downl
 the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
 ```powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
 irm https://docs.hal.guru/halguru-install.ps1 | iex
 ```
 
@@ -51,5 +52,6 @@ More details at [Experienced users guide](experienced-users.md)
 If you want to install the latest pre-release version of halguru, you can use the following command:
 
 ```powershell
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
 iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
 ```
