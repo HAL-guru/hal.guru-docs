@@ -121,46 +121,18 @@ Notes:
 
 If you want to include auto-generated files in the documentation, install the `halguru` command-line tool. It can produce documentation artifacts prefixed with `autogen-` directly from your project configuration, keeping the docs in sync with your CLI commands, YAML models, and schema definitions.
 
-### [Installation on macOS and Linux](https://docs.hal.guru/installation/macos-and-linux/)
+### Install the CLI tool
 
-To install the **stable** release of the `halguru` CLI:
-
-```bash
-curl -sSL https://docs.hal.guru/halguru-install.sh | bash
-```
-
-To install the **pre-release** release of the `halguru` CLI:
-
-```bash
-curl -sSL https://docs.hal.guru/halguru-install.sh | bash -s -- --prerelease
-```
-
-#### [Installation on Windows](https://docs.hal.guru/installation/windows/)
-
-To install the **stable** release of the `halguru` CLI:
-
-```powershell
-irm https://docs.hal.guru/halguru-install.ps1 | iex
-```
-
-To install the **pre-release** release of the `halguru` CLI:
-
-```powershell
-iex "& { $(irm https://docs.hal.guru/halguru-install.ps1) } --prerelease"
-```
+Use [this tutorial](https://docs.hal.guru/installation/) to install the `halguru` CLI tool.
 
 ### Generate documentation
 
 To generate documentation for `halguru` CLI, YAML documentation files, and JSON schemas for **Visual Studio Code**, from the project root, run:
 
 ```bash
-halguru manual --generate-version-file docs/autogen-docs-version.txt --overwrite
 halguru manual --generate-cli-docs docs/cli --overwrite
 halguru manual --generate-schemas docs/schemas --overwrite
-halguru manual --generate-agent-yaml-docs docs/yaml-agent --overwrite
-halguru manual --generate-state-yaml-docs docs/yaml-state --overwrite
-halguru manual --generate-action-yaml-docs docs/yaml-action --overwrite
-halguru manual --generate-webscraping-yaml-docs docs/yaml-webscraping --overwrite
+halguru manual --generate-yaml-docs docs --overwrite
 ```
 
 - All generated files start with the `autogen-` prefix.
