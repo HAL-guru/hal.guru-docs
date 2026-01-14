@@ -135,6 +135,11 @@ halguru manual --generate-schemas docs/schemas --overwrite
 halguru manual --generate-yaml-docs docs --overwrite
 ```
 
+Alternatively, if **Bash** is your shell of choice:
+```bash
+./halguru-generate-manual.sh
+```
+
 - All generated files start with the `autogen-` prefix.
 - These files are not tracked in the GitHub repository (see the file `.gitignore`).
 
@@ -154,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 ```
+
 ## Macros – quick start
 
 - Define macros and global variables in `main.py` (at project root).
