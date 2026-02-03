@@ -1,3 +1,4 @@
+
 # hal.guru-docs
 
 This repository contains the source for our technical documentation on building, publishing, and maintaining AI agents with the hal.guru platform. It’s the single place to learn workflows, tooling, and best practices—from local setup to advanced automation. To browse the rendered docs, visit [docs.hal.guru](https://docs.hal.guru). 
