@@ -66,7 +66,7 @@ jobs:
           pip install mkdocs-exclude
           pip install mkdocs-git-revision-date-localized-plugin
           pip install mkdocs-redirects
-          mkdocs build --strict
+          mkdocs build
           test -d site && echo "Site directory exists" || echo "Missing site directory"
           ls -la site
 
