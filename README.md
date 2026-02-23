@@ -33,6 +33,7 @@ pip install mkdocs-material
 pip install mkdocs-macros-plugin
 pip install mkdocs-exclude
 pip install mkdocs-git-revision-date-localized-plugin
+pip install mkdocs-redirects
 ```
 
 ## Run locally
@@ -71,18 +72,22 @@ mkdocs build
 
 ## Project structure
 
-- `mkdocs.yml` – main mkdocs config
-- `macros.py` – [macro and variable definitions](#macros--quick-start)
-- `overrides/custom.css` - additional CSS settings for the generated site
-- `overrides/partials/` - custom HTML partials
-- `docs/**` – documentation sources (Markdown, media)
-- `docs/drafts/**` - work-in-progress documents
-- `docs/assets/` – images, java script files, extra assets
-- `docs/schemas/*-schema.json` - schemas for YAML files ([auto-generated](#auto-generated-documentation))
+| File/folder | Description |
+|-------------|-------------|
+|  `main.py`  | Main configuration file for mkdocs-macros-plugin. |
+| `mkdocs.yml` | main mkdocs config |
+| `macros.py` | [macro and variable definitions](#macros--quick-start) |
+| `overrides/custom.css` | additional CSS settings for the generated site |
+| `overrides/partials/` | custom HTML partials |
+| `docs/**` | documentation sources (Markdown, media) |
+| `docs/_drafts/**` | work-in-progress documents |
+| `docs/_snippets/**` | reusable content snippets for [auto-generated](#auto-generated-documentation) documentation |
+| `docs/assets/` | images, java script files, extra assets |
+| `docs/schemas/*-schema.json` | schemas for YAML files ([auto-generated](#auto-generated-documentation)) |
 
 > **Note:** The `*.draft.md` and `docs/drafts/**` files are excluded from the build by default.
 
-## Markdown file headers
+## Markdown Front Matter
 
 Every Markdown file should include a YAML front matter header that defines:
 - **title**: the page title

@@ -1,0 +1,1 @@
+We use YAML files to define the structure of AI agents, persist their runtime state, specify the actions they can execute, and configure web scraping workflows. This approach keeps configurations human-readable, versionable, and easy to validate, while separating logic from data for cleaner, more maintainable systems.

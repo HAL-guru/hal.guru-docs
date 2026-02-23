@@ -86,8 +86,13 @@ plugins:
       include_dir: .
   - exclude:
       glob:
-        - "drafts/**"
+        - "_drafts/**"
         - "**/*.draft.md"
+        - "_snippets/**"
+  - redirects:
+      redirect_maps:
+        "configuration-files/index.md": "autogen-reference-links.md"
+        "schemas/index.md": "autogen-jsonschema-status.md"
   - git-revision-date-localized:
       enable_creation_date: false
       type: iso_date
