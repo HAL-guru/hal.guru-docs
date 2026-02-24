@@ -86,7 +86,7 @@ async function updatePlatformStatusAndVersions(environment = 'stable') {
     await updatePlatformStatusAndVersion(
         'https://login' + subdomainPostfix + '.hal.guru/platform/status',
         'https://login' + subdomainPostfix + '.hal.guru/platform/versions',
-        'login-status', 'login-app-version', null);
+        'login-status', 'login-app-version', "login-core-version");
 
     await updatePlatformStatusAndVersion(
         'https://webhook' + subdomainPostfix + '.hal.guru/platform/status',
