@@ -91,7 +91,7 @@ plugins:
         - "_snippets/**"
   - redirects:
       redirect_maps:
-        "configuration-files/index.md": "autogen-reference-links.md"
+        "configuration-files/index.md": "autogen-configuration-files.md"
         "schemas/index.md": "autogen-jsonschema-status.md"
   - git-revision-date-localized:
       enable_creation_date: false
