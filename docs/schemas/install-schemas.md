@@ -25,11 +25,27 @@ Tips:
 
 ## For other editors
 
-A complete list of all JSON schemas can be found in the [JSON Schemas](../autogen-jsonschema-status.md) file. The **File Extension** column specifies the file extension that should be used for YAML files in order to apply the appropriate JSON schema, while the **JSON Schema URL** column provides a link to the corresponding JSON Schema file.
+A complete list of all JSON schemas can be found in the [JSON Schemas](../autogen-jsonschema-status.md) file. The **File Extension** column specifies the file extension that should be used for YAML files to apply the appropriate JSON schema, while the **JSON Schema URL** column provides a link to the corresponding JSON Schema file.
 
-For example, the AI Agent configuration uses the `.halguru.yaml` extension, and the JSON Schema link is `https://docs.hal.guru/schemas/halguru-schema.json`.
+For example, the AI Agent configuration uses the `.halguru.yaml` extension, and the JSON Schema link is [https://docs.hal.guru/schemas/halguru-schema.json](https://docs.hal.guru/schemas/halguru-schema.json).
 
 ### JetBrains IDEs
+
+To install JSON Schemas in a JetBrains IDE (for example, IntelliJ IDEA, WebStorm, or PyCharm), follow these steps:
+
+1. Open **Settings / Preferences** by pressing:
+    - `Ctrl+Alt+S` on Windows/Linux, or
+    - `Cmd+,` on macOS.
+2. Navigate to **Languages & Frameworks** → **Schemas and DTDs** → **JSON Schema Mappings**.
+3. Click the **+** (Add) icon to create a new mapping.
+4. In the **Name** field, enter a friendly name (e.g., `hal.guru AI Agent`).
+5. In the **URL** field, paste the schema link:  
+   `https://docs.hal.guru/schemas/halguru-schema.json`
+6. Under **File path patterns**, click **+** and add the filename pattern:  
+   `.halguru.yaml`
+7. Click **OK** (or **Apply**) to save your changes.
+
+After you configure this, any `.halguru.yaml` files will be validated automatically. The IDE will also provide autocompletion and inline hints for available fields, helping you spot mistakes early and fill out the file faster.
 
 ### Sublime Text
 
