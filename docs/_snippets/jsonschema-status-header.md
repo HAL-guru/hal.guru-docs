@@ -1,5 +1,5 @@
 YAML schemas define the structure, allowed fields, data types, and validation rules for
-hal.guru [configurations files](autogen-reference-links.md). They are used to validate and process YAML files.
+hal.guru [configurations files](autogen-configuration-files.md). They are used to validate and process YAML files.
 
 By describing what a valid configuration should look like, schemas help catch errors early,
 ensure consistency across environments, and enable richer tooling such as auto-completion,
