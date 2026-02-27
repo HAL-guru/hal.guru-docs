@@ -4,4 +4,4 @@ description:
 author: Chris Prusik
 ---
 
-> Moved to [../autogen-reference-links](../autogen-reference-links.md)
+> Moved to [../autogen-configuration-files](../autogen-configuration-files.md)
