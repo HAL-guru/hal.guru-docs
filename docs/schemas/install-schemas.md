@@ -27,7 +27,11 @@ Tips:
 
 A complete list of all JSON schemas can be found in the [JSON Schemas](../autogen-jsonschema-status.md) file. The **File Extension** column specifies the file extension that should be used for YAML files to apply the appropriate JSON schema, while the **JSON Schema URL** column provides a link to the corresponding JSON Schema file.
 
-For example, the AI Agent configuration uses the `.halguru.yaml` extension, and the JSON Schema link is [https://docs.hal.guru/schemas/halguru-schema.json](https://docs.hal.guru/schemas/halguru-schema.json).
+For example, the AI Agent configuration uses the `.halguru.yaml` extension, and the JSON Schema link is [https://docs.hal.guru/schemas/halguru-schema.json](https://docs.hal.guru/schemas/halguru-schema.json). 
+
+Below you’ll find step-by-step instructions on how to set up JSON Schema validation in specific text editors, using a sample AI Agent configuration file. You can repeat the same steps for the remaining configuration files as well.
+
+If you work with multiple editors, you may want to apply the setup in each one to ensure consistent validation, autocompletion, and early detection of configuration errors.
 
 ### JetBrains IDEs
 
