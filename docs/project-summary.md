@@ -14,3 +14,11 @@ Current status of the hal.guru project for 2026-03-13. Quantitative metrics like
 | Repository | Commits | Total* | Last Month* | Last Week* |
 |------------|---------|--------|-------------|------------|
 | hal.guru-robots-core |     1512 | 173263 / 81006 | 24154 / 13993 | 8151 / 4718 |
+| hal.guru-apps |     1197 | 2219726 / 241191 | 385 / 220 | 27 / 27 |
+| hal.guru-licensing |      165 | 15270 / 2938 | 5313 / 322 | 2 / 2 |
+| hal.guru-maui |       21 | 4512 / 733 |  /  |  /  |
+| hal.guru-docs |      297 | 73374 / 49158 | 289 / 126 | 101 / 18 |
+| hal.guru-website |      251 | 15110 / 2111 | 6 / 6 |  /  |
+| hal.guru-content |       28 | 1851169 / 77339 |  /  |  /  |
+| hal.guru-marketing |       52 | 3792515 / 11194 |  /  |  /  |
+| hal.guru-management |       19 | 1161 / 123 |  /  |  /  |

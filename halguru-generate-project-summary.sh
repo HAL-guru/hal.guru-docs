@@ -5,6 +5,22 @@
 # excluding non-source files such as JSON, XML, HTML, CSS, etc.
 #
 
+generate_repo_summary() {
+  local repo_name="$1"
+  echo "- '$repo_name'"
+  cd "$repo_name" || return
+  dotnet clean *.sln > /dev/null 2>&1
+  local total_stats=$(git log --shortstat --pretty=format: | \
+    awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
+  local last_month_stats=$(git log --since="1 month ago" --shortstat --pretty=format: | \
+    awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
+  local last_week_stats=$(git log --since="1 week ago" --shortstat --pretty=format: | \
+    awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
+  local total_commits=$(git log --format="%H" | wc -l)
+  echo "| $repo_name | $total_commits | $total_stats | $last_month_stats | $last_week_stats |" >> "$summary_file"
+  cd ..
+}
+
 current_dir=$(pwd)
 current_date="$(date +%F)"
 summary_file="$current_dir/docs/project-summary.md"
@@ -30,22 +46,20 @@ echo "Retrieving Git information for repositories"
 
 echo "## Git Information" >> "$summary_file"
 echo "" >> "$summary_file"
-echo "*) Insertions lines count/deletion lines count" >> "$summary_file"
+echo "*) Insertions lines count / deletion lines count" >> "$summary_file"
 echo "" >> "$summary_file"
 echo "| Repository | Commits | Total* | Last Month* | Last Week* |" >> "$summary_file"
 echo "|------------|---------|--------|-------------|------------|" >> "$summary_file"
 
-echo "- 'hal.guru-robots-core'"
-cd "hal.guru-robots-core"
-dotnet clean HalGuru.Robots.Core.sln > null
-total_stats=$(git log --shortstat --pretty=format: | \
-  awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
-last_month_stats=$(git log --since="1 month ago" --shortstat --pretty=format: | \
-  awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
-last_week_stats=$(git log --since="1 week ago" --shortstat --pretty=format: | \
-  awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
-total_commits=$(git log --format="%H" | wc -l)
-echo "| hal.guru-robots-core | $total_commits | $total_stats | $last_month_stats | $last_week_stats |" >> "$summary_file"
+generate_repo_summary "hal.guru-robots-core"
+generate_repo_summary "hal.guru-apps"
+generate_repo_summary "hal.guru-licensing"
+generate_repo_summary "hal.guru-maui"
+generate_repo_summary "hal.guru-docs"
+generate_repo_summary "hal.guru-website"
+generate_repo_summary "hal.guru-content"
+generate_repo_summary "hal.guru-marketing"
+generate_repo_summary "hal.guru-management"
 
 #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' >> "$summary_file"
 
