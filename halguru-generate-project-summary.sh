@@ -8,9 +8,11 @@
 generate_manual_files() {
   version=$(halguru --version)
   echo "Generating manual files for $version"
-  cd "hal.guru-docs" || return
+
+  echo "## Manual files" >> "$summary_file"
+  echo "" >> "$summary_file"
+  echo "$version" >> "$summary_file"
   ./halguru-generate-manual.sh > /dev/null
-  cd ..
 }
 
 generate_git_information() {
@@ -32,8 +34,8 @@ generate_git_information() {
 }
 
 generate_git_table_header() {
-  echo "| Repository | Commits | Added lines | Deleted lines | Last Week* |" >> "$summary_file"
-  echo "|------------|---------|--------|-------------|------------|" >> "$summary_file"
+  echo "| Repository | Commits | Added lines | Deleted lines | Created | Updated |" >> "$summary_file"
+  echo "|------------|--------:|------------:|--------------:|---------|---------|" >> "$summary_file"
 }
 
 generate_git_table_row() {
@@ -48,7 +50,9 @@ generate_git_table_row() {
   #local last_week_stats=$(git log --since="1 week ago" --shortstat --pretty=format: | \
   #  awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
   local total_commits=$(git log --format="%H" | wc -l)
-  echo "| $repo_name | $total_commits | $total_stats |  |" >> "$summary_file"
+  local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
+  local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
+  echo "| $repo_name | $total_commits | $total_stats | $created_date | $updated_date |" >> "$summary_file"
   cd ..
 }
 
@@ -77,12 +81,12 @@ trap 'cd "$current_dir";' EXIT
 echo "Generating 'docs/project-summary.md' file"
 : > "$summary_file"
 
-generate_yaml_front_matter
+generate_front_matter
 generate_file_header
+generate_manual_files
 
 cd ..
 
-generate_manual_files
 generate_git_information
 
 echo "Calculating lines of code"
