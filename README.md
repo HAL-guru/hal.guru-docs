@@ -149,7 +149,7 @@ Alternatively, if **Bash** is your shell of choice:
 - All generated files start with the `autogen-` prefix.
 - These files are not tracked in the GitHub repository (see the file `.gitignore`).
 
-## Html in Markdown
+## HTML in Markdown
 
 The documentation is written in Markdown. You can use HTML tags in Markdown files.
 

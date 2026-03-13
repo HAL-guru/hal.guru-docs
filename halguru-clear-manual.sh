@@ -22,7 +22,7 @@ if [ "$matches" = "0" ]; then
 fi
 
 echo "Removing $matches file(s):"
-# Wyświetl usuwane pliki i usuń je
+
 find "$TARGET_DIR" -type f -name 'autogen-*' -print -delete
 
 echo "Done."
