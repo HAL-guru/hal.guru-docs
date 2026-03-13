@@ -21,6 +21,14 @@ generate_repo_summary() {
   cd ..
 }
 
+generate_manual_files() {
+  version=$(halguru --version)
+  echo "Generating manual files for $version"
+  cd "hal.guru-docs" || return
+  ./halguru-generate-manual.sh > /dev/null
+  cd ..
+}
+
 current_dir=$(pwd)
 current_date="$(date +%F)"
 summary_file="$current_dir/docs/project-summary.md"
@@ -42,6 +50,8 @@ echo "Current status of the hal.guru project for $current_date. Quantitative met
 echo "" >> "$summary_file"
 cd ..
 
+generate_manual_files
+
 echo "Retrieving Git information for repositories"
 
 echo "## Git Information" >> "$summary_file"
@@ -61,6 +71,7 @@ generate_repo_summary "hal.guru-content"
 generate_repo_summary "hal.guru-marketing"
 generate_repo_summary "hal.guru-management"
 
+echo "Calculating lines of code"
 #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' >> "$summary_file"
 
 echo "Done"
