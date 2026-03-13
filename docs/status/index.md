@@ -27,7 +27,7 @@ A live overview of the stable environment. It shows the availability and version
 
 ### ↗ [Status History](https://stats.uptimerobot.com/RlcI7xLSp8)
 ### → [Pre-release Status](prerelease.md)
-### → [Technical Project Summary](../project-summary.md)
+### → [Technical Project Summary](project-summary.md)
 
 <script type="text/javascript">
 

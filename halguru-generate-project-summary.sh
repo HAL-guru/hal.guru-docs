@@ -5,20 +5,13 @@
 # excluding non-source files such as JSON, XML, HTML, CSS, etc.
 #
 
-clear_manual_files() {
-  cd "hal.guru-docs"
-  ./halguru_clear_manual
-  cd ..
-}
-
 generate_manual_files() {
   cd "hal.guru-docs"
-  version=$(halguru --version)
   echo "Generating manual files for $version"
 
   echo "## Manual files" >> "$summary_file"
   echo "" >> "$summary_file"
-  echo "Manual $version" >> "$summary_file"
+  echo "Documentation for core version $version" >> "$summary_file"
   echo "" >> "$summary_file"
   ./halguru-generate-manual.sh > /dev/null
 
@@ -27,22 +20,22 @@ generate_manual_files() {
 
   echo "| Directory | Markdown Files | Markdown Lines | Autogen✺ Files | Autogen✺ Lines |" >> "$summary_file"
   echo "|-----------|---------------:|---------------:|---------------:|---------------:|" >> "$summary_file"
-  directories=($(find "docs" -mindepth 1 -maxdepth 1 -type d))
-  for dir in "${directories[@]}"; do
-    local files_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" | wc -l)
-    local lines_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
-    local autogen_files_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" | wc -l)
-    local autogen_lines_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
-    if [ "$files_count" -gt 0 ]; then
-      echo "| $dir | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
-    fi
-  done
+  #directories=($(find "docs" -mindepth 1 -maxdepth 1 -type d))
+  #for dir in "${directories[@]}"; do
+  #  local files_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" | wc -l)
+  #  local lines_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
+  #  local autogen_files_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" | wc -l)
+  #  local autogen_lines_count=$(find "$dir" \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
+  #  if [ "$files_count" -gt 0 ]; then
+  #    echo "| $dir | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
+  #  fi
+  #done
   local files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" | wc -l)
   local lines_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
   local autogen_files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" | wc -l)
   local autogen_lines_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
   if [ "$files_count" -gt 0 ]; then
-    echo "| **Total** | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
+    echo "| docs | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
   fi
   echo "" >> "$summary_file"
   cd ..
@@ -97,35 +90,37 @@ generate_git_table_row() {
   local total_commits=$(git log --format="%H" | wc -l)
   local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
-  local files_count=$(find . \( -name .git -o -name .idea -o -name .site -o -name .__pycache__ \) -type d -prune -o -type f | wc -l)
+  local files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f | wc -l)
   local lines_count=$(
-    find . \( -name .git -o -name .idea -o -name .site -o -name .__pycache__ \) -type d -prune -o -type f \( \
+    find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f \( \
       -name "*.md" -o \
       -name "*.cs" -o \
       -name "*.yaml" -o \
-      -name "*.yml" \
-      -name "*.csproj" \
-      -name "*.sln" \
-      -name "*.sh" \
-      -name "*.cshtml" \
-      -name "*.html" \
-      -name "*.json" \
-      -name "*.css" \
-      -name "*.scss" \
-      -name "*.less" \
+      -name "*.yml" -o \
+      -name "*.csproj" -o \
+      -name "*.sln" -o \
+      -name "*.sh" -o \
+      -name "*.cshtml" -o \
+      -name "*.html" -o \
+      -name "*.js" -o \
+      -name "*.json" -o \
+      -name "*.css" -o \
+      -name "*.scss" -o \
+      -name "*.less" -o \
       -name "*.razor" \
     \) -exec wc -l {} + | awk '{sum += $1} END {print sum}'
   )
-  echo "| $repo_name | $total_commits | $files_count | $lines_count | $total_stats | $created_date | $updated_date |" >> "$summary_file"
+  local name="${repo_name:9}"
+  echo "| $name | $total_commits | $files_count | $lines_count | $total_stats | $created_date | $updated_date |" >> "$summary_file"
   cd ..
 }
 
 function generate_front_matter() {
-  : > "$summary_file"
   echo "---" >> "$summary_file"
   echo "title: Project Summary for $current_date" >> "$summary_file"
   echo "description: Current status of the hal.guru project - quantitative metrics like lines of code, commits, and overall progress." >> "$summary_file"
   echo "autogenerated: true" >> "$summary_file"
+  echo "core_version: $version" >> "$summary_file"
   echo "last_update: $current_date" >> "$summary_file"
   echo "---" >> "$summary_file"
   echo "" >> "$summary_file"
@@ -155,20 +150,22 @@ function generate_cloc_summary() {
 
 current_dir=$(pwd)
 current_date="$(date +%F)"
-summary_file="$current_dir/docs/project-summary.md"
+summary_file="$current_dir/docs/status/project-summary.md"
+copyright=$(halguru --version)
+version=$(awk '{print $2}' <<< "$copyright")
 
 trap 'cd "$current_dir";' EXIT
 
-echo "Generating 'docs/project-summary.md' file"
+echo "Generating 'project-summary.md' file"
 : > "$summary_file"
 
 cd ..
 
 generate_front_matter
 generate_file_header
-clear_manual_files
-generate_git_information
 generate_manual_files
+generate_git_information
 generate_cloc_summary
 generate_footer_information
-echo "Done. Check file $summary_file"
+
+echo "Done. Check file '$summary_file'"
