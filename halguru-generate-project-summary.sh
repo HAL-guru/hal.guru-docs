@@ -18,7 +18,7 @@ generate_manual_files() {
 
   echo "## Manual files" >> "$summary_file"
   echo "" >> "$summary_file"
-  echo "$version" >> "$summary_file"
+  echo "Manual $version" >> "$summary_file"
   echo "" >> "$summary_file"
   ./halguru-generate-manual.sh > /dev/null
 
@@ -148,8 +148,9 @@ function generate_cloc_summary() {
   echo "## Lines of code summary" >> "$summary_file"
   echo "" >> "$summary_file"
   #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  echo "\`\`\`" >> "$summary_file"
   cloc . --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
-  echo "" >> "$summary_file"
+  echo "\`\`\`" >> "$summary_file"
 }
 
 current_dir=$(pwd)
