@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Generate all necessary manual files for the hal.guru platform.
+# This script uses the 'halguru' CLI to generate:
+# - Version information file
+# - CLI documentation
+# - JSON schemas
+# - YAML documentation
+#
+# All generated files are placed in the 'docs' directory with an 'autogen-' prefix.
+#
 
 trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
 
