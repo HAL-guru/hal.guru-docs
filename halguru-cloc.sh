@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Calculate lines of code for the project.
+# This script runs 'cloc' on the parent directory,
+# excluding non-source files such as JSON, XML, HTML, CSS, etc.
+#
 
 current_dir=$(pwd)
 
