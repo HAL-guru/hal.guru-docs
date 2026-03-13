@@ -6,13 +6,27 @@
 #
 
 generate_manual_files() {
+  cd "hal.guru-docs"
   version=$(halguru --version)
   echo "Generating manual files for $version"
 
   echo "## Manual files" >> "$summary_file"
   echo "" >> "$summary_file"
   echo "$version" >> "$summary_file"
+  echo "" >> "$summary_file"
   ./halguru-generate-manual.sh > /dev/null
+
+  echo "| Directory | Markdown Files | Lines Count |" >> "$summary_file"
+  echo "|-----------|---------------:|------------:|" >> "$summary_file"
+  directories=($(find "docs" -mindepth 1 -maxdepth 1 -type d))
+  for dir in "${directories[@]}"; do
+    local files_count=$(find "$dir" -type f -name "*.md" | wc -l)
+    local lines_count=$(find "$dir" -type f -name "*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
+    if [ "$files_count" -gt 0 ]; then
+      echo "| $dir | $files_count | $lines_count |" >> "$summary_file"
+    fi
+  done
+  cd ..
 }
 
 generate_git_information() {
@@ -34,7 +48,9 @@ generate_git_information() {
 }
 
 generate_git_table_header() {
-  echo "| Repository | Commits | Added lines | Deleted lines | Created | Updated |" >> "$summary_file"
+  echo "> * Lines of code" >> "$summary_file"
+  echo "" >> "$summary_file"
+  echo "| Repository | Commits | Added* | Deleted* | Created | Updated |" >> "$summary_file"
   echo "|------------|--------:|------------:|--------------:|---------|---------|" >> "$summary_file"
 }
 
@@ -81,15 +97,14 @@ trap 'cd "$current_dir";' EXIT
 echo "Generating 'docs/project-summary.md' file"
 : > "$summary_file"
 
-generate_front_matter
-generate_file_header
-generate_manual_files
-
 cd ..
 
+generate_front_matter
+generate_file_header
 generate_git_information
 
 echo "Calculating lines of code"
 #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' >> "$summary_file"
 
-echo "Done"
+generate_manual_files
+echo "Done. Check file $summary_file"

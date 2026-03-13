@@ -7,19 +7,44 @@ last_update: 2026-03-13
 
 Current status of the hal.guru project for 2026-03-13. Quantitative metrics like lines of code, commits, and overall progress.
 
-## Manual files
-
-halguru 1.93.0 (C) 2005 hal.guru sp. z o.o.
 ## Git Information
 
-| Repository | Commits | Added lines | Deleted lines | Created | Updated |
+> *) Lines of code
+
+| Repository | Commits | Added* | Deleted* | Created | Updated |
 |------------|--------:|------------:|--------------:|---------|---------|
 | hal.guru-robots-core |     1512 | 173263  |  81006 | 2024-07-17 | 2026-03-13 |
 | hal.guru-apps |     1197 | 2219720  |  241185 | 2023-12-18 | 2026-03-09 |
 | hal.guru-licensing |      165 | 15270  |  2938 | 2025-10-01 | 2026-03-09 |
 | hal.guru-maui |       21 | 4512  |  733 | 2024-07-17 | 2024-11-08 |
-| hal.guru-docs |      301 | 73520  |  49252 | 2024-01-24 | 2026-03-13 |
+| hal.guru-docs |      302 | 73523  |  49255 | 2024-01-24 | 2026-03-13 |
 | hal.guru-website |      251 | 15110  |  2111 | 2023-11-26 | 2026-02-28 |
 | hal.guru-content |       28 | 1851169  |  77339 | 2025-08-19 | 2026-01-21 |
 | hal.guru-marketing |       52 | 3792515  |  11194 | 2023-11-27 | 2024-12-23 |
 | hal.guru-management |       19 | 1161  |  123 | 2024-02-14 | 2025-12-09 |
+## Manual files
+
+halguru 1.93.0 (C) 2005 hal.guru sp. z o.o.
+
+| Directory | Markdown Files | Lines Count |
+|-----------|---------------:|------------:|
+| docs/yaml-ragfile |       17 | 1854 |
+| docs/configuration-files |        1 | 7 |
+| docs/yaml-license |       74 | 7972 |
+| docs/why |        3 | 268 |
+| docs/yaml-rag |       58 | 6026 |
+| docs/features |        1 | 17 |
+| docs/yaml-website |        7 | 690 |
+| docs/_snippets |        6 | 76 |
+| docs/installation |        4 | 558 |
+| docs/status |        2 | 192 |
+| docs/cli |       28 | 5008 |
+| docs/schemas |        2 | 282 |
+| docs/_drafts |        3 | 652 |
+| docs/architecture |        3 | 298 |
+| docs/getting-started |        1 | 14 |
+| docs/yaml-state |       51 | 4656 |
+| docs/yaml-agent |      576 | 60028 |
+| docs/yaml-ksef |       41 | 4190 |
+| docs/yaml-webscraping |       40 | 4030 |
+| docs/yaml-action |       41 | 4188 |
