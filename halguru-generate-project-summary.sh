@@ -147,7 +147,8 @@ function generate_cloc_summary() {
   echo "Genrating lines of code"
   echo "## Lines of code summary" >> "$summary_file"
   echo "" >> "$summary_file"
-  cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  cloc . --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
   echo "" >> "$summary_file"
 }
 
