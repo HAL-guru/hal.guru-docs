@@ -43,7 +43,7 @@ generate_git_table_row() {
   echo "- '$repo_name'"
   cd "$repo_name" || return
   dotnet clean *.sln > /dev/null 2>&1
-  local total_stats=$(git log --shortstat --pretty=format: | \
+  local total_stats=$(git -c diff.renameLimit=32768 log --shortstat --pretty=format: | \
     awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, " | ", del}')
   #local last_month_stats=$(git log --since="1 month ago" --shortstat --pretty=format: | \
   #  awk '/insertions/ {add += $4} /deletions/ {del += $6} END {print add, "/", del}')
