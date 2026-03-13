@@ -48,10 +48,10 @@ generate_git_information() {
 }
 
 generate_git_table_header() {
-  echo "> * Lines of code" >> "$summary_file"
+  echo "✺ Lines of code" >> "$summary_file"
   echo "" >> "$summary_file"
-  echo "| Repository | Commits | Added* | Deleted* | Created | Updated |" >> "$summary_file"
-  echo "|------------|--------:|------------:|--------------:|---------|---------|" >> "$summary_file"
+  echo "| Repository | Commits | Total✺ | Added✺ | Deleted✺ | Created | Updated |" >> "$summary_file"
+  echo "|------------|--------:|-------:|-------:|----------:|--------|---------|" >> "$summary_file"
 }
 
 generate_git_table_row() {
@@ -68,7 +68,20 @@ generate_git_table_row() {
   local total_commits=$(git log --format="%H" | wc -l)
   local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
-  echo "| $repo_name | $total_commits | $total_stats | $created_date | $updated_date |" >> "$summary_file"
+  local lines_count=$(
+    find . -type f \( \
+      -name "*.md" -o \
+      -name "*.cs" -o \
+      -name "*.yaml" -o \
+      -name "*.yml" \
+      -name "*.csproj" \
+      -name "*.sln" \
+      -name "*.sh" \
+      -name "*.cshtml" \
+      -name "*.razor" \
+    \) -exec wc -l {} + | awk '{sum += $1} END {print sum}'
+  )
+  echo "| $repo_name | $total_commits | $lines_count | $total_stats | $created_date | $updated_date |" >> "$summary_file"
   cd ..
 }
 

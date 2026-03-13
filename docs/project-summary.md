@@ -9,19 +9,19 @@ Current status of the hal.guru project for 2026-03-13. Quantitative metrics like
 
 ## Git Information
 
-> *) Lines of code
+✺ Lines of code
 
-| Repository | Commits | Added* | Deleted* | Created | Updated |
-|------------|--------:|------------:|--------------:|---------|---------|
-| hal.guru-robots-core |     1512 | 173263  |  81006 | 2024-07-17 | 2026-03-13 |
-| hal.guru-apps |     1197 | 2219720  |  241185 | 2023-12-18 | 2026-03-09 |
-| hal.guru-licensing |      165 | 15270  |  2938 | 2025-10-01 | 2026-03-09 |
-| hal.guru-maui |       21 | 4512  |  733 | 2024-07-17 | 2024-11-08 |
-| hal.guru-docs |      302 | 73523  |  49255 | 2024-01-24 | 2026-03-13 |
-| hal.guru-website |      251 | 15110  |  2111 | 2023-11-26 | 2026-02-28 |
-| hal.guru-content |       28 | 1851169  |  77339 | 2025-08-19 | 2026-01-21 |
-| hal.guru-marketing |       52 | 3792515  |  11194 | 2023-11-27 | 2024-12-23 |
-| hal.guru-management |       19 | 1161  |  123 | 2024-02-14 | 2025-12-09 |
+| Repository | Commits | Total✺ | Added✺ | Deleted✺ | Created | Updated |
+|------------|--------:|-------:|-------:|----------:|--------|---------|
+| hal.guru-robots-core |     1512 | 674152 | 173263  |  81006 | 2024-07-17 | 2026-03-13 |
+| hal.guru-apps |     1197 | 4916416 | 2219720  |  241185 | 2023-12-18 | 2026-03-09 |
+| hal.guru-licensing |      165 | 133508 | 15270  |  2938 | 2025-10-01 | 2026-03-09 |
+| hal.guru-maui |       21 | 146158 | 4512  |  733 | 2024-07-17 | 2024-11-08 |
+| hal.guru-docs |      303 | 121010 | 73574  |  49266 | 2024-01-24 | 2026-03-13 |
+| hal.guru-website |      251 | 8092 | 15110  |  2111 | 2023-11-26 | 2026-02-28 |
+| hal.guru-content |       28 | 2125122 | 1851169  |  77339 | 2025-08-19 | 2026-01-21 |
+| hal.guru-marketing |       52 | 5104512 | 3792515  |  11194 | 2023-11-27 | 2024-12-23 |
+| hal.guru-management |       19 | 2026 | 1161  |  123 | 2024-02-14 | 2025-12-09 |
 ## Manual files
 
 halguru 1.93.0 (C) 2005 hal.guru sp. z o.o.
