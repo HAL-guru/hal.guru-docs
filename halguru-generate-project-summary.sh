@@ -65,7 +65,7 @@ build_find_name_expr() {
 count_files() {
   local search_dir="${1:-.}"
   local file_patterns="${2:-*.*}"
-  local exclude="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+  local exclude_directories="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
 
   local -a find_expr
   local -a prune_expr
@@ -73,7 +73,7 @@ count_files() {
   # Read results into arrays
   local IFS=$'\n'
   find_expr=($(build_find_name_expr "$file_patterns"))
-  prune_expr=($(build_find_name_expr "$exclude"))
+  prune_expr=($(build_find_name_expr "$exclude_directories"))
   unset IFS
 
   local -a find_cmd=(find "$search_dir")
@@ -96,7 +96,7 @@ count_files() {
 count_lines() {
   local search_dir="${1:-.}"
   local file_patterns="${2:-*.*}"
-  local exclude="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+  local exclude_directories="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
 
   local -a find_expr
   local -a prune_expr
@@ -104,7 +104,7 @@ count_lines() {
   # Read results into arrays
   local IFS=$'\n'
   find_expr=($(build_find_name_expr "$file_patterns"))
-  prune_expr=($(build_find_name_expr "$exclude"))
+  prune_expr=($(build_find_name_expr "$exclude_directories"))
   unset IFS
 
   local -a find_cmd=(find "$search_dir")
@@ -208,9 +208,9 @@ function generate_cloc_summary() {
   echo "Genrating lines of code"
   echo "## Lines of code summary" >> "$summary_file"
   echo "" >> "$summary_file"
-  #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude_directories-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
   echo "\`\`\`" >> "$summary_file"
-  cloc . --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  cloc . --exclude_directories-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
   echo "\`\`\`" >> "$summary_file"
 }
 
