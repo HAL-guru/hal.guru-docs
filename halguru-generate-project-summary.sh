@@ -30,15 +30,64 @@ generate_manual_files() {
   #    echo "| $dir | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
   #  fi
   #done
-  local files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" | wc -l)
-  local lines_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
-  local autogen_files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" | wc -l)
-  local autogen_lines_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f -name "autogen-*.md" -exec wc -l {} + | awk '{sum += $1} END {print sum}')
+  local files_count=$(count_files . "*.md")
+  local lines_count=$(count_lines . "*.md")
+  local autogen_files_count=$(count_files . "autogen-*.md")
+  local autogen_lines_count=$(count_lines . "autogen-*.md")
   if [ "$files_count" -gt 0 ]; then
     echo "| docs | $files_count | $lines_count | $autogen_files_count | $autogen_lines_count |" >> "$summary_file"
   fi
   echo "" >> "$summary_file"
   cd ..
+}
+
+build_find_name_expr() {
+  local input="$1"
+  local -n output_ref=$2
+  local -a items
+  local i
+
+  output_ref=()
+  IFS=';' read -r -a items <<< "$input"
+
+  for i in "${!items[@]}"; do
+    if [ "$i" -gt 0 ]; then
+      output_ref+=( -o )
+    fi
+    output_ref+=( -name "${items[$i]}" )
+  done
+}
+
+count_files() {
+  local search_dir="${1:-.}"
+  local file_patterns="${2:-*.*}"
+  local exclude="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+
+  local -a find_expr
+  local -a prune_expr
+
+  build_find_name_expr "$file_patterns" find_expr
+  build_find_name_expr "$exclude" prune_expr
+
+  find "$search_dir" \
+    \( "${prune_expr[@]}" \) -type d -prune -o \
+    -type f \( "${find_expr[@]}" \) -print | wc -l
+}
+
+count_lines() {
+  local search_dir="${1:-.}"
+  local file_patterns="${2:-*.*}"
+  local exclude="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+
+  local -a find_expr
+  local -a prune_expr
+
+  build_find_name_expr "$file_patterns" find_expr
+  build_find_name_expr "$exclude" prune_expr
+
+  find "$search_dir" \
+    \( "${prune_expr[@]}" \) -type d -prune -o \
+    -type f \( "${find_expr[@]}" \) -exec wc -l {} + | awk '{sum += $1} END {print sum + 0}'
 }
 
 generate_git_information() {
@@ -90,26 +139,8 @@ generate_git_table_row() {
   local total_commits=$(git log --format="%H" | wc -l)
   local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
-  local files_count=$(find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f | wc -l)
-  local lines_count=$(
-    find . \( -name .git -o -name .idea -o -name site -o -name public -o -name resources -o -name __pycache__ \) -type d -prune -o -type f \( \
-      -name "*.md" -o \
-      -name "*.cs" -o \
-      -name "*.yaml" -o \
-      -name "*.yml" -o \
-      -name "*.csproj" -o \
-      -name "*.sln" -o \
-      -name "*.sh" -o \
-      -name "*.cshtml" -o \
-      -name "*.html" -o \
-      -name "*.js" -o \
-      -name "*.json" -o \
-      -name "*.css" -o \
-      -name "*.scss" -o \
-      -name "*.less" -o \
-      -name "*.razor" \
-    \) -exec wc -l {} + | awk '{sum += $1} END {print sum}'
-  )
+  local files_count=$(count_files)
+  local lines_count=$(count_lines)
   local name="${repo_name:9}"
   echo "| $name | $total_commits | $files_count | $lines_count | $total_stats | $created_date | $updated_date |" >> "$summary_file"
   cd ..
@@ -127,7 +158,8 @@ function generate_front_matter() {
 }
 
 function generate_file_header() {
-  echo "Current status of the hal.guru project for $current_date. Quantitative metrics like lines of code, commits, and overall progress." >> "$summary_file"
+  echo "Current status of the hal.guru project for $current_date." >> "$summary_file"
+  echo "Quantitative metrics like lines of code, commits, and overall progress." >> "$summary_file"
   echo "" >> "$summary_file"
 }
 
