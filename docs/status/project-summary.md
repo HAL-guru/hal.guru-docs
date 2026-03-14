@@ -41,9 +41,9 @@ Directories and subdirectories excluded from the calculations: `.git;.idea,site,
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      324 |      977 | 52481 | 2024-01-24 | 2026-03-14 |
+| docs |      325 |      977 | 52472 | 2024-01-24 | 2026-03-14 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3470 | 2484  | 198008 |  |  |
+| **Total** | 3471 | 2484  | 197999 |  |  |
 
 Columns:
 
@@ -59,20 +59,29 @@ Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.y
 Directories and subdirectories excluded from the calculations: `.git;.idea,site,public,resources,__pycache__,bin,obj`
 
 All lines are counted, including comments and empty lines.
-Binary files, graphics, icons, and PDF files are not counted.
+Binary files, graphics, icons, and PDF files are **not** counted.
+
+### Git Content Information
+
+The **content** repository stores all fonts, graphic assets, and templates,
+that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru).
+
+| Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |
+|--------:|------:|---------:|---------:|----------:|----------:|
+|        0 |        0 |        0 | 0 |        0 | 0 |
 
 ## Lines of code summary
 
 ```
-github.com/AlDanial/cloc v 2.04  T=3.53 s (857.4 files/s, 269913.6 lines/s)
+github.com/AlDanial/cloc v 2.04  T=3.31 s (914.8 files/s, 287983.5 lines/s)
 ------------------------------------------------------------------------------------
 Language                          files          blank        comment           code
 ------------------------------------------------------------------------------------
-XML                                 143             35             11         601603
+XML                                 143             35             11         601602
 C#                                 1192          18992          29419          78037
 CSS                                  37           9721            354          51925
 JavaScript                           30          11939           9543          41694
-Markdown                           1069          16180           2921          38970
+Markdown                           1069          16183           2921          38976
 JSON                                 58              0              0           8417
 YAML                                153            489            203           6787
 SVG                                  25             10              6           3777
@@ -84,7 +93,7 @@ MSBuild script                       55            321             11           
 HTML                                 75             95             39           1274
 XAML                                 12             88              1           1073
 Visual Studio Solution                5              5              7            780
-Bourne Shell                         14            195             70            729
+Bourne Shell                         14            196             70            719
 Dockerfile                           10             62             56            312
 Text                                 14             17              0            145
 PowerShell                            1             17              6             93
@@ -92,7 +101,7 @@ Python                                2             25             49           
 DOS Batch                             6              0              0             10
 INI                                   1              0              0              3
 ------------------------------------------------------------------------------------
-SUM:                               3028          59395          43624         850236
+SUM:                               3028          59399          43624         850231
 ------------------------------------------------------------------------------------
 ```
 ## Technical Information

@@ -198,22 +198,11 @@ generate_content_information() {
   append_to_summary "that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru)."
   append_to_summary ""
 
-  append_to_summary "| Commits | Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |"
-  append_to_summary "|---------|--------:|------:|---------:|---------:|----------:|----------:|"
+  append_to_summary "| Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |"
+  append_to_summary "|--------:|------:|---------:|---------:|----------:|----------:|"
 
   generate_content_table_row "hal.guru-content"
 
-  append_to_summary ""
-  append_to_summary "Columns:"
-  append_to_summary "* **Repository** - The name of the Git repository."
-  append_to_summary "* **Commits** - The total number of commits in the repository."
-  append_to_summary "* **Files** - The total number of files in the repository."
-  append_to_summary "* **Lines** - The total number of lines across all files in the repository."
-  append_to_summary "* **Per File** - The average number of lines per file."
-  append_to_summary "* **Created** - The date when the repository was created."
-  append_to_summary "* **Updated** - The date of the most recent change in the repository."
-  append_to_summary ""
-  append_to_summary "All files matching this pattern are counted here: \`$content_files_pattern\`"
   append_to_summary ""
 }
 
@@ -222,17 +211,15 @@ generate_content_table_row() {
   local exclude_directories="${3:-.git,.idea}"
   echo "- '$repo_name'"
   cd "$repo_name" || return
-  local commits_count=$(git log --format="%H" | wc -l)
   local images_count=$(count_files . ".png,.jpg,.svg,.ico,.gif")
-  local fonts_count=$(count_files . )
-  local files_count=$(count_files . )
-  local lines_count=$(count_lines)
-  local files_count=$(count_files)
-  local lines_count=$(count_lines)
-  local lines_per_file_count=$(( total_lines_count / total_files_count ))
+  local fonts_count=$(count_files . ".ttf,.woff2")
+  local js_files_count=$(count_files . ".js")
+  local js_lines_count=$(count_lines . ".js")
+  local css_files_count=$(count_files . ".css,.less,.scss")
+  local css_lines_count=$(count_lines . ".css,.less,.scss")
   local name="${repo_name:9}"
 
-  append_to_summary "| $name | $commits_count | $files_count | $lines_count | $lines_per_file_count | $created_date | $updated_date |"
+  append_to_summary "| $images_count | $fonts_count | $js_files_count | $js_lines_count | $css_files_count | $css_lines_count |"
 
   cd ..
 }
@@ -293,6 +280,7 @@ generate_front_matter
 generate_header_information
 generate_manual_files
 generate_git_information
+generate_content_information
 generate_cloc_summary
 generate_footer_information
 
