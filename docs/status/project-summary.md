@@ -29,39 +29,49 @@ Columns:
 * **Lines** - Total number of lines across all Markdown files of that type.
 * **Lines per File** - Average number of lines per Markdown file.
 
+Directories and subdirectories excluded from the calculations: `.git;.idea,site,public,resources,__pycache__,bin,obj`
+
 ## Git Information
 
-| Repository | Commits | Files  | Lines | Created | Updated |
-|------------|--------:|-------:|------:|---------|---------|
-| robots-core |     1512 |      819 | 189852 | 2024-07-17 | 2026-03-13 |
-| apps |     1197 |      975 | 916546 | 2023-12-18 | 2026-03-09 |
-| licensing |      165 |      239 | 398136 | 2025-10-01 | 2026-03-09 |
-| maui |       21 |      103 | 18210 | 2024-07-17 | 2024-11-08 |
-| docs |      318 |     1001 | 119564 | 2024-01-24 | 2026-03-14 |
-| website |      251 |      198 | 19160 | 2023-11-26 | 2026-02-28 |
-| content |       28 |     1186 | 3649670 | 2025-08-19 | 2026-01-21 |
+| Repository | Commits | Files  | Lines | Per File |Created | Updated |
+|------------|--------:|-------:|------:|---------:|--------|---------|
+| robots-core |     1512 |      809 | 52057296 | 64347 | 2024-07-17 | 2026-03-13 |
+| apps |     1197 |      798 | 172371590 | 216004 | 2023-12-18 | 2026-03-09 |
+| licensing |      165 |      157 | 5646142 | 35962 | 2025-10-01 | 2026-03-09 |
+| maui |       21 |      133 | 8534138 | 64166 | 2024-07-17 | 2024-11-08 |
+| docs |      319 |      998 | 726820 | 728 | 2024-01-24 | 2026-03-14 |
+| website |      251 |      195 | 411070 | 2108 | 2023-11-26 | 2026-02-28 |
+| content |       28 |     1082 | 4655370 | 4302 | 2025-08-19 | 2026-01-21 |
 
 Columns:
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
 * **Files** - The total number of files in the repository.
 * **Lines** - The total number of lines across all files in the repository.
+* **Per File** - The average number of lines per file.
 * **Created** - The date when the repository was created.
 * **Updated** - The date of the most recent change in the repository.
+
+
+Files included in the calculations: `*.cs,*.razor,*.csproj,*.sln,*.md,*.html,*.js,*.less,*.scss,*.css,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml,*.txt`
+
+Directories and subdirectories excluded from the calculations: `.git;.idea,site,public,resources,__pycache__,bin,obj`
+
+All lines are counted, including comments.
 
 ## Lines of code summary
 
 ```
-github.com/AlDanial/cloc v 2.04  T=2.15 s (1352.2 files/s, 173186.8 lines/s)
+github.com/AlDanial/cloc v 2.04  T=3.59 s (844.6 files/s, 265876.0 lines/s)
 ------------------------------------------------------------------------------------
 Language                          files          blank        comment           code
 ------------------------------------------------------------------------------------
+XML                                 143             35             11         601600
 C#                                 1192          18992          29419          78037
 CSS                                  37           9721            354          51925
 JavaScript                           30          11939           9543          41694
-Markdown                           1069          16173           2921          38965
-XML                                  27             13             11          20671
-JSON                                 54              0              0           8393
+Markdown                           1069          16178           2921          38970
+JSON                                 58              0              0           8417
 YAML                                153            489            203           6787
 SVG                                  25             10              6           3777
 LESS                                  1            269              2           3620
@@ -72,15 +82,15 @@ MSBuild script                       55            321             11           
 HTML                                 75             95             39           1274
 XAML                                 12             88              1           1073
 Visual Studio Solution                5              5              7            780
-Bourne Shell                         14            184             73            668
+Bourne Shell                         14            185             72            681
 Dockerfile                           10             62             56            312
-Text                                 12             17              0            143
+Text                                 14             17              0            145
 PowerShell                            1             17              6             93
 Python                                2             25             49             87
 DOS Batch                             6              0              0             10
 INI                                   1              0              0              3
 ------------------------------------------------------------------------------------
-SUM:                               2906          59355          43627         269212
+SUM:                               3028          59383          43626         850185
 ------------------------------------------------------------------------------------
 ```
 ## Technical Information

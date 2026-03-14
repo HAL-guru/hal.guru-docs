@@ -42,6 +42,8 @@ generate_manual_files() {
   append_to_summary "* **Lines** - Total number of lines across all Markdown files of that type."
   append_to_summary "* **Lines per File** - Average number of lines per Markdown file."
   append_to_summary ""
+  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary ""
 }
 
 build_find_name_expr() {
@@ -50,7 +52,7 @@ build_find_name_expr() {
   local i
   local -a result
 
-  IFS=';' read -r -a items <<< "$input"
+  IFS=',' read -r -a items <<< "$input"
 
   for i in "${!items[@]}"; do
     [[ -z "${items[$i]}" ]] && continue
@@ -65,8 +67,8 @@ build_find_name_expr() {
 
 count_files() {
   local search_dir="${1:-.}"
-  local file_patterns="${2:-*.*}"
-  local exclude_directories="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+  local file_patterns="${2:-$code_files_pattern}"
+  local exclude_directories="${3:-$code_exclude_directories}"
 
   local -a find_expr
   local -a prune_expr
@@ -129,8 +131,8 @@ generate_git_information() {
   append_to_summary "## Git Information"
   append_to_summary ""
 
-  append_to_summary "| Repository | Commits | Files  | Lines | Created | Updated |"
-  append_to_summary "|------------|--------:|-------:|------:|---------|---------|"
+  append_to_summary "| Repository | Commits | Files  | Lines | Per File |Created | Updated |"
+  append_to_summary "|------------|--------:|-------:|------:|---------:|--------|---------|"
 
   generate_git_table_row "hal.guru-robots-core"
   generate_git_table_row "hal.guru-apps"
@@ -147,9 +149,16 @@ generate_git_information() {
   append_to_summary "* **Commits** - The total number of commits in the repository."
   append_to_summary "* **Files** - The total number of files in the repository."
   append_to_summary "* **Lines** - The total number of lines across all files in the repository."
-  #append_to_summary "* **Lines per File** - The average number of lines per Markdown file."
+  append_to_summary "* **Per File** - The average number of lines per file."
   append_to_summary "* **Created** - The date when the repository was created."
   append_to_summary "* **Updated** - The date of the most recent change in the repository."
+  append_to_summary ""
+  append_to_summary ""
+  append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
+  append_to_summary ""
+  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary ""
+  append_to_summary "All lines are counted, including comments and empty lines."
   append_to_summary ""
 }
 
@@ -162,9 +171,10 @@ generate_git_table_row() {
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
   local total_files_count=$(count_files)
   local total_lines_count=$(count_lines)
+  local lines_per_file_count=$(( total_lines_count / total_files_count ))
   local name="${repo_name:9}"
 
-  append_to_summary "| $name | $total_commits | $total_files_count | $total_lines_count | $created_date | $updated_date |"
+  append_to_summary "| $name | $total_commits | $total_files_count | $total_lines_count | $lines_per_file_count | $created_date | $updated_date |"
 
   cd ..
 }
@@ -200,9 +210,12 @@ function generate_cloc_summary() {
   append_to_summary ""
   append_to_summary "\`\`\`"
   include_dirs="hal.guru-robots-core hal.guru-apps hal.guru-licensing hal.guru-maui hal.guru-docs hal.guru-website"
-  cloc $include_dirs --exclude-dir=.git,.idea,site,public,resources,__pycache__,bin,obj >> "$summary_file"
+  cloc $include_dirs --exclude-dir="$code_exclude_directories" >> "$summary_file"
   append_to_summary "\`\`\`"
 }
+
+code_files_pattern="*.cs,*.razor,*.csproj,*.sln,*.md,*.html,*.js,*.less,*.scss,*.css,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml,*.txt"
+code_exclude_directories=".git;.idea,site,public,resources,__pycache__,bin,obj"
 
 current_dir=$(pwd)
 current_date="$(date +%F)"
