@@ -41,9 +41,9 @@ Directories and subdirectories excluded from the calculations: `.git;.idea,site,
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      325 |      977 | 52472 | 2024-01-24 | 2026-03-14 |
+| docs |      326 |      977 | 52472 | 2024-01-24 | 2026-03-14 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3471 | 2484  | 197999 |  |  |
+| **Total** | 3472 | 2484  | 197999 |  |  |
 
 Columns:
 
@@ -73,7 +73,7 @@ that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru
 ## Lines of code summary
 
 ```
-github.com/AlDanial/cloc v 2.04  T=3.31 s (914.8 files/s, 287983.5 lines/s)
+github.com/AlDanial/cloc v 2.04  T=3.54 s (854.3 files/s, 268953.9 lines/s)
 ------------------------------------------------------------------------------------
 Language                          files          blank        comment           code
 ------------------------------------------------------------------------------------
