@@ -270,7 +270,7 @@ function generate_cloc_summary() {
   append_to_summary "Results of running the \`cloc\` tool on the following repositories: core, apps, licensing, maui, docs, and website."
   append_to_summary ""
   include_dirs="hal.guru-robots-core hal.guru-apps hal.guru-licensing hal.guru-maui hal.guru-docs hal.guru-website"
-  cloc $include_dirs --md --exclude-dir="$code_exclude_directories" | sed '1,2d; $d' >> "$summary_file"
+  cloc $include_dirs --md --exclude-dir="$code_exclude_directories" | sed '1,2d' >> "$summary_file"
   append_to_summary ""
   append_to_summary "The table shows a summary of the codebase by language or file type."
   append_to_summary ""

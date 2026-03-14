@@ -17,9 +17,9 @@ Quantitative metrics like lines of code, commits, and overall progress.
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      329 |       48 | 3072 | 2024-01-24 | 2026-03-14 |
+| docs |      330 |       54 | 3072 | 2024-01-24 | 2026-03-14 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3475 | 1555  | 148599 |  |  |
+| **Total** | 3476 | 1561  | 148599 |  |  |
 
 Columns:
 
@@ -76,7 +76,7 @@ that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru
 
 ## Lines of code summary
 
-Results of running the `cloc` tool on the following repositories: core, apps, licensing, maui, docs, and website. append_to_summary 
+Results of running the `cloc` tool on the following repositories: core, apps, licensing, maui, docs, and website.
 
 
 Language|files|blank|comment|code
@@ -104,9 +104,11 @@ PowerShell|1|17|6|93
 Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
+Bourne Again Shell|1|0|0|2
 --------|--------|--------|--------|--------
+SUM:|2693|57150|43520|262923
 
-  The `cloc` table shows a summary of the codebase by language or file type.
+The table shows a summary of the codebase by language or file type.
 
 * **Language** – the detected programming or markup language.
 * **files** – the number of files recognized as that language.
