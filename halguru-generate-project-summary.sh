@@ -190,9 +190,9 @@ generate_git_table_row() {
 }
 
 generate_content_information() {
-  echo "Generating Git information for repositories"
+  echo "Generating content information for repositories"
 
-  append_to_summary "### Git Content Information"
+  append_to_summary "### Content Information"
   append_to_summary ""
   append_to_summary "The **content** repository stores all fonts, graphic assets, and templates,"
   append_to_summary "that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru)."
@@ -211,13 +211,12 @@ generate_content_table_row() {
   local exclude_directories="${3:-.git,.idea}"
   echo "- '$repo_name'"
   cd "$repo_name" || return
-  local images_count=$(count_files . ".png,.jpg,.svg,.ico,.gif")
-  local fonts_count=$(count_files . ".ttf,.woff2")
-  local js_files_count=$(count_files . ".js")
-  local js_lines_count=$(count_lines . ".js")
-  local css_files_count=$(count_files . ".css,.less,.scss")
-  local css_lines_count=$(count_lines . ".css,.less,.scss")
-  local name="${repo_name:9}"
+  local images_count=$(count_files . "*.png,*.jpg,*.svg,*.ico,*.gif" ".git,.idea")
+  local fonts_count=$(count_files . "*.ttf,*.woff2" ".git,.idea")
+  local js_files_count=$(count_files . "*.js" ".git,.idea")
+  local js_lines_count=$(count_lines . "*.js" ".git,.idea")
+  local css_files_count=$(count_files . "*.css,*.less,*.scss" ".git,.idea")
+  local css_lines_count=$(count_lines . "*.css,*.less,*.scss" ".git,.idea")
 
   append_to_summary "| $images_count | $fonts_count | $js_files_count | $js_lines_count | $css_files_count | $css_lines_count |"
 
@@ -261,7 +260,7 @@ function generate_cloc_summary() {
 
 content_files_pattern="*.html,*.js,*.less,*.scss,*.css,*.md,*.yml,*.yaml,*.json,*.xml,*.txt"
 code_files_pattern="*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
-code_exclude_directories=".git;.idea,site,public,resources,__pycache__,bin,obj"
+code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
 
 current_dir=$(pwd)
 current_date="$(date +%F)"

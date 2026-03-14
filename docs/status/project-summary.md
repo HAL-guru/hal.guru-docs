@@ -31,7 +31,7 @@ Columns:
 * **Lines** - Total number of lines across all Markdown files of that type.
 * **Per File** - Average number of lines per Markdown file.
 
-Directories and subdirectories excluded from the calculations: `.git;.idea,site,public,resources,__pycache__,bin,obj`
+Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
 ## Git Information
 
@@ -41,9 +41,9 @@ Directories and subdirectories excluded from the calculations: `.git;.idea,site,
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      326 |      977 | 52472 | 2024-01-24 | 2026-03-14 |
+| docs |      327 |      977 | 52471 | 2024-01-24 | 2026-03-14 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3472 | 2484  | 197999 |  |  |
+| **Total** | 3473 | 2484  | 197998 |  |  |
 
 Columns:
 
@@ -56,33 +56,33 @@ Columns:
 
 Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
 
-Directories and subdirectories excluded from the calculations: `.git;.idea,site,public,resources,__pycache__,bin,obj`
+Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
 All lines are counted, including comments and empty lines.
 Binary files, graphics, icons, and PDF files are **not** counted.
 
-### Git Content Information
+### Content Information
 
 The **content** repository stores all fonts, graphic assets, and templates,
 that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru).
 
 | Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |
 |--------:|------:|---------:|---------:|----------:|----------:|
-|        0 |        0 |        0 | 0 |        0 | 0 |
+|    30042 |       22 |      645 | 203575 |      413 | 121554 |
 
 ## Lines of code summary
 
 ```
-github.com/AlDanial/cloc v 2.04  T=3.54 s (854.3 files/s, 268953.9 lines/s)
+github.com/AlDanial/cloc v 2.04  T=2.12 s (1371.6 files/s, 175706.5 lines/s)
 ------------------------------------------------------------------------------------
 Language                          files          blank        comment           code
 ------------------------------------------------------------------------------------
-XML                                 143             35             11         601602
 C#                                 1192          18992          29419          78037
 CSS                                  37           9721            354          51925
 JavaScript                           30          11939           9543          41694
 Markdown                           1069          16183           2921          38976
-JSON                                 58              0              0           8417
+XML                                  27             13             11          20671
+JSON                                 54              0              0           8393
 YAML                                153            489            203           6787
 SVG                                  25             10              6           3777
 LESS                                  1            269              2           3620
@@ -93,15 +93,15 @@ MSBuild script                       55            321             11           
 HTML                                 75             95             39           1274
 XAML                                 12             88              1           1073
 Visual Studio Solution                5              5              7            780
-Bourne Shell                         14            196             70            719
+Bourne Shell                         14            196             70            718
 Dockerfile                           10             62             56            312
-Text                                 14             17              0            145
+Text                                 12             17              0            143
 PowerShell                            1             17              6             93
 Python                                2             25             49             87
 DOS Batch                             6              0              0             10
 INI                                   1              0              0              3
 ------------------------------------------------------------------------------------
-SUM:                               3028          59399          43624         850231
+SUM:                               2906          59377          43624         269273
 ------------------------------------------------------------------------------------
 ```
 ## Technical Information
