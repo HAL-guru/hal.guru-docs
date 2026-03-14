@@ -43,19 +43,23 @@ generate_manual_files() {
 
 build_find_name_expr() {
   local input="$1"
-  local -n output_ref=$2
   local -a items
   local i
+  local -a result
 
-  output_ref=()
   IFS=';' read -r -a items <<< "$input"
 
   for i in "${!items[@]}"; do
-    if [ "$i" -gt 0 ]; then
-      output_ref+=( -o )
+    # Skip empty items (e.g. from trailing semicolon or empty input)
+    [[ -z "${items[$i]}" ]] && continue
+    if [ "${#result[@]}" -gt 0 ]; then
+      result+=( -o )
     fi
-    output_ref+=( -name "${items[$i]}" )
+    result+=( -name "${items[$i]}" )
   done
+
+  # Return array as quoted elements
+  printf "%q\n" "${result[@]}"
 }
 
 count_files() {
@@ -66,12 +70,27 @@ count_files() {
   local -a find_expr
   local -a prune_expr
 
-  build_find_name_expr "$file_patterns" find_expr
-  build_find_name_expr "$exclude" prune_expr
+  # Read results into arrays
+  local IFS=$'\n'
+  find_expr=($(build_find_name_expr "$file_patterns"))
+  prune_expr=($(build_find_name_expr "$exclude"))
+  unset IFS
 
-  find "$search_dir" \
-    \( "${prune_expr[@]}" \) -type d -prune -o \
-    -type f \( "${find_expr[@]}" \) -print | wc -l
+  local -a find_cmd=(find "$search_dir")
+
+  if [ "${#prune_expr[@]}" -gt 0 ]; then
+    find_cmd+=( \( "${prune_expr[@]}" \) -type d -prune -o )
+  fi
+
+  find_cmd+=( -type f )
+
+  if [ "${#find_expr[@]}" -gt 0 ]; then
+    find_cmd+=( \( "${find_expr[@]}" \) )
+  fi
+
+  find_cmd+=( -print )
+
+  "${find_cmd[@]}" | wc -l
 }
 
 count_lines() {
@@ -82,12 +101,27 @@ count_lines() {
   local -a find_expr
   local -a prune_expr
 
-  build_find_name_expr "$file_patterns" find_expr
-  build_find_name_expr "$exclude" prune_expr
+  # Read results into arrays
+  local IFS=$'\n'
+  find_expr=($(build_find_name_expr "$file_patterns"))
+  prune_expr=($(build_find_name_expr "$exclude"))
+  unset IFS
 
-  find "$search_dir" \
-    \( "${prune_expr[@]}" \) -type d -prune -o \
-    -type f \( "${find_expr[@]}" \) -exec wc -l {} + | awk '{sum += $1} END {print sum + 0}'
+  local -a find_cmd=(find "$search_dir")
+
+  if [ "${#prune_expr[@]}" -gt 0 ]; then
+    find_cmd+=( \( "${prune_expr[@]}" \) -type d -prune -o )
+  fi
+
+  find_cmd+=( -type f )
+
+  if [ "${#find_expr[@]}" -gt 0 ]; then
+    find_cmd+=( \( "${find_expr[@]}" \) )
+  fi
+
+  find_cmd+=( -exec wc -l {} + )
+
+  "${find_cmd[@]}" | awk '{sum += $1} END {print sum + 0}'
 }
 
 generate_git_information() {
