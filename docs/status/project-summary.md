@@ -17,9 +17,9 @@ Quantitative metrics like lines of code, commits, and overall progress.
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      328 |       48 | 3056 | 2024-01-24 | 2026-03-14 |
+| docs |      329 |       48 | 3072 | 2024-01-24 | 2026-03-14 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3474 | 1555  | 148583 |  |  |
+| **Total** | 3475 | 1555  | 148599 |  |  |
 
 Columns:
 
@@ -61,50 +61,65 @@ Columns:
 
 Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
-### Content Information
+## cdn.hal.guru
 
-The **content** repository stores all fonts, graphic assets, and templates,
+The repository stores all fonts, graphic assets, and templates,
 that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru).
 
 | Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |
 |--------:|------:|---------:|---------:|----------:|----------:|
 |    30042 |       22 |      645 | 203575 |      413 | 121554 |
 
+* Commits:       28
+* Created: 2025-08-19
+* Updated: 2026-01-21
+
 ## Lines of code summary
 
-```
-github.com/AlDanial/cloc v 2.04  T=2.09 s (1286.1 files/s, 173693.4 lines/s)
-------------------------------------------------------------------------------------
-Language                          files          blank        comment           code
-------------------------------------------------------------------------------------
-C#                                 1192          18992          29419          78037
-CSS                                  37           9721            354          51925
-JavaScript                           30          11939           9543          41694
-Markdown                            855          13945           2817          32596
-XML                                  27             13             11          20671
-JSON                                 54              0              0           8393
-YAML                                153            489            203           6787
-SVG                                  25             10              6           3777
-LESS                                  1            269              2           3620
-SCSS                                 43            291             98           3562
-Razor                                77            232            494           3043
-C# Generated                          5            412            334           2450
-MSBuild script                       55            321             11           1845
-HTML                                 75             95             39           1274
-XAML                                 12             88              1           1073
-Visual Studio Solution                5              5              7            780
-Bourne Shell                         14            204             70            728
-Dockerfile                           10             62             56            312
-Text                                 12             17              0            143
-PowerShell                            1             17              6             93
-Python                                2             25             49             87
-DOS Batch                             6              0              0             10
-INI                                   1              0              0              3
-------------------------------------------------------------------------------------
-SUM:                               2692          57147          43520         262903
-------------------------------------------------------------------------------------
-```
+Results of running the `cloc` tool on the following repositories: core, apps, licensing, maui, docs, and website. append_to_summary 
+
+
+Language|files|blank|comment|code
+:-------|-------:|-------:|-------:|-------:
+C#|1192|18992|29419|78037
+CSS|37|9721|354|51925
+JavaScript|30|11939|9543|41694
+Markdown|855|13947|2817|32599
+XML|27|13|11|20671
+JSON|54|0|0|8393
+YAML|153|489|203|6787
+SVG|25|10|6|3777
+LESS|1|269|2|3620
+SCSS|43|291|98|3562
+Razor|77|232|494|3043
+C# Generated|5|412|334|2450
+MSBuild script|55|321|11|1845
+HTML|75|95|39|1274
+XAML|12|88|1|1073
+Visual Studio Solution|5|5|7|780
+Bourne Shell|14|205|70|743
+Dockerfile|10|62|56|312
+Text|12|17|0|143
+PowerShell|1|17|6|93
+Python|2|25|49|87
+DOS Batch|6|0|0|10
+INI|1|0|0|3
+--------|--------|--------|--------|--------
+
+  The `cloc` table shows a summary of the codebase by language or file type.
+
+* **Language** – the detected programming or markup language.
+* **files** – the number of files recognized as that language.
+* **blank** – empty lines.
+* **comment** – lines containing comments.
+* **code** – lines containing actual source code.
+
+Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
+
 ## Technical Information
 
-This file is generated by [halguru_generate-project-summary.sh](https://github.com/HAL-guru/hal.guru-docs/blob/main/halguru-generate-project-summary.sh) tool.
+These tables help estimate the size and structure of the project,
+not its complexity or quality, so the results should be treated as a quantitative overview
+rather than a measure of development effort.
 
+This file is generated by [halguru_generate-project-summary.sh](https://github.com/HAL-guru/hal.guru-docs/blob/main/halguru-generate-project-summary.sh) tool.
