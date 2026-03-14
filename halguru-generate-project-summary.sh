@@ -95,8 +95,8 @@ count_files() {
 
 count_lines() {
   local search_dir="${1:-.}"
-  local file_patterns="${2:-*.*}"
-  local exclude_directories="${3:-.git;.idea;site;public;resources;__pycache__;bin;obj;images;img;sprites;webfonts;svgs;static}"
+  local file_patterns="${2:-$code_files_pattern}"
+  local exclude_directories="${3:-$code_exclude_directories}"
 
   local -a find_expr
   local -a prune_expr
@@ -116,9 +116,9 @@ count_lines() {
     find_cmd+=( \( "${find_expr[@]}" \) )
   fi
 
-  find_cmd+=( -exec wc -l {} + )
+  find_cmd+=( -print0 )
 
-  "${find_cmd[@]}" | awk '{sum += $1} END {print sum + 0}'
+  "${find_cmd[@]}" | xargs -0 wc -l | grep -v " total$" | awk '{sum += $1} END {print sum + 0}'
 }
 
 append_to_summary() {
