@@ -59,7 +59,7 @@ build_find_name_expr() {
   done
 
   # Return array as quoted elements
-  printf "%q\n" "${result[@]}"
+  printf "%q " "${result[@]}"
 }
 
 count_files() {
@@ -71,10 +71,8 @@ count_files() {
   local -a prune_expr
 
   # Read results into arrays
-  local IFS=$'\n'
-  find_expr=($(build_find_name_expr "$file_patterns"))
-  prune_expr=($(build_find_name_expr "$exclude_directories"))
-  unset IFS
+  eval "find_expr=($(build_find_name_expr "$file_patterns"))"
+  eval "prune_expr=($(build_find_name_expr "$exclude_directories"))"
 
   local -a find_cmd=(find "$search_dir")
 
@@ -102,10 +100,8 @@ count_lines() {
   local -a prune_expr
 
   # Read results into arrays
-  local IFS=$'\n'
-  find_expr=($(build_find_name_expr "$file_patterns"))
-  prune_expr=($(build_find_name_expr "$exclude_directories"))
-  unset IFS
+  eval "find_expr=($(build_find_name_expr "$file_patterns"))"
+  eval "prune_expr=($(build_find_name_expr "$exclude_directories"))"
 
   local -a find_cmd=(find "$search_dir")
 
@@ -210,7 +206,7 @@ function generate_cloc_summary() {
   echo "" >> "$summary_file"
   #cloc . --not-match-f='\.json$|\.xml$|\.html$|\.css$|\.svg$|\.js$|\.yaml$|\.txt$|\.yml$|\.ini$|\.less$|\.scss$' --exclude_directories-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
   echo "\`\`\`" >> "$summary_file"
-  cloc . --exclude_directories-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
+  cloc . --exclude-dir=.git,.idea,site,public,resources,__pycache__ >> "$summary_file"
   echo "\`\`\`" >> "$summary_file"
 }
 
