@@ -15,8 +15,8 @@ generate_manual_files() {
 
   ./halguru-generate-manual.sh > /dev/null
 
-  append_to_summary "| File Type | Files | Lines | Lines per File |"
-  append_to_summary "|----------|------:|------:|---------------:|"
+  append_to_summary "| File Type | Files | Lines | Per File |"
+  append_to_summary "|----------|------:|------:|----------:|"
 
   local total_files_count=$(count_files "hal.guru-docs/docs" "*.md")
   local total_lines_count=$(count_lines "hal.guru-docs/docs" "*.md")
@@ -40,7 +40,7 @@ generate_manual_files() {
   append_to_summary "Columns:"
   append_to_summary "* **Files** - Total number of Markdown files of that type."
   append_to_summary "* **Lines** - Total number of lines across all Markdown files of that type."
-  append_to_summary "* **Lines per File** - Average number of lines per Markdown file."
+  append_to_summary "* **Per File** - Average number of lines per Markdown file."
   append_to_summary ""
   append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
@@ -140,7 +140,7 @@ generate_git_information() {
   generate_git_table_row "hal.guru-maui"
   generate_git_table_row "hal.guru-docs"
   generate_git_table_row "hal.guru-website"
-  generate_git_table_row "hal.guru-content"
+  generate_git_table_row "hal.guru-content" "$content_files_pattern"
   append_to_summary ""
   #append_to_summary "Pomijane katalogi"
   #append_to_summary ""
@@ -153,17 +153,22 @@ generate_git_information() {
   append_to_summary "* **Created** - The date when the repository was created."
   append_to_summary "* **Updated** - The date of the most recent change in the repository."
   append_to_summary ""
-  append_to_summary ""
   append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
   append_to_summary ""
   append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
   append_to_summary "All lines are counted, including comments and empty lines."
   append_to_summary ""
+  append_to_summary "The **content** repository stores all fonts, graphic assets, and templates,"
+  append_to_summary "that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru)."
+  append_to_summary "All files matching this pattern are counted here: \`$content_files_pattern\`"
+  append_to_summary ""
 }
 
 generate_git_table_row() {
   local repo_name="$1"
+  local file_patterns="${2:-$code_files_pattern}"
+  local exclude_directories="${3:-$code_exclude_directories}"
   echo "- '$repo_name'"
   cd "$repo_name" || return
   local total_commits=$(git log --format="%H" | wc -l)
@@ -214,7 +219,8 @@ function generate_cloc_summary() {
   append_to_summary "\`\`\`"
 }
 
-code_files_pattern="*.cs,*.razor,*.csproj,*.sln,*.md,*.html,*.js,*.less,*.scss,*.css,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml,*.txt"
+content_files_pattern="*.html,*.js,*.less,*.scss,*.css,*.md,*.yml,*.yaml,*.json,*.xml,*.txt"
+code_files_pattern="*.cs,*.razor,*.csproj,*.sln,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml,*.txt"
 code_exclude_directories=".git;.idea,site,public,resources,__pycache__,bin,obj"
 
 current_dir=$(pwd)
