@@ -52,6 +52,8 @@ generate_manual_files() {
   append_to_summary "* **Lines** - Total number of lines across all Markdown files of that type."
   append_to_summary "* **Per File** - Average number of lines per Markdown file."
   append_to_summary ""
+  append_to_summary "All lines are counted, including comments and empty lines."
+  append_to_summary ""
   append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
 
@@ -169,12 +171,12 @@ generate_git_information() {
   append_to_summary "* **Created** - The date when the repository was created."
   append_to_summary "* **Updated** - The date of the most recent change in the repository."
   append_to_summary ""
+  append_to_summary "All lines are counted, including comments and empty lines."
+  append_to_summary "Binary files, graphics, icons, and PDF files are **not** counted."
+  append_to_summary ""
   append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
   append_to_summary ""
   append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
-  append_to_summary ""
-  append_to_summary "All lines are counted, including comments and empty lines."
-  append_to_summary "Binary files, graphics, icons, and PDF files are **not** counted."
   append_to_summary ""
 }
 
@@ -226,6 +228,8 @@ generate_content_information() {
   local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
 
+  append_to_summary ""
+  append_to_summary "All lines are counted, including comments and empty lines."
   append_to_summary ""
   append_to_summary "* Commits: $commits_count"
   append_to_summary "* Created: $created_date"
