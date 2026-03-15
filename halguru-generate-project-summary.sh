@@ -366,35 +366,44 @@ function generate_cloc_summary() {
   append_to_summary ""
 }
 
+# @function create_global_variables
+# @brief Initializes global variables used throughout the summary generation process.
+#
+# Sets file patterns and excluded directories for code statistics, stores the current date,
+# defines the output summary file path, and extracts the current halguru CLI version.
+create_global_variables() {
+  code_files_pattern="*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
+  code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
+  current_date="$(date +%F)"
+  summary_file="$script_dir/docs/status/project-summary.md"
+  local copyright=$(halguru --version)
+  version=$(awk '{print $2}' <<< "$copyright")
+}
+
+# @function initialise_summary_file
+# @brief Prepares the summary output file and prints the repositories directory path.
+#
+# Changes to the script directory, clears the existing summary file content,
+# then moves to the parent directory and prints the current repositories directory.
+initialise_summary_file() {
+  cd "$script_dir"
+  : > "$summary_file"
+
+  cd ..
+
+  current_dir="$(pwd)"
+  echo "Repositories directory: $current_dir"
+}
+
 echo "Generating 'project-summary.md' file"
 
-# Initialization and configuration
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 echo "Script directory: $script_dir"
 
-# Ensure we return to the script directory on exit
 trap 'cd "$script_dir";' EXIT
 
-# Configuration for file discovery and exclusion
-code_files_pattern="*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
-code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
-current_date="$(date +%F)"
-summary_file="$script_dir/docs/status/project-summary.md"
-
-# Get current version from halguru tool
-copyright=$(halguru --version)
-version=$(awk '{print $2}' <<< "$copyright")
-
-# Initialize summary file
-cd "$script_dir" || exit 1
-: > "$summary_file"
-
-# Run data collection and generation
-cd ..
-current_dir="$(pwd)"
-echo "Repositories directory: $current_dir"
-
+create_global_variables
+initialise_summary_file
 generate_front_matter
 generate_header_information
 clear_manual_files
