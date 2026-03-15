@@ -251,8 +251,10 @@ function generate_front_matter() {
 }
 
 function generate_header_information() {
-  append_to_summary "Current status of the hal.guru project for $current_date."
-  append_to_summary "Quantitative metrics like lines of code, commits, and overall progress."
+  append_to_summary "This document provides an automatically generated overview of the hal.guru project status,"
+  append_to_summary "including quantitative metrics like lines of code, commits, and overall development progress."
+  append_to_summary ""
+  append_to_summary "Current status for $current_date."
   append_to_summary ""
 }
 
