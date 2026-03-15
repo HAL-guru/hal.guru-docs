@@ -193,6 +193,8 @@ generate_git_information() {
   total_commits_count=0
   total_files_count=0
   total_lines_count=0
+  total_created_date="2100-01-01"
+  total_updated_date="2000-01-01"
 
   generate_git_table_row "hal.guru-robots-core"
   generate_git_table_row "hal.guru-apps"
@@ -201,7 +203,7 @@ generate_git_information() {
   generate_git_table_row "hal.guru-docs"
   generate_git_table_row "hal.guru-website"
 
-  append_to_summary "| **Total** | $total_commits_count | $total_files_count  | $total_lines_count |  |  |"
+  append_to_summary "| **Total** | $total_commits_count | $total_files_count  | $total_lines_count | $total_created_date | $total_updated_date |"
 
   append_to_summary ""
   append_to_summary "Columns:"
@@ -249,6 +251,12 @@ generate_git_table_row() {
   total_commits_count=$(( total_commits_count + commits_count ))
   total_files_count=$(( total_files_count + files_count ))
   total_lines_count=$(( total_lines_count + lines_count ))
+  if [[ "$created_date" < "$total_created_date" ]]; then
+    total_created_date=$created_date
+  fi
+  if [[ "$updated_date" > "$total_updated_date" ]]; then
+    total_updated_date=$updated_date
+  fi
   cd ..
 }
 
