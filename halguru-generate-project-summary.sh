@@ -362,6 +362,8 @@ function generate_cloc_summary() {
   append_to_summary "* **comment** – lines containing comments."
   append_to_summary "* **code** – lines containing actual source code."
   append_to_summary ""
+  append_to_summary "Automatically generated Markdown files (\`autogen-*.md\`) are included in this summary."
+  append_to_summary ""
   append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
 }

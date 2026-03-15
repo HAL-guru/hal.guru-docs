@@ -19,9 +19,9 @@ Current status for 2026-03-15.
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      338 |       48 | 3170 | 2024-01-24 | 2026-03-15 |
+| docs |      339 |       48 | 3172 | 2024-01-24 | 2026-03-15 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3489 | 1555  | 148669 | 2023-11-26 | 2026-03-15 |
+| **Total** | 3490 | 1555  | 148671 | 2023-11-26 | 2026-03-15 |
 
 Columns:
 
@@ -104,7 +104,7 @@ MSBuild script|55|321|11|1845
 HTML|75|95|39|1274
 XAML|12|88|1|1073
 Visual Studio Solution|5|5|7|780
-Bourne Shell|14|203|147|764
+Bourne Shell|14|203|147|766
 Dockerfile|10|62|56|312
 Text|12|17|0|143
 PowerShell|1|17|6|93
@@ -112,7 +112,7 @@ Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|2692|57147|43581|262920
+SUM:|2692|57147|43581|262922
 
 The table shows a summary of the codebase by language or file type.
 
@@ -121,6 +121,8 @@ The table shows a summary of the codebase by language or file type.
 * **blank** – empty lines.
 * **comment** – lines containing comments.
 * **code** – lines containing actual source code.
+
+Automatically generated Markdown files (`autogen-*.md`) are included in this summary.
 
 Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
