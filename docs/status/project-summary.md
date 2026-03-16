@@ -19,9 +19,9 @@ Current status for 2026-03-16.
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      341 |       48 | 3183 | 2024-01-24 | 2026-03-16 |
+| docs |      343 |       48 | 3321 | 2024-01-24 | 2026-03-16 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3494 | 1555  | 148692 | 2023-11-26 | 2026-03-16 |
+| **Total** | 3496 | 1555  | 148830 | 2023-11-26 | 2026-03-16 |
 
 Columns:
 
@@ -103,8 +103,8 @@ C# Generated|5|412|334|2450
 MSBuild script|55|321|11|1845
 HTML|75|95|39|1274
 XAML|12|88|1|1073
+Bourne Shell|14|237|147|881
 Visual Studio Solution|5|5|7|780
-Bourne Shell|14|204|147|776
 Dockerfile|10|62|56|312
 Text|12|17|0|143
 PowerShell|1|17|6|93
@@ -112,7 +112,7 @@ Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|2692|57148|43581|262942
+SUM:|2692|57181|43581|263047
 
 The table shows a summary of the codebase by language or file type.
 
@@ -123,6 +123,51 @@ The table shows a summary of the codebase by language or file type.
 * **code** – lines containing actual source code.
 
 Automatically generated Markdown files (`autogen-*.md`) are included in this summary.
+
+Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
+
+## Project Progress
+
+Current changes in Git repositories.
+
+### Last Week
+
+| Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
+|------------|--------:|--------------:|-------------:|--------------:|
+| robots-core | 40 | 112 | 1709 | 406 |
+| apps | 2 | 1 | 1 | 1 |
+| licensing | 1 | 1 | 2 | 2 |
+| maui | 0 | 0 | 0 | 0 |
+| docs | 49 | 9 | 1519 | 924 |
+| website | 0 | 0 | 0 | 0 |
+| **Total** | 92 | 123  | 3231 | 1333 |
+
+### Last Month
+
+| Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
+|------------|--------:|--------------:|-------------:|--------------:|
+| robots-core | 376 | 613 | 23659 | 13751 |
+| apps | 31 | 46 | 394 | 228 |
+| licensing | 53 | 72 | 5308 | 316 |
+| maui | 0 | 0 | 0 | 0 |
+| docs | 64 | 28 | 1712 | 1039 |
+| website | 2 | 1 | 7 | 7 |
+| **Total** | 526 | 760  | 31080 | 15341 |
+
+### Last Year
+
+| Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
+|------------|--------:|--------------:|-------------:|--------------:|
+| robots-core | 1103 | 1891 | 123181 | 66492 |
+| apps | 532 | 31342 | 58092 | 1733021 |
+| licensing | 165 | 195 | 14790 | 2379 |
+| maui | 0 | 0 | 0 | 0 |
+| docs | 260 | 686 | 38582 | 36611 |
+| website | 63 | 73 | 1851 | 427 |
+| **Total** | 2123 | 34187  | 236496 | 1838930 |
+
+
+Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
 
 Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 

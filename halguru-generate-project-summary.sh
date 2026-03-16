@@ -389,8 +389,145 @@ create_global_variables() {
   echo "halguru CLI version: '$version'."
 }
 
-generate_progress_summary() {
-  echo
+ensure_git_repo() {
+    git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
+        echo "Error: current directory is not a Git repository." >&2
+        return 1
+    }
+}
+
+count_commits_for_period() {
+    local period="$1"
+
+    if [ -z "$period" ]; then
+        echo "Error: period argument is required." >&2
+        return 1
+    fi
+
+    ensure_git_repo || return 1
+
+    git rev-list --count --since="$period" HEAD
+}
+
+count_changed_files_for_period() {
+    local period="$1"
+
+    if [ -z "$period" ]; then
+        echo "Error: period argument is required." >&2
+        return 1
+    fi
+
+    ensure_git_repo || return 1
+
+    git log --since="$period" --name-only --pretty=format: \
+        | sed '/^$/d' \
+        | sort -u \
+        | wc -l \
+        | tr -d '[:space:]'
+}
+
+count_added_lines_for_period() {
+    local period="$1"
+
+    if [ -z "$period" ]; then
+        echo "Error: period argument is required." >&2
+        return 1
+    fi
+
+    ensure_git_repo || return 1
+
+    git log --since="$period" --numstat --pretty=format: \
+        | awk '
+            NF == 3 && $1 ~ /^[0-9]+$/ { added += $1 }
+            END { print added + 0 }
+        '
+}
+
+count_deleted_lines_for_period() {
+    local period="$1"
+
+    if [ -z "$period" ]; then
+        echo "Error: period argument is required." >&2
+        return 1
+    fi
+
+    ensure_git_repo || return 1
+
+    git log --since="$period" --numstat --pretty=format: \
+        | awk '
+            NF == 3 && $2 ~ /^[0-9]+$/ { deleted += $2 }
+            END { print deleted + 0 }
+        '
+}
+
+generate_git_progress_summary() {
+  echo "Generate a Git progress summary."
+
+  append_to_summary "## Project Progress"
+  append_to_summary ""
+  append_to_summary "Current changes in Git repositories."
+  append_to_summary ""
+
+  generate_git_progress_summary_for_period "last week" "Last Week"
+  generate_git_progress_summary_for_period "last month" "Last Month"
+  generate_git_progress_summary_for_period "last year" "Last Year"
+  append_to_summary ""
+  append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
+  append_to_summary ""
+  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary ""
+}
+
+generate_git_progress_summary_for_period() {
+  local period="$1"
+  local period_title="$2"
+  echo "- $period_title"
+
+  append_to_summary "### $period_title"
+  append_to_summary ""
+
+  append_to_summary "| Repository | Commits | Changed Files | Added Lines  | Deleted Lines |"
+  append_to_summary "|------------|--------:|--------------:|-------------:|--------------:|"
+
+  total_commits_count=0
+  total_changed_files_count=0
+  total_added_lines_count=0
+  total_deleted_lines_count=0
+
+  generate_git_progress_table_row "hal.guru-robots-core" "$period"
+  generate_git_progress_table_row "hal.guru-apps" "$period"
+  generate_git_progress_table_row "hal.guru-licensing" "$period"
+  generate_git_progress_table_row "hal.guru-maui" "$period"
+  generate_git_progress_table_row "hal.guru-docs" "$period"
+  generate_git_progress_table_row "hal.guru-website" "$period"
+
+  append_to_summary "| **Total** | $total_commits_count | $total_changed_files_count  | $total_added_lines_count | $total_deleted_lines_count |"
+  append_to_summary ""
+}
+
+generate_git_progress_table_row() {
+  local repo_name="$1"
+  local period="$2"
+  local file_patterns="${3:-$code_files_pattern}"
+  local exclude_directories="${4:-$code_exclude_directories}"
+
+  cd "$repo_name" || return
+
+  commits_count=$(count_commits_for_period "$period") || exit 1
+  changed_files_count=$(count_changed_files_for_period "$period") || exit 1
+  added_lines_count=$(count_added_lines_for_period "$period") || exit 1
+  deleted_lines_count=$(count_deleted_lines_for_period "$period") || exit 1
+
+  local name="${repo_name:9}"
+
+  append_to_summary "| $name | $commits_count | $changed_files_count | $added_lines_count | $deleted_lines_count |"
+
+  total_commits_count=$(( total_commits_count + commits_count ))
+  total_changed_files_count=$(( total_changed_files_count + changed_files_count ))
+  total_added_lines_count=$(( total_added_lines_count + added_lines_count ))
+  total_deleted_lines_count=$(( total_deleted_lines_count + deleted_lines_count ))
+
+  cd ..
 }
 
 # @function initialise_summary_file
@@ -424,7 +561,7 @@ generate_git_information
 generate_manual_files
 generate_content_information
 generate_cloc_summary
-generate_progress_summary
+generate_git_progress_summary
 generate_footer_information
 
 echo "Done. Check the file '$summary_file'."
