@@ -36,8 +36,8 @@ generate_repositories_information() {
   append_to_summary "| apps | A collection of web applications, queueing services, and APIs powered by AI agents |"
   append_to_summary "| licensing | Server application and CLI for license generation and management |"
   append_to_summary "| maui | Cross-platform mobile and desktop applications powered by AI agents |"
-  append_to_summary "| docs | Technical documentation built with mkdocs |"
-  append_to_summary "| website | Website built with Hugo |"
+  append_to_summary "| docs | Technical documentation built with [Material for mkdocs](https://squidfunk.github.io/mkdocs-material/getting-started/) |"
+  append_to_summary "| website | Website built with [Hugo](https://gohugo.io) |"
   append_to_summary ""
 }
 
@@ -304,8 +304,11 @@ generate_content_information() {
 
   append_to_summary "## Content Files"
   append_to_summary ""
+
   append_to_summary "The repository stores all fonts, graphic assets, and templates,"
   append_to_summary "that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru)."
+  append_to_summary "We use, among other things, [Material Design for Bootstrap](https://mdbootstrap.com)"
+  append_to_summary "and [Font Awesome](https://fontawesome.com) icons."
   append_to_summary ""
 
   append_to_summary "| Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |"

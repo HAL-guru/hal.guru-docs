@@ -19,8 +19,8 @@ Current status for 2026-03-16.
 | apps | A collection of web applications, queueing services, and APIs powered by AI agents |
 | licensing | Server application and CLI for license generation and management |
 | maui | Cross-platform mobile and desktop applications powered by AI agents |
-| docs | Technical documentation built with mkdocs |
-| website | Website built with Hugo |
+| docs | Technical documentation built with [Material for mkdocs](https://squidfunk.github.io/mkdocs-material/getting-started/) |
+| website | Website built with [Hugo](https://gohugo.io) |
 
 ## Git Information
 
@@ -30,9 +30,9 @@ Current status for 2026-03-16.
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       46 | 2583 | 2024-07-17 | 2024-11-08 |
-| docs |      349 |       48 | 3417 | 2024-01-24 | 2026-03-16 |
+| docs |      351 |       48 | 3420 | 2024-01-24 | 2026-03-16 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3536 | 1582  | 148162 | 2023-11-26 | 2026-03-16 |
+| **Total** | 3538 | 1582  | 148165 | 2023-11-26 | 2026-03-16 |
 
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
@@ -73,6 +73,8 @@ Directories and subdirectories excluded from the calculations: `.git,.idea,site,
 
 The repository stores all fonts, graphic assets, and templates,
 that are available to other applications via [cdn.hal.guru](https://cdn.hal.guru).
+We use, among other things, [Material Design for Bootstrap](https://mdbootstrap.com)
+and [Font Awesome](https://fontawesome.com) icons.
 
 | Images  | Fonts | JS Files | JS Lines | CSS Files | CSS Lines |
 |--------:|------:|---------:|---------:|----------:|----------:|
@@ -96,7 +98,7 @@ Language|files|blank|comment|code
 C#|1208|17085|29508|77916
 CSS|37|9721|354|51925
 JavaScript|30|11939|9543|41694
-Markdown|855|13948|2817|32610
+Markdown|855|13948|2817|32612
 XML|27|13|11|20653
 JSON|54|0|0|8393
 YAML|153|489|203|6787
@@ -108,7 +110,7 @@ C# Generated|5|412|334|2450
 MSBuild script|55|321|11|1846
 HTML|75|95|39|1274
 XAML|12|88|1|1073
-Bourne Shell|14|241|195|914
+Bourne Shell|14|242|195|916
 Visual Studio Solution|5|5|7|780
 Dockerfile|10|62|56|312
 Text|13|17|0|148
@@ -117,7 +119,7 @@ Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|2709|55280|43734|262970
+SUM:|2709|55281|43734|262974
 
 * **Language** – the detected programming or markup language.
 * **files** – the number of files recognized as that language.
@@ -141,9 +143,9 @@ Current changes in Git repositories.
 | apps | 0 | 0 | 0 | 0 |
 | licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 55 | 9 | 1863 | 998 |
+| docs | 57 | 9 | 1897 | 1032 |
 | website | 0 | 0 | 0 | 0 |
-| **Total** | 120 | 166  | 5995 | 5810 |
+| **Total** | 122 | 166  | 6029 | 5844 |
 
 ### Last Month
 
@@ -153,9 +155,9 @@ Current changes in Git repositories.
 | apps | 31 | 46 | 394 | 228 |
 | licensing | 53 | 72 | 5308 | 316 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 70 | 28 | 2056 | 1113 |
+| docs | 72 | 28 | 2090 | 1147 |
 | website | 2 | 1 | 7 | 7 |
-| **Total** | 566 | 818  | 33917 | 19828 |
+| **Total** | 568 | 818  | 33951 | 19862 |
 
 ### Last Year
 
@@ -165,9 +167,9 @@ Current changes in Git repositories.
 | apps | 532 | 31342 | 58092 | 1733021 |
 | licensing | 165 | 195 | 14790 | 2379 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 265 | 686 | 38232 | 35789 |
+| docs | 267 | 686 | 38266 | 35823 |
 | website | 63 | 73 | 1851 | 427 |
-| **Total** | 2162 | 34210  | 238639 | 1842521 |
+| **Total** | 2164 | 34210  | 238673 | 1842555 |
 
 
 Files included in the calculations: `*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
