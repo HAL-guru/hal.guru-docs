@@ -28,7 +28,10 @@ clear_manual_files() {
 generate_manual_files() {
   echo "Generating Markdown documentation files."
 
-  cd "hal.guru-docs"
+  cd "hal.guru-docs" || {
+    echo "Error: failed to change directory to 'hal.guru-docs'." >&2
+    return 1
+  }
 
   append_to_summary "## Manual files"
   append_to_summary ""
@@ -110,6 +113,11 @@ count_files() {
   local file_patterns="${2:-$code_files_pattern}"
   local exclude_directories="${3:-$code_exclude_directories}"
 
+  if [ ! -d "$search_dir" ]; then
+    echo "Error: search directory '$search_dir' does not exist." >&2
+    return 1
+  fi
+
   local -a find_expr
   local -a prune_expr
 
@@ -144,6 +152,11 @@ count_lines() {
   local search_dir="${1:-.}"
   local file_patterns="${2:-$code_files_pattern}"
   local exclude_directories="${3:-$code_exclude_directories}"
+
+  if [ ! -d "$search_dir" ]; then
+    echo "Error: search directory '$search_dir' does not exist." >&2
+    return 1
+  fi
 
   local -a find_expr
   local -a prune_expr
@@ -238,7 +251,10 @@ generate_git_table_row() {
   local file_patterns="${2:-$code_files_pattern}"
   local exclude_directories="${3:-$code_exclude_directories}"
   echo "- '$repo_name'."
-  cd "$repo_name" || return
+  cd "$repo_name" || {
+    echo "Error: failed to change directory to '$repo_name'." >&2
+    return 1
+  }
   local commits_count=$(git log --format="%H" | wc -l)
   local created_date=$(git log --reverse --format=%ad --date=format:'%Y-%m-%d' | head -n 1)
   local updated_date=$(git log -1 --format=%ad --date=format:'%Y-%m-%d')
@@ -267,7 +283,10 @@ generate_git_table_row() {
 generate_content_information() {
   echo "Generating Content information for repositories."
 
-  cd "hal.guru-content"
+  cd "hal.guru-content" || {
+    echo "Error: failed to change directory to 'hal.guru-content'." >&2
+    return 1
+  }
 
   append_to_summary "## Content Files"
   append_to_summary ""
@@ -554,12 +573,15 @@ generate_git_progress_table_row() {
   local file_patterns="${3:-$code_files_pattern}"
   local exclude_directories="${4:-$code_exclude_directories}"
 
-  cd "$repo_name" || return
+  cd "$repo_name" || {
+    echo "Error: failed to change directory to '$repo_name'." >&2
+    return 1
+  }
 
-  commits_count=$(count_commits_for_period "$period") || exit 1
-  changed_files_count=$(count_changed_files_for_period "$period") || exit 1
-  added_lines_count=$(count_added_lines_for_period "$period") || exit 1
-  deleted_lines_count=$(count_deleted_lines_for_period "$period") || exit 1
+  commits_count=$(count_commits_for_period "$period") || { cd ..; return 1; }
+  changed_files_count=$(count_changed_files_for_period "$period") || { cd ..; return 1; }
+  added_lines_count=$(count_added_lines_for_period "$period") || { cd ..; return 1; }
+  deleted_lines_count=$(count_deleted_lines_for_period "$period") || { cd ..; return 1; }
 
   local name="${repo_name:9}"
 
@@ -579,10 +601,16 @@ generate_git_progress_table_row() {
 # Changes to the script directory, clears the existing summary file content,
 # then moves to the parent directory and prints the current repositories directory.
 initialise_summary_file() {
-  cd "$script_dir"
+  cd "$script_dir" || {
+    echo "Error: failed to change directory to '$script_dir'." >&2
+    exit 1
+  }
   : > "$summary_file"
 
-  cd ..
+  cd .. || {
+    echo "Error: failed to change directory to parent directory." >&2
+    exit 1
+  }
 
   current_dir="$(pwd)"
   echo "Repositories directory: '$current_dir'."
