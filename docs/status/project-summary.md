@@ -26,13 +26,13 @@ Current status for 2026-03-16.
 
 | Repository | Commits | Files  | Lines | Created | Updated |
 |------------|--------:|-------:|------:|---------|---------|
-| robots-core |     1519 |      739 | 71720 | 2024-07-17 | 2026-03-16 |
+| robots-core |     1553 |      754 | 69796 | 2024-07-17 | 2026-03-16 |
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      346 |       48 | 3412 | 2024-01-24 | 2026-03-16 |
+| docs |      348 |       48 | 3417 | 2024-01-24 | 2026-03-16 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3499 | 1555  | 148921 | 2023-11-26 | 2026-03-16 |
+| **Total** | 3535 | 1570  | 147002 | 2023-11-26 | 2026-03-16 |
 
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
@@ -93,7 +93,7 @@ The table shows a summary of the codebase by language or file type.
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-C#|1192|18988|29403|78039
+C#|1208|17085|29508|77916
 CSS|37|9721|354|51925
 JavaScript|30|11939|9543|41694
 Markdown|855|13948|2817|32610
@@ -105,19 +105,19 @@ LESS|1|269|2|3620
 SCSS|43|291|98|3562
 Razor|77|232|494|3043
 C# Generated|5|412|334|2450
-MSBuild script|55|321|11|1845
+MSBuild script|55|321|11|1846
 HTML|75|95|39|1274
 XAML|12|88|1|1073
-Bourne Shell|14|241|190|914
+Bourne Shell|14|241|195|914
 Visual Studio Solution|5|5|7|780
 Dockerfile|10|62|56|312
-Text|12|17|0|143
+Text|13|17|0|148
 PowerShell|1|17|6|93
 Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|2692|57183|43624|263087
+SUM:|2709|55280|43734|262970
 
 * **Language** – the detected programming or markup language.
 * **files** – the number of files recognized as that language.
@@ -137,37 +137,37 @@ Current changes in Git repositories.
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 40 | 112 | 1709 | 406 |
-| apps | 2 | 1 | 1 | 1 |
-| licensing | 1 | 1 | 2 | 2 |
+| robots-core | 66 | 160 | 4192 | 4812 |
+| apps | 0 | 0 | 0 | 0 |
+| licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 52 | 9 | 1796 | 948 |
+| docs | 54 | 9 | 1844 | 979 |
 | website | 0 | 0 | 0 | 0 |
-| **Total** | 95 | 123  | 3508 | 1357 |
+| **Total** | 120 | 169  | 6036 | 5791 |
 
 ### Last Month
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 376 | 613 | 23659 | 13751 |
+| robots-core | 410 | 671 | 26152 | 18164 |
 | apps | 31 | 46 | 394 | 228 |
 | licensing | 53 | 72 | 5308 | 316 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 67 | 28 | 1989 | 1063 |
+| docs | 69 | 28 | 2037 | 1094 |
 | website | 2 | 1 | 7 | 7 |
-| **Total** | 529 | 760  | 31357 | 15365 |
+| **Total** | 565 | 818  | 33898 | 19809 |
 
 ### Last Year
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 1103 | 1891 | 123181 | 66492 |
+| robots-core | 1137 | 1914 | 125674 | 70905 |
 | apps | 532 | 31342 | 58092 | 1733021 |
 | licensing | 165 | 195 | 14790 | 2379 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 263 | 686 | 38859 | 36635 |
+| docs | 265 | 686 | 38907 | 36666 |
 | website | 63 | 73 | 1851 | 427 |
-| **Total** | 2126 | 34187  | 236773 | 1838954 |
+| **Total** | 2162 | 34210  | 239314 | 1843398 |
 
 
 Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
