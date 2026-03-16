@@ -20,6 +20,11 @@ clear_manual_files() {
   find "hal.guru-docs" -type f -name "autogen-*.md" -delete
 }
 
+# @function generate_repositories_information
+# @brief Generates a table containing repository names and their descriptions.
+#
+# Appends a Markdown table to the project summary that lists the primary
+# hal.guru repositories along with a brief description of each.
 generate_repositories_information() {
   echo "Generating repositories information."
 
