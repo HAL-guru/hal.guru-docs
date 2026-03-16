@@ -374,12 +374,22 @@ function generate_cloc_summary() {
 # Sets file patterns and excluded directories for code statistics, stores the current date,
 # defines the output summary file path, and extracts the current halguru CLI version.
 create_global_variables() {
+  echo "Creating global variables"
   code_files_pattern="*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
+  echo "Files pattern: '$code_files_pattern'"
   code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
+  echo "Exclude directories: '$code_exclude_directories'"
   current_date="$(date +%F)"
+  echo "Current date: '$current_date'"
   summary_file="$script_dir/docs/status/project-summary.md"
+  echo "Output markdown: '$summary_file'"
   local copyright=$(halguru --version)
   version=$(awk '{print $2}' <<< "$copyright")
+  echo "halguru CLI version: '$version'"
+}
+
+generate_progress_summary() {
+  echo
 }
 
 # @function initialise_summary_file
@@ -413,6 +423,7 @@ generate_git_information
 generate_manual_files
 generate_content_information
 generate_cloc_summary
+generate_progress_summary
 generate_footer_information
 
 echo "Done. Check file '$summary_file'"
