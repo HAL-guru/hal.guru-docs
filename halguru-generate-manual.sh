@@ -1,12 +1,10 @@
 #!/bin/bash
 #
-# Generate all necessary manual files for the hal.guru platform.
-# This script uses the 'halguru' CLI to generate:
-# - Version information file
-# - CLI documentation
-# - JSON schemas
-# - YAML documentation
+# @file halguru-generate-manual.sh
+# @brief Generates all necessary manual files for the hal.guru platform.
 #
+# This script uses the 'halguru' CLI to generate version information,
+# CLI documentation, JSON schemas, and YAML documentation.
 # All generated files are placed in the 'docs' directory with an 'autogen-' prefix.
 #
 
