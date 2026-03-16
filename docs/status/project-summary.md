@@ -29,10 +29,10 @@ Current status for 2026-03-16.
 | robots-core |     1553 |      754 | 69796 | 2024-07-17 | 2026-03-16 |
 | apps |     1197 |      538 | 58324 | 2023-12-18 | 2026-03-09 |
 | licensing |      165 |      119 | 10006 | 2025-10-01 | 2026-03-09 |
-| maui |       21 |       34 | 1423 | 2024-07-17 | 2024-11-08 |
-| docs |      348 |       48 | 3417 | 2024-01-24 | 2026-03-16 |
+| maui |       21 |       46 | 2583 | 2024-07-17 | 2024-11-08 |
+| docs |      349 |       48 | 3417 | 2024-01-24 | 2026-03-16 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3535 | 1570  | 147002 | 2023-11-26 | 2026-03-16 |
+| **Total** | 3536 | 1582  | 148162 | 2023-11-26 | 2026-03-16 |
 
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
@@ -44,7 +44,7 @@ Current status for 2026-03-16.
 All lines are counted, including comments and empty lines.
 Binary files, graphics, icons, and PDF files are **not** counted.
 
-Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
+Files included in the calculations: `*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
 
 Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
@@ -137,13 +137,13 @@ Current changes in Git repositories.
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 66 | 160 | 4192 | 4812 |
+| robots-core | 65 | 157 | 4132 | 4812 |
 | apps | 0 | 0 | 0 | 0 |
 | licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 54 | 9 | 1844 | 979 |
+| docs | 55 | 9 | 1863 | 998 |
 | website | 0 | 0 | 0 | 0 |
-| **Total** | 120 | 169  | 6036 | 5791 |
+| **Total** | 120 | 166  | 5995 | 5810 |
 
 ### Last Month
 
@@ -153,9 +153,9 @@ Current changes in Git repositories.
 | apps | 31 | 46 | 394 | 228 |
 | licensing | 53 | 72 | 5308 | 316 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 69 | 28 | 2037 | 1094 |
+| docs | 70 | 28 | 2056 | 1113 |
 | website | 2 | 1 | 7 | 7 |
-| **Total** | 565 | 818  | 33898 | 19809 |
+| **Total** | 566 | 818  | 33917 | 19828 |
 
 ### Last Year
 
@@ -165,12 +165,12 @@ Current changes in Git repositories.
 | apps | 532 | 31342 | 58092 | 1733021 |
 | licensing | 165 | 195 | 14790 | 2379 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 265 | 686 | 38907 | 36666 |
+| docs | 265 | 686 | 38232 | 35789 |
 | website | 63 | 73 | 1851 | 427 |
-| **Total** | 2162 | 34210  | 239314 | 1843398 |
+| **Total** | 2162 | 34210  | 238639 | 1842521 |
 
 
-Files included in the calculations: `*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
+Files included in the calculations: `*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml`
 
 Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 

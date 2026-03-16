@@ -400,27 +400,6 @@ function generate_cloc_summary() {
   append_to_summary ""
 }
 
-# @function create_global_variables
-# @brief Initializes global variables used throughout the summary generation process.
-#
-# Sets file patterns and excluded directories for code statistics, stores the current date,
-# defines the output summary file path, and extracts the current halguru CLI version.
-create_global_variables() {
-  echo "Creating global variables."
-
-  code_files_pattern="*.cs,*.razor,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
-  echo "Files pattern: '$code_files_pattern'."
-  code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
-  echo "Exclude directories: '$code_exclude_directories'."
-  current_date="$(date +%F)"
-  echo "Current date: '$current_date'."
-  summary_file="$script_dir/docs/status/project-summary.md"
-  echo "Output markdown: '$summary_file'."
-  local copyright=$(halguru --version)
-  version=$(awk '{print $2}' <<< "$copyright")
-  echo "halguru CLI version: '$version'."
-}
-
 # @function ensure_git_repo
 # @brief Checks if the current directory is a Git repository.
 #
@@ -629,6 +608,27 @@ initialise_summary_file() {
   echo "Repositories directory: '$current_dir'."
 }
 
+# @function initialise_global_variables
+# @brief Initializes global variables used throughout the summary generation process.
+#
+# Sets file patterns and excluded directories for code statistics, stores the current date,
+# defines the output summary file path, and extracts the current halguru CLI version.
+initialise_global_variables() {
+  echo "Creating global variables."
+
+  code_files_pattern="*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
+  echo "Files pattern: '$code_files_pattern'."
+  code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
+  echo "Exclude directories: '$code_exclude_directories'."
+  current_date="$(date +%F)"
+  echo "Current date: '$current_date'."
+  summary_file="$script_dir/docs/status/project-summary.md"
+  echo "Output markdown: '$summary_file'."
+  local copyright=$(halguru --version)
+  version=$(awk '{print $2}' <<< "$copyright")
+  echo "halguru CLI version: '$version'."
+}
+
 echo "Generating 'project-summary.md' file."
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -636,7 +636,7 @@ echo "Script directory: '$script_dir'."
 
 trap 'cd "$script_dir";' EXIT
 
-create_global_variables
+initialise_global_variables
 initialise_summary_file
 generate_front_matter
 generate_header_information
