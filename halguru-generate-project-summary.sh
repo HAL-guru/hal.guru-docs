@@ -389,6 +389,10 @@ create_global_variables() {
   echo "halguru CLI version: '$version'."
 }
 
+# @function ensure_git_repo
+# @brief Checks if the current directory is a Git repository.
+#
+# @return 0 if inside a Git work tree, 1 otherwise with an error message.
 ensure_git_repo() {
     git rev-parse --is-inside-work-tree >/dev/null 2>&1 || {
         echo "Error: current directory is not a Git repository." >&2
@@ -396,6 +400,11 @@ ensure_git_repo() {
     }
 }
 
+# @function count_commits_for_period
+# @brief Counts the number of commits since a specified period.
+#
+# @param period The time period (e.g., "last week", "24 hours ago").
+# @return The total count of commits in the given period.
 count_commits_for_period() {
     local period="$1"
 
@@ -409,6 +418,11 @@ count_commits_for_period() {
     git rev-list --count --since="$period" HEAD
 }
 
+# @function count_changed_files_for_period
+# @brief Counts the number of unique files changed since a specified period.
+#
+# @param period The time period (e.g., "last month", "1 year ago").
+# @return The total count of unique changed files.
 count_changed_files_for_period() {
     local period="$1"
 
@@ -426,6 +440,11 @@ count_changed_files_for_period() {
         | tr -d '[:space:]'
 }
 
+# @function count_added_lines_for_period
+# @brief Calculates the total number of lines added since a specified period.
+#
+# @param period The time period (e.g., "last week").
+# @return The total count of added lines.
 count_added_lines_for_period() {
     local period="$1"
 
@@ -443,6 +462,11 @@ count_added_lines_for_period() {
         '
 }
 
+# @function count_deleted_lines_for_period
+# @brief Calculates the total number of lines deleted since a specified period.
+#
+# @param period The time period (e.g., "last year").
+# @return The total count of deleted lines.
 count_deleted_lines_for_period() {
     local period="$1"
 
@@ -460,6 +484,10 @@ count_deleted_lines_for_period() {
         '
 }
 
+# @function generate_git_progress_summary
+# @brief Generates a progress summary for Git repositories over different periods.
+#
+# Appends sections for last week, last month, and last year to the summary file.
 generate_git_progress_summary() {
   echo "Generate a Git progress summary."
 
@@ -478,6 +506,11 @@ generate_git_progress_summary() {
   append_to_summary ""
 }
 
+# @function generate_git_progress_summary_for_period
+# @brief Generates a table of Git progress for a specific time period.
+#
+# @param period The Git-compatible time period string.
+# @param period_title The title to use for the section in the summary.
 generate_git_progress_summary_for_period() {
   local period="$1"
   local period_title="$2"
@@ -505,6 +538,16 @@ generate_git_progress_summary_for_period() {
   append_to_summary ""
 }
 
+# @function generate_git_progress_table_row
+# @brief Generates a single row for the Git progress table.
+#
+# Navigates into a repository, collects its metrics for a period, and appends a
+# formatted row to the summary file. Updates global total counters.
+#
+# @param repo_name The name of the repository directory.
+# @param period The time period to calculate metrics for.
+# @param file_patterns Optional file patterns (default: $code_files_pattern).
+# @param exclude_directories Optional directories to exclude (default: $code_exclude_directories).
 generate_git_progress_table_row() {
   local repo_name="$1"
   local period="$2"
