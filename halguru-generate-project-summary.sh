@@ -619,7 +619,7 @@ initialise_summary_file() {
 initialise_global_variables() {
   echo "Creating global variables."
 
-  code_files_pattern="*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml"
+  code_files_pattern="*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml"
   echo "Files pattern: '$code_files_pattern'."
   code_exclude_directories=".git,.idea,site,public,resources,__pycache__,bin,obj"
   echo "Exclude directories: '$code_exclude_directories'."
