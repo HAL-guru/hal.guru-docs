@@ -245,9 +245,9 @@ generate_git_information() {
   append_to_summary "All lines are counted, including comments and empty lines."
   append_to_summary "Binary files, graphics, icons, and PDF files are **not** counted."
   append_to_summary ""
-  append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
+  append_to_summary "Files **included** in the calculations: \`$code_files_pattern\`"
   append_to_summary ""
-  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary "Directories and subdirectories **excluded** from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
 }
 
@@ -399,7 +399,7 @@ function generate_cloc_summary() {
   append_to_summary ""
   append_to_summary "Automatically generated Markdown files (\`autogen-*.md\`) are included in this summary."
   append_to_summary ""
-  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary "Directories and subdirectories **excluded** from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
 }
 
@@ -514,9 +514,9 @@ generate_git_progress_summary() {
   generate_git_progress_summary_for_period "last month" "Last Month"
   generate_git_progress_summary_for_period "last year" "Last Year"
   append_to_summary ""
-  append_to_summary "Files included in the calculations: \`$code_files_pattern\`"
+  append_to_summary "Files **included** in the calculations: \`$code_files_pattern\`"
   append_to_summary ""
-  append_to_summary "Directories and subdirectories excluded from the calculations: \`$code_exclude_directories\`"
+  append_to_summary "Directories and subdirectories **excluded** from the calculations: \`$code_exclude_directories\`"
   append_to_summary ""
 }
 
