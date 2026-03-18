@@ -30,9 +30,9 @@ Current status for 2026-03-18.
 | apps |     1199 |      564 | 58933 | 2023-12-18 | 2026-03-17 |
 | licensing |      165 |      128 | 12103 | 2025-10-01 | 2026-03-09 |
 | maui |       21 |       54 | 2721 | 2024-07-17 | 2024-11-08 |
-| docs |      354 |       57 | 10029 | 2024-01-24 | 2026-03-18 |
+| docs |      355 |       57 | 10029 | 2024-01-24 | 2026-03-18 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
-| **Total** | 3592 | 1673  | 177010 | 2023-11-26 | 2026-03-18 |
+| **Total** | 3593 | 1673  | 177010 | 2023-11-26 | 2026-03-18 |
 
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
@@ -67,7 +67,7 @@ Documentation for core and [halguru CLI](../cli/index.md) version 1.93.0.
 
 All lines are counted, including comments and empty lines.
 
-Directories and subdirectories excluded from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
+Directories and subdirectories **excluded** from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
 ## Content Files
 
@@ -127,7 +127,7 @@ SUM:|2727|55227|44279|263169
 * **comment** – lines containing comments.
 * **code** – lines containing actual source code.
 
-Automatically generated Markdown files (`autogen-*.md`) are included in this summary.
+Automatically generated Markdown files (`autogen-*.md`) are **included** in this summary.
 
 Directories and subdirectories **excluded** from the calculations: `.git,.idea,site,public,resources,__pycache__,bin,obj`
 
@@ -143,21 +143,21 @@ Current changes in Git repositories.
 | apps | 2 | 2 | 12 | 1 |
 | licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 60 | 9 | 1973 | 1103 |
+| docs | 61 | 9 | 1987 | 1117 |
 | website | 0 | 0 | 0 | 0 |
-| **Total** | 168 | 219  | 9568 | 8782 |
+| **Total** | 169 | 219  | 9582 | 8796 |
 
 ### Last Month
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 446 | 704 | 29232 | 20798 |
+| robots-core | 443 | 704 | 29179 | 20793 |
 | apps | 33 | 48 | 406 | 229 |
 | licensing | 53 | 72 | 5308 | 316 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 75 | 28 | 2166 | 1218 |
+| docs | 76 | 28 | 2180 | 1232 |
 | website | 2 | 1 | 7 | 7 |
-| **Total** | 609 | 853  | 37119 | 22568 |
+| **Total** | 607 | 853  | 37080 | 22577 |
 
 ### Last Year
 
@@ -167,9 +167,9 @@ Current changes in Git repositories.
 | apps | 534 | 31342 | 58104 | 1733022 |
 | licensing | 165 | 195 | 14790 | 2379 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 264 | 684 | 36987 | 34745 |
+| docs | 265 | 684 | 37001 | 34759 |
 | website | 63 | 73 | 1851 | 427 |
-| **Total** | 2206 | 34236  | 240249 | 1844054 |
+| **Total** | 2207 | 34236  | 240263 | 1844068 |
 
 
 Files **included** in the calculations: `*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml`
