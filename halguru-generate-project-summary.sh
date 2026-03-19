@@ -634,6 +634,7 @@ initialise_global_variables() {
 
 echo "Generating 'project-summary.md' file."
 
+start_time=$(date +%s)
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 echo "Script directory: '$script_dir'."
 
@@ -650,6 +651,8 @@ generate_manual_files
 generate_content_information
 generate_cloc_summary
 generate_git_progress_summary
+end_time=$(date +%s)
+generation_time=$(( end_time - start_time ))
 generate_footer_information
 
-echo "Done. Check the file '$summary_file'."
+echo "Finished in $generation_time sec. Check the file '$summary_file'."
