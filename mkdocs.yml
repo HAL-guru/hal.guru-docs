@@ -89,6 +89,7 @@ plugins:
         - "_drafts/**"
         - "**/*.draft.md"
         - "_snippets/**"
+        - "**/_snippets/**"
   - redirects:
       redirect_maps:
         "configuration-files/index.md": "autogen-configuration-files.md"
@@ -108,6 +109,8 @@ nav:
   - 'Platform Architecture': 'architecture/index.md'
   - 'Getting Started': 'getting-started/index.md'
   - 'CLI Application': 'cli/index.md'
+#  - 'Large Language Models': 'yaml-agent/autogen-llmconnectors.md'
+#  - 'Communication Channels': 'yaml-agent/autogen-channels.md'
   - 'AI Agent Configuration': 'yaml-agent/index.md'
   - 'Configuration Files': 'configuration-files/index.md'
   - 'JSON Schemas': 'schemas/index.md'
