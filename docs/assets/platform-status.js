@@ -98,6 +98,11 @@ async function updatePlatformStatusAndVersions(environment = 'stable') {
         'https://internal' + subdomainPostfix + '.hal.guru/platform/versions',
         'internal-status', 'internal-app-version', 'internal-core-version');
 
+    await updatePlatformStatusAndVersion(
+        'https://license.hal.guru/platform/status',
+        'https://license.hal.guru/platform/versions',
+        'license-status', 'license-app-version', 'license-core-version');
+
     if (environment === 'stable') {
         await updateSchemaFileStatusAndVersion(
             'https://docs.hal.guru/schemas/halguru-schema.json',
