@@ -231,6 +231,7 @@ generate_git_information() {
   generate_git_table_row "hal.guru-maui"
   generate_git_table_row "hal.guru-docs"
   generate_git_table_row "hal.guru-website"
+  generate_git_table_row "hal.guru-infrastructure"
 
   append_to_summary "| **Total** | $total_commits_count | $total_files_count  | $total_lines_count | $total_created_date | $total_updated_date |"
 
@@ -295,14 +296,14 @@ generate_git_table_row() {
 #
 # Counts images, fonts, JS, and CSS files/lines used in the CDN repository.
 generate_content_information() {
-  echo "Generating Content information for repositories."
+  echo "Generating CDN information for repositories."
 
-  cd "hal.guru-content" || {
-    echo "Error: failed to change directory to 'hal.guru-content'." >&2
+  cd "hal.guru-cdn" || {
+    echo "Error: failed to change directory to 'hal.guru-cdn'." >&2
     return 1
   }
 
-  append_to_summary "## Content Files"
+  append_to_summary "## CDN Files"
   append_to_summary ""
 
   append_to_summary "The repository stores all fonts, graphic assets, and templates,"
@@ -389,7 +390,7 @@ function generate_cloc_summary() {
   append_to_summary "on the following repositories: core, apps, licensing, maui, docs, and website."
   append_to_summary "The table shows a summary of the codebase by language or file type."
   append_to_summary ""
-  include_dirs="hal.guru-robots-core hal.guru-apps hal.guru-licensing hal.guru-maui hal.guru-docs hal.guru-website"
+  include_dirs="hal.guru-robots-core hal.guru-apps hal.guru-licensing hal.guru-maui hal.guru-docs hal.guru-website hal.guru-infrastructure"
   cloc $include_dirs --md --exclude-dir="$code_exclude_directories" | sed '1,2d' >> "$summary_file"
   append_to_summary ""
   append_to_summary "* **Language** – the detected programming or markup language."
@@ -548,6 +549,7 @@ generate_git_progress_summary_for_period() {
   generate_git_progress_table_row "hal.guru-maui" "$period"
   generate_git_progress_table_row "hal.guru-docs" "$period"
   generate_git_progress_table_row "hal.guru-website" "$period"
+  generate_git_progress_table_row "hal.guru-infrastructure" "$period"
 
   append_to_summary "| **Total** | $total_commits_count | $total_changed_files_count  | $total_added_lines_count | $total_deleted_lines_count |"
   append_to_summary ""
