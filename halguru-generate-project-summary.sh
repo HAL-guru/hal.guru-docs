@@ -38,6 +38,7 @@ generate_repositories_information() {
   append_to_summary "| maui | Cross-platform mobile and desktop applications powered by AI agents |"
   append_to_summary "| docs | Technical documentation built with [Material for mkdocs](https://squidfunk.github.io/mkdocs-material/getting-started/) |"
   append_to_summary "| website | Website built with [Hugo](https://gohugo.io) |"
+  append_to_summary "| infrastructure | Documentation and scripts automating the platform |"
   append_to_summary ""
 }
 
