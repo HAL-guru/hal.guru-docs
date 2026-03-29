@@ -179,15 +179,15 @@ async function updatePlatformStatus(url, statusId) {
     try {
         const result = await downloadTextFile(url);
         if (result === 'OK') {
-            setMessage('🟢 Active', statusId);
+            setMessage('🟢', statusId);
             return true;
         }
-        setMessage('🛑 ' + result, statusId);
+        setMessage('🛑', statusId);
         setWarningMessage();
         return false;
     } catch (error) {
         console.error('Error occurred during downloading:', error);
-        setMessage('🛑 Inactive', statusId);
+        setMessage('🛑', statusId);
         setWarningMessage();
         return false;
     }
@@ -227,17 +227,17 @@ async function updatePlatformVersions(url, appVersionId, coreVersionId) {
  * @return {Promise<boolean>} A promise that resolves to true if the update was successful, or false if an error occurred.
  */
 async function updateSchemaFileStatusAndVersion(url, statusId, coreVersionId) {
-    setMessage('🔄 Updating...', statusId);
+    setMessage('🔄', statusId);
     setMessage('Updating...', coreVersionId);
 
     try {
         const versions = await downloadJsonFile(url);
-        setMessage('🟢 Published', statusId);
+        setMessage('🟢', statusId);
         setMessage('<strong>' + versions['x-version'] + '</strong>', coreVersionId);
         return true;
     } catch (error) {
         console.error('Error occurred during downloading:', error);
-        setMessage('🛑 Inactive', statusId);
+        setMessage('🛑', statusId);
         setMessage('Unknown', coreVersionId);
         setWarningMessage();
         return false;

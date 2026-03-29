@@ -8,15 +8,15 @@ A live overview of the pre-release environment. It shows the availability and ve
 
 > This deployment is for internal QA purposes only. The functionality is experimental and may be incomplete. Do **NOT** use in production.
 
-| Name                                                                 | Status                                      | App                                                 | Core                                            | Description                    |
-|----------------------------------------------------------------------|---------------------------------------------|-----------------------------------------------------|-------------------------------------------------|--------------------------------|
-| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">CLI</a> | 🟢 Released                                 | <span id="cli-app-version">No data</span>           | <span id="cli-core-version">No data</span>      | Command-line Application       |
-| <a href="https://api-dev.hal.guru/swagger/index.html">API</a>        | <span id="api-status">⚪ No data</span>      | <span id="api-app-version">No data</span>           | <span id="api-core-version">No data</span>      | Web API (OpenAPI/Swagger)      |
-| <a href="https://admin-dev.hal.guru">Admin</a>                       | <span id="admin-status">⚪ No data</span>    | <span id="admin-app-version">No data</span>         | <span id="admin-core-version">No data</span>    | AI Agent Management            |
-| <a href="https://chat-dev.hal.guru">Chat</a>                         | <span id="chat-status">⚪ No data</span>     | <span id="chat-app-version">No data</span>          | <span id="chat-core-version">No data</span>     | Chat Web Application           |
-| <a href="https://login-dev.hal.guru">Login</a>                       | <span id="login-status">⚪ No data</span>    | <span id="login-app-version">No data</span>         | <span id="login-core-version">No data</span>    | Login and Registration Service |
-| <a href="https://webhook-dev.hal.guru">WebHook</a>                   | <span id="webhook-status">⚪ No data</span>  | <span id="webhook-app-version">No data</span>       | <span id="webhook-core-version">No data</span>  | Multi-Channel Webhook Router   |
-| <a href="https://internal-dev.hal.guru">Internal</a>                 | <span id="internal-status">⚪ No data</span> | <span id="internal-app-version">No data</span>      | <span id="internal-core-version">No data</span> | AI Messaging Backend           |
+| Name                                                                         |               Status                | App | Core | Description                     |
+|------------------------------------------------------------------------------|:-----------------------------------:|-----|------|---------------------------------|
+| <a href="https://github.com/HAL-guru/hal.guru-docs/releases">halguru</a> | 🟢                                 | <span id="cli-app-version">No data</span>           | <span id="cli-core-version">No data</span>      | Command-line Application       |
+| <a href="https://api-dev.hal.guru/swagger/index.html">api-dev.hal.guru</a>   | <span id="api-status">⚪</span>      | <span id="api-app-version">No data</span>           | <span id="api-core-version">No data</span>      | Web API (OpenAPI/Swagger)      |
+| <a href="https://admin-dev.hal.guru">admin-dev.hal.guru</a>                  | <span id="admin-status">⚪</span>    | <span id="admin-app-version">No data</span>         | <span id="admin-core-version">No data</span>    | AI Agent Management            |
+| <a href="https://chat-dev.hal.guru">chat-dev.hal.guru</a>                    | <span id="chat-status">⚪</span>     | <span id="chat-app-version">No data</span>          | <span id="chat-core-version">No data</span>     | Chat Web Application           |
+| login-dev.hal.guru                                                           | <span id="login-status">⚪</span>    | <span id="login-app-version">No data</span>         | <span id="login-core-version">No data</span>    | Login and Registration Service |
+| webhook-dev.hal.guru                                                         | <span id="webhook-status">⚪</span>  | <span id="webhook-app-version">No data</span>       | <span id="webhook-core-version">No data</span>  | Multi-Channel Webhook Router   |
+| internal-dev.hal.guru                                                        | <span id="internal-status">⚪</span> | <span id="internal-app-version">No data</span>      | <span id="internal-core-version">No data</span> | AI Messaging Backend           |
 
 <div id="warning-message"></div>
 
