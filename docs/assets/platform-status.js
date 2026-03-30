@@ -21,27 +21,6 @@ async function updatePrereleasePlatformStatusAndVersions() {
 }
 
 /**
- * Updates the status and version of multiple schema files by calling the `updateSchemaFileStatusAndVersion` method
- * with predefined URLs and corresponding status and version keys.
- *
- * @return {Promise<void>} A promise that resolves when all schema file statuses and versions have been updated.
- */
-async function updateAllSchemasStatusAndVersions() {
-    await updateSchemaFileStatusAndVersion(
-        'https://docs.hal.guru/schemas/halguru-schema.json',
-        'agent-schema-status', 'agent-schema-version');
-    await updateSchemaFileStatusAndVersion(
-        'https://docs.hal.guru/schemas/halguru-state-schema.json',
-        'state-schema-status', 'state-schema-version');
-    await updateSchemaFileStatusAndVersion(
-        'https://docs.hal.guru/schemas/halguru-action-schema.json',
-        'action-schema-status', 'action-schema-version');
-    await updateSchemaFileStatusAndVersion(
-        'https://docs.hal.guru/schemas/halguru-webscraping-schema.json',
-        'webscraping-schema-status', 'webscraping-schema-version');
-}
-
-/**
  * Updates the platform's status and versions for various subdomains based on the specified environment.
  *
  * @param {string} [environment='stable'] - The environment to be used for the platform update. Valid values are 'stable' and 'prerelease'. Defaults to 'stable'.
@@ -129,7 +108,7 @@ async function updatePlatformStatusAndVersion(statusUrl, versionUrl, statusId, a
     } else {
         setMessage('Unknown', appVersionId);
         setMessage('Unknown', coreVersionId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
     }
 }
 
@@ -142,8 +121,8 @@ async function updatePlatformStatusAndVersion(statusUrl, versionUrl, statusId, a
  * @return {Promise<boolean>} A promise that resolves to true if the versions were successfully updated, or false if an error occurred.
  */
 async function updateVersionsFromTextFile(url, appVersionId, coreVersionId) {
-    setMessage('Updating...', appVersionId);
-    setMessage('Updating...', coreVersionId);
+    setMessage('Updating', appVersionId);
+    setMessage('Updating', coreVersionId);
     try {
         const response = await fetch(url, {
             method: 'GET',
@@ -162,7 +141,7 @@ async function updateVersionsFromTextFile(url, appVersionId, coreVersionId) {
         console.error('Error occurred during downloading:', error);
         setMessage('Unknown', appVersionId);
         setMessage('Unknown', coreVersionId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
         return false;
     }
 }
@@ -175,7 +154,7 @@ async function updateVersionsFromTextFile(url, appVersionId, coreVersionId) {
  * @return {Promise<boolean>} A promise that resolves to true if the status update was successful, otherwise false.
  */
 async function updatePlatformStatus(url, statusId) {
-    setMessage('🔄 Updating...', statusId);
+    setMessage('🔄<br/><small>Updating</small>', statusId);
     try {
         const result = await downloadTextFile(url);
         if (result === 'OK') {
@@ -183,12 +162,12 @@ async function updatePlatformStatus(url, statusId) {
             return true;
         }
         setMessage('🛑', statusId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
         return false;
     } catch (error) {
         console.error('Error occurred during downloading:', error);
         setMessage('🛑', statusId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
         return false;
     }
 }
@@ -202,8 +181,8 @@ async function updatePlatformStatus(url, statusId) {
  * @return {Promise<boolean>} Resolves to true if the update is successful, otherwise false.
  */
 async function updatePlatformVersions(url, appVersionId, coreVersionId) {
-    setMessage('Updating...', appVersionId);
-    setMessage('Updating...', coreVersionId);
+    setMessage('Updating', appVersionId);
+    setMessage('Updating', coreVersionId);
 
     try {
         const versions = await downloadJsonFile(url);
@@ -214,21 +193,22 @@ async function updatePlatformVersions(url, appVersionId, coreVersionId) {
         console.error('Error occurred during downloading:', error);
         setMessage('Unknown', appVersionId);
         setMessage('Unknown', coreVersionId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
         return false;
     }
 }
 
 /**
- * Updates the schema version by downloading data from the provided URL and setting the version message.
+ * Updates the status and version of the schema file by downloading and processing the data from the given URL.
  *
- * @param {string} url - The URL to download the schema version data from.
- * @param {string} coreVersionId - The ID of the core version being updated, used to display messages.
- * @return {Promise<boolean>} A promise that resolves to true if the update was successful, or false if an error occurred.
+ * @param {string} url - The URL to download the schema file from.
+ * @param {string} statusId - The identifier for the status message element to be updated.
+ * @param {string} coreVersionId - The identifier for the core version message element to be updated.
+ * @return {Promise<boolean>} A promise that resolves to `true` if the file processing is successful, otherwise `false`.
  */
 async function updateSchemaFileStatusAndVersion(url, statusId, coreVersionId) {
-    setMessage('🔄', statusId);
-    setMessage('Updating...', coreVersionId);
+    setMessage('🔄<br/><small>Updating</small>', statusId);
+    setMessage('Updating', coreVersionId);
 
     try {
         const versions = await downloadJsonFile(url);
@@ -239,50 +219,82 @@ async function updateSchemaFileStatusAndVersion(url, statusId, coreVersionId) {
         console.error('Error occurred during downloading:', error);
         setMessage('🛑', statusId);
         setMessage('Unknown', coreVersionId);
-        setWarningMessage();
+        setUnavailableServicesMessage();
         return false;
     }
 }
 
 /**
- * Downloads a text file from the specified URL and returns its content as a string.
+ * Downloads a text file from the specified URL with an optional timeout.
  *
- * @param {string} url - The URL of the text file to download.
- * @return {Promise<string>} A promise that resolves to the text content of the downloaded file.
- * @throws {Error} Throws an error if the HTTP response is not successful.
+ * @param {string} url - The URL from which to download the text file.
+ * @param {number} [timeoutMs=5000] - The maximum time in milliseconds to wait before aborting the request. Defaults to 5000 ms.
+ * @return {Promise<string>} A promise that resolves to the content of the text file as a string.
+ * @throws {Error} Throws an error if the request fails, times out, or the server responds with a non-OK status.
  */
-async function downloadTextFile(url) {
-    const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Accept': 'text/plain'
+async function downloadTextFile(url, timeoutMs = 5000) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'text/plain'
+            },
+            signal: controller.signal
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
-    });
-    if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+
+        return await response.text();
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            throw new Error(`Request timed out after ${timeoutMs} ms`);
+        }
+        throw error;
+    } finally {
+        clearTimeout(timeoutId);
     }
-    return await response.text();
 }
 
 /**
  * Downloads a JSON file from the specified URL and parses its content.
+ * The request will time out if it exceeds the specified duration.
  *
  * @param {string} url - The URL of the JSON file to be downloaded.
- * @return {Promise<Object>} A promise that resolves to the parsed JSON object.
- * @throws {Error} If the HTTP request fails or returns a non-OK status.
+ * @param {number} [timeoutMs=5000] - The timeout duration in milliseconds before aborting the request.
+ * @return {Promise<Object>} A promise that resolves to the parsed JSON content of the response.
+ * @throws {Error} If the request fails, is aborted, or the server responds with a non-OK status.
  */
-async function downloadJsonFile(url) {
-    const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
+async function downloadJsonFile(url, timeoutMs = 5000) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
-    if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            },
+            signal: controller.signal
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        if (error.name === 'AbortError') {
+            throw new Error(`Request timed out after ${timeoutMs} ms`);
+        }
+        throw error;
+    } finally {
+        clearTimeout(timeoutId);
     }
-    return await response.json();
 }
 
 /**
@@ -305,14 +317,12 @@ function setMessage(message, spanId) {
 }
 
 /**
- * Sets a warning message to be displayed to the user.
+ * Sets a message indicating that some services are unavailable.
+ * The message is styled with a warning emphasis and notifies users
+ * to check back later for updates on the services' availability.
  *
- * This method uses a predefined message and assigns it to a specific
- * element on the page with a "warning-message" class or ID. The function
- * is intended to inform users to check back later for updates.
- *
- * @return {void} This method does not return a value.
+ * @return {void} This method does not return any value.
  */
-function setWarningMessage() {
-    setMessage('<blockquote>Please check back later.</blockquote>', 'warning-message');
+function setUnavailableServicesMessage() {
+    setMessage('<blockquote>Some services are <span style="color: red">unavailable</span>. Please check again later.</blockquote>', 'warning-message');
 }
