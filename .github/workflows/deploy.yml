@@ -52,12 +52,13 @@ jobs:
         shell: bash
         run: |
           chmod +x docs/halguru-install.sh
-          docs/halguru-install.sh --no-run
+          docs/halguru-install.sh --no-run --no-link
+          export PATH="$HOME/.halguru:$PATH"
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
           halguru manual --generate-version-file docs/autogen-cli-version.txt --overwrite
           docs/halguru-install.sh --pre-release --no-run --no-link
-          ./halguru/halguru manual --generate-version-file docs/autogen-cli-prerelease-version.txt --overwrite
+          halguru manual --generate-version-file docs/autogen-cli-prerelease-version.txt --overwrite
 
       - name: Build website
         run: |
