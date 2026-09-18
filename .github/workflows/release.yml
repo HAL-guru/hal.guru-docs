@@ -8,7 +8,7 @@ on:
 jobs:
   release:
     timeout-minutes: 20
-    runs-on: ubuntu-latest
+    runs-on: chris-microk8s-runner
 
     permissions:
       repository-projects: read

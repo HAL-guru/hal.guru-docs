@@ -388,7 +388,7 @@ function generate_cloc_summary() {
   append_to_summary "## Total Lines of Code"
   append_to_summary ""
   append_to_summary "Results of running the [cloc](https://github.com/AlDanial/cloc) tool "
-  append_to_summary "on the following repositories: core, apps, licensing, maui, docs, and website."
+  append_to_summary "on the following repositories: **core**, **apps**, **licensing**, **maui**, **docs**, and **website**."
   append_to_summary "The table shows a summary of the codebase by language or file type."
   append_to_summary ""
   include_dirs="hal.guru-robots-core hal.guru-apps hal.guru-licensing hal.guru-maui hal.guru-docs hal.guru-website hal.guru-infrastructure"
