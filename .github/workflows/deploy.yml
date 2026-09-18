@@ -22,7 +22,7 @@ defaults:
 jobs:
   build:
     timeout-minutes: 20
-    runs-on: ubuntu-latest
+    runs-on: chris-microk8s-runner
 
     steps:
       - name: Checkout
