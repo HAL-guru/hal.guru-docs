@@ -56,8 +56,8 @@ jobs:
           chmod +x ./halguru-generate-manual.sh
           ./halguru-generate-manual.sh
           halguru manual --generate-version-file docs/autogen-cli-version.txt --overwrite
-          docs/halguru-install.sh --pre-release --no-run
-          halguru manual --generate-version-file docs/autogen-cli-prerelease-version.txt --overwrite
+          docs/halguru-install.sh --pre-release --no-run --no-link
+          ./halguru/halguru manual --generate-version-file docs/autogen-cli-prerelease-version.txt --overwrite
 
       - name: Build website
         run: |

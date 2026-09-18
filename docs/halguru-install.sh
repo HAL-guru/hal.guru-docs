@@ -186,6 +186,9 @@ parse_args() {
             --norun|--no-run|-n)
                 NORUN="true"
                 ;;
+            --nolink|--no-link|-l)
+                NOLINK="true"
+                ;;
             --version|-v)
                 shift
                 if [ -z "${1:-}" ]; then
@@ -198,7 +201,7 @@ parse_args() {
                 fi
                 ;;
             --help|-h)
-                echo "Usage: halguru-install.sh [--pre-release|--no-run|--help|--version <tag>]"
+                echo "Usage: halguru-install.sh [--pre-release|--no-run|--no-link|--help|--version <tag>]"
                 exit 0
                 ;;
             *)
@@ -279,21 +282,23 @@ main() {
         exit 13
     fi
 
-    if [ ! -d "/usr/local/bin" ]; then
-        echo "Directory /usr/local/bin doesn't exists, creating..."
-        if ! sudo mkdir -p /usr/local/bin; then
-            log_error 14 "Unable to create directory /usr/local/bin"
-            exit 14
+    if [ "$NOLINK" != "true" ]; then
+        if [ ! -d "/usr/local/bin" ]; then
+            echo "Directory /usr/local/bin doesn't exists, creating..."
+            if ! sudo mkdir -p /usr/local/bin; then
+                log_error 14 "Unable to create directory /usr/local/bin"
+                exit 14
+            fi
+            if ! sudo chmod 755 /usr/local/bin; then
+                log_error 14 "Unable to setup directory /usr/local/bin"
+                exit 14
+            fi
         fi
-        if ! sudo chmod 755 /usr/local/bin; then
-            log_error 14 "Unable to setup directory /usr/local/bin"
-            exit 14
-        fi
-    fi
 
-    if ! sudo ln -sf "$INSTALL_DIR/halguru" /usr/local/bin/halguru; then
-        log_error 14 "Failed to create symbolic link"
-        exit 14
+        if ! sudo ln -sf "$INSTALL_DIR/halguru" /usr/local/bin/halguru; then
+            log_error 14 "Failed to create symbolic link"
+            exit 14
+        fi
     fi
 
     if [ "$NORUN" != "true" ]; then
