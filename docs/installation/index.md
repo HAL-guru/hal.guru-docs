@@ -1,6 +1,6 @@
 ---
-title: Installation
-description: Installation
+title: Installing the halguru CLI Application
+description: Step-by-step installation and configuration guide for the halguru CLI application across macOS, Linux, and Windows.
 author: Chris Prusik
 ---
 
@@ -34,3 +34,7 @@ to complete the setup and configure the Visual Studio Code editor for your AI ag
 ## Experienced users
 
 For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users.md).
+
+## Next step
+
+Once you have installed the application, you can proceed to [Preparing your environment](../getting-started/preparing-your-environment/index.md).
