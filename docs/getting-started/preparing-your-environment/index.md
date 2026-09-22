@@ -12,7 +12,7 @@ author: Chris Prusik
 
 ## Setting the HalGuruApiKey Environment Variable
 
-While it is possible to pass your API key with every CLI command using the `--api-key` flag (e.g., `halguru --api-key {your-api-key}`), we strongly recommend configuring it as an environment variable to streamline your workflow.
+While it is possible to pass your API key with every CLI command using the `--api-key` flag, we strongly recommend configuring it as an environment variable to streamline your workflow.
 
 === "macOS (Zsh)"
 
@@ -106,7 +106,6 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
 
     Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command.
 
-    - **Command Prompt (Permanent):**
     ```cmd
     setx HalGuruApiUrl "https://api.yourserver.com"
     ```
@@ -125,7 +124,7 @@ You should get a result like:
 
 ```
 Start: Checking API platform status
-Using API URL: https://api.hal.guru/.
+Using API URL: https://api.hal.guru/
 The API platform is up and running.
 The halguru CLI version: 1.93.0
 API core version: 1.93.0
@@ -143,7 +142,7 @@ You should get a result like:
 
 ```
 Start: List published agents
-Using API URL: https://api.hal.guru/.
+Using API URL: https://api.hal.guru/
 Using package name: My Package
 There are 0 all agents published on the platform.
 Done: List successful in 144ms
