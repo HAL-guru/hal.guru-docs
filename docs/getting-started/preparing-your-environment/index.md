@@ -14,58 +14,103 @@ author: Chris Prusik
 
 While it is possible to pass your API key with every CLI command using the `--api-key` flag (e.g., `halguru --api-key {your-api-key}`), we strongly recommend configuring it as an environment variable to streamline your workflow.
 
-### macOS (Zsh)
+=== "macOS (Zsh)"
 
-1. Open your shell configuration file:
-```bash
-code ~/.zshrc
-```
-*(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
+    1. Open your shell configuration file:
+    ```bash
+    code ~/.zshrc
+    ```
+    *(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
 
-2. Append the following export statement to the end of the file:
-```bash
-export HalGuruApiKey="{your-api-key-from-clipboard}"
-```
+    2. Append the following export statement to the end of the file:
+    ```bash
+    export HalGuruApiKey="{your-api-key-from-clipboard}"
+    ```
 
-3. Reload the configuration in your active terminal session:
-```bash
-source ~/.zshrc
-```
+    3. Reload the configuration in your active terminal session:
+    ```bash
+    source ~/.zshrc
+    ```
 
-### Linux (Bash / Zsh)
+=== "Linux (Bash / Zsh)"
 
-1. Open your profile configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh):
-```bash
-code ~/.bashrc
-```
-*(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
+    1. Open your profile configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh):
+    ```bash
+    code ~/.bashrc
+    ```
+    *(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
 
-2. Add the export line at the end:
-```bash
-export HalGuruApiKey="{your-api-key-from-clipboard}"
-```
+    2. Add the export line at the end:
+    ```bash
+    export HalGuruApiKey="{your-api-key-from-clipboard}"
+    ```
 
-3. Apply the changes:
-```bash
-source ~/.bashrc
-```
+    3. Apply the changes:
+    ```bash
+    source ~/.bashrc
+    ```
 
-### Windows
+=== "Windows"
 
-Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**.
+    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**.
 
-- **Command Prompt (Permanent):**
-```cmd
-setx HalGuruApiKey "{your-api-key-from-clipboard}"
-```
+    - **Command Prompt (Permanent):**
+    ```cmd
+    setx HalGuruApiKey "{your-api-key-from-clipboard}"
+    ```
 
-Restart your terminal after setting permanent environment variables for the changes to take effect.
+    Restart your terminal after setting permanent environment variables for the changes to take effect.
 
 ## Configuring a Self-Hosted API Endpoint (`HalGuruApiUrl`)
 
 To maximize reliability and ensure smooth communication with an on-premises or private self-hosted instance of the hal.guru platform, configure the custom API endpoint URL. When using a self-hosted server, the CLI needs to route requests to your specific domain rather than the default cloud infrastructure.
 
-Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`. Steps as previously described.
+Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
+
+=== "macOS (Zsh)"
+
+    1. Open your shell configuration file:
+    ```bash
+    code ~/.zshrc
+    ```
+
+    2. Append the export statement:
+    ```bash
+    export HalGuruApiUrl="https://api.yourserver.com"
+    ```
+
+    3. Reload the configuration in your active terminal session:
+    ```bash
+    source ~/.zshrc
+    ```
+
+=== "Linux (Bash / Zsh)"
+
+    1. Open your profile configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh):
+    ```bash
+    code ~/.bashrc
+    ```
+
+    2. Add the export statement at the end:
+    ```bash
+    export HalGuruApiUrl="https://api.yourserver.com"
+    ```
+
+    3. Apply the changes:
+    ```bash
+    source ~/.bashrc
+    ```
+
+=== "Windows"
+
+    Open a terminal with administrator privileges:
+
+    - **Command Prompt (Permanent):**
+    ```cmd
+    setx HalGuruApiUrl "https://api.yourserver.com"
+    ```
+
+    Restart your terminal after setting permanent environment variables for the changes to take effect.
 
 ## Checking the connection to the hal.guru platform
 
