@@ -4,9 +4,11 @@ description: Creating an account on the hal.guru platform. Setting the HalGuruAp
 author: Chris Prusik
 ---
 
+Pre-requisite steps: [Visual Studio Code and halguru CLI installed](../../installation/index.md)
+
 ## Creating an account on the hal.guru platform
 
-1. **Create an Account**: Register on the hal.guru platform via the [registration page](https://admin.hal.guru).
+1. **Create an Account**: Register on the hal.guru platform via the [registration page](https://admin.hal.guru) (or use the url to the Self-Hosted Admin Endpoint)
 2. **Set Up a Package**: Navigate to the dashboard and create your first `Package` to organize and manage your AI agents.
 3. **Generate an API Key**: Within your newly created Package settings, generate an `API Key` and copy it to your clipboard. Store it securely, as it will be required to authenticate CLI operations and agent interactions.
 

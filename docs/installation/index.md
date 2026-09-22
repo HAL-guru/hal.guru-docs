@@ -71,6 +71,8 @@ halguru 1.93.0
 More information at https://docs.hal.guru
 ```
 
+To see the full list of available [CLI application](../cli/index.md) options and commands, run `halguru --help`.
+
 ## Next step
 
 Once you have installed the application, you can proceed to [Preparing your environment](../getting-started/preparing-your-environment/index.md).
