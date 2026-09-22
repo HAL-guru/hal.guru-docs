@@ -9,7 +9,7 @@ If you’d like to understand the platform’s core features, we recommend readi
 It will walk you through the essential concepts, show you how to configure and deploy an agent, 
 and highlight best practices so you can build confidently from the very beginning.
 
-## → [1. Installing the halguru CLI Application](../installation/index.md)
+## → [1. Installing applications](../installation/index.md)
 
 ## → [2. Preparing your environment](preparing-your-environment/index.md)
 

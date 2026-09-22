@@ -1,6 +1,6 @@
 ---
-title: Installing the halguru CLI Application
-description: Step-by-step installation and configuration guide for the halguru CLI application across macOS, Linux, and Windows.
+title: Installing applications
+description: Visual Studio Code installation. Step-by-step installation and configuration guide for the halguru CLI application across macOS, Linux, and Windows.
 author: Chris Prusik
 ---
 
@@ -22,7 +22,7 @@ Next, you need to install the halguru application along with its extension for t
     curl -sSL https://docs.hal.guru/halguru-install.sh | bash
     ```
 
-    > More details: [macOS and Linux installation tutorial](macos-and-linux.md).
+    More details: [macOS and Linux installation tutorial](macos-and-linux.md).
 
 === "Linux"
 
@@ -32,11 +32,11 @@ Next, you need to install the halguru application along with its extension for t
     curl -sSL https://docs.hal.guru/halguru-install.sh | bash
     ```
 
-    > More details: [macOS and Linux installation tutorial](macos-and-linux.md).
+    More details: [macOS and Linux installation tutorial](macos-and-linux.md).
 
 === "Windows"
 
-    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
+    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Windows PowerShell (Administrator)**. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
 
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
@@ -48,8 +48,9 @@ Next, you need to install the halguru application along with its extension for t
     halguru install
     ```
     to complete the setup and configure the Visual Studio Code editor for your AI agents.
+    More details: [Windows installation tutorial](windows.md).
 
-    > More details: [Windows installation tutorial](windows.md).
+> **Experienced users**: For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users.md).
 
 ## Checking installation
 
@@ -69,10 +70,6 @@ halguru 1.93.0
 (C) hal.guru sp. z o.o.
 More information at https://docs.hal.guru
 ```
-
-## Experienced users
-
-For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users.md).
 
 ## Next step
 
