@@ -52,9 +52,8 @@ While it is possible to pass your API key with every CLI command using the `--ap
 
 === "Windows"
 
-    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**.
+    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command.
 
-    - **Command Prompt (Permanent):**
     ```cmd
     setx HalGuruApiKey "{your-api-key-from-clipboard}"
     ```
@@ -73,6 +72,7 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
     ```bash
     code ~/.zshrc
     ```
+    *(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
 
     2. Append the export statement:
     ```bash
@@ -90,6 +90,7 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
     ```bash
     code ~/.bashrc
     ```
+    *(You can replace `code` with your preferred editor, such as `nano ~/.zshrc` or `vim ~/.zshrc`)*
 
     2. Add the export statement at the end:
     ```bash
@@ -103,7 +104,7 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
 
 === "Windows"
 
-    Open a terminal with administrator privileges:
+    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command.
 
     - **Command Prompt (Permanent):**
     ```cmd

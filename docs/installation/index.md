@@ -7,29 +7,39 @@ author: Chris Prusik
 For developing AI agents, we recommend using the **Visual Studio Code** editor, which can be downloaded from [Microsoft's website](https://code.visualstudio.com/download). 
 Next, you need to install the halguru application along with its extension for this editor.
 
-## MacOS and Linux users
+=== "macOS"
 
-Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.sh):
+    Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.sh):
 
-```bash
-curl -sSL https://docs.hal.guru/halguru-install.sh | bash
-```
+    ```bash
+    curl -sSL https://docs.hal.guru/halguru-install.sh | bash
+    ```
 
-> More details: [macOS and Linux installation tutorial](macos-and-linux.md).
+    > More details: [macOS and Linux installation tutorial](macos-and-linux.md).
 
-## Windows users
+=== "Linux"
 
-Open PowerShell as an administrator. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
+    Open your terminal and execute the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.sh):
 
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
-irm https://docs.hal.guru/halguru-install.ps1 | iex
-```
+    ```bash
+    curl -sSL https://docs.hal.guru/halguru-install.sh | bash
+    ```
 
-After the installation, open a new terminal window and run the command `halguru install` 
-to complete the setup and configure the Visual Studio Code editor for your AI agents.
+    > More details: [macOS and Linux installation tutorial](macos-and-linux.md).
 
-> More details: [Windows installation tutorial](windows.md).
+=== "Windows"
+
+    Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command to download and run the installation [script](https://docs.hal.guru/halguru-install.ps1):
+
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+    irm https://docs.hal.guru/halguru-install.ps1 | iex
+    ```
+
+    After the installation, open a new terminal window and run the command `halguru install` 
+    to complete the setup and configure the Visual Studio Code editor for your AI agents.
+
+    > More details: [Windows installation tutorial](windows.md).
 
 ## Experienced users
 
