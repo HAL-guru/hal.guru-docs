@@ -12,7 +12,7 @@ Run the command `code` to verify that the installation was successful.
 
 ## Installing the halguru CLI Application
 
-Next, you need to install the halguru application along with its extension for this editor.
+Next, you need to install the halguru application along with its extension for this editor, but first close all instances of **Visual Studio Code**.
 
 === "macOS"
 

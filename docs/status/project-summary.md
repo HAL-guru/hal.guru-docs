@@ -28,14 +28,14 @@ Current status for 2026-09-26.
 
 | Repository | Commits | Files  | Lines | Created | Updated |
 |------------|--------:|-------:|------:|---------|---------|
-| robots-core |     1788 |      829 | 91943 | 2024-07-17 | 2026-09-26 |
+| robots-core |     1789 |      829 | 91914 | 2024-07-17 | 2026-09-26 |
 | apps |     1233 |      570 | 59984 | 2023-12-18 | 2026-08-23 |
 | licensing |      178 |      134 | 12623 | 2025-10-01 | 2026-08-13 |
 | maui |       21 |       54 | 2721 | 2024-07-17 | 2024-11-08 |
-| docs |      382 |       60 | 10098 | 2024-01-24 | 2026-09-25 |
+| docs |      383 |       60 | 9964 | 2024-01-24 | 2026-09-26 |
 | website |      251 |       77 | 4036 | 2023-11-26 | 2026-02-28 |
 | infrastructure |       62 |       20 | 1042 | 2025-02-18 | 2026-05-23 |
-| **Total** | 3915 | 1744  | 182447 | 2023-11-26 | 2026-09-26 |
+| **Total** | 3917 | 1744  | 182284 | 2023-11-26 | 2026-09-26 |
 
 * **Repository** - The name of the Git repository.
 * **Commits** - The total number of commits in the repository.
@@ -98,7 +98,7 @@ The table shows a summary of the codebase by language or file type.
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-C#|1265|17252|31040|79822
+C#|1265|17250|31040|79795
 CSS|37|9721|354|51925
 JavaScript|30|11944|9539|41708
 Markdown|842|13740|2696|32854
@@ -122,7 +122,7 @@ Python|2|25|49|87
 DOS Batch|6|0|0|10
 INI|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|2771|55502|45292|266307
+SUM:|2771|55500|45292|266280
 
 * **Language** – the detected programming or markup language.
 * **files** – the number of files recognized as that language.
@@ -142,40 +142,40 @@ Current changes in Git repositories.
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 31 | 102 | 1608 | 2483 |
+| robots-core | 32 | 102 | 1625 | 2529 |
 | apps | 0 | 0 | 0 | 0 |
 | licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 9 | 11 | 379 | 145 |
+| docs | 10 | 11 | 400 | 166 |
 | website | 0 | 0 | 0 | 0 |
 | infrastructure | 0 | 0 | 0 | 0 |
-| **Total** | 40 | 113  | 1987 | 2628 |
+| **Total** | 42 | 113  | 2025 | 2695 |
 
 ### Last Month
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 78 | 201 | 4720 | 5466 |
+| robots-core | 79 | 201 | 4737 | 5512 |
 | apps | 0 | 0 | 0 | 0 |
 | licensing | 0 | 0 | 0 | 0 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 14 | 14 | 441 | 201 |
+| docs | 15 | 14 | 462 | 222 |
 | website | 0 | 0 | 0 | 0 |
 | infrastructure | 0 | 0 | 0 | 0 |
-| **Total** | 92 | 215  | 5161 | 5667 |
+| **Total** | 94 | 215  | 5199 | 5734 |
 
 ### Last Year
 
 | Repository | Commits | Changed Files | Added Lines  | Deleted Lines |
 |------------|--------:|--------------:|-------------:|--------------:|
-| robots-core | 1117 | 1865 | 113366 | 65921 |
+| robots-core | 1118 | 1865 | 113383 | 65967 |
 | apps | 402 | 484 | 40242 | 10553 |
 | licensing | 178 | 202 | 15419 | 2556 |
 | maui | 0 | 0 | 0 | 0 |
-| docs | 119 | 50 | 3024 | 1819 |
+| docs | 119 | 47 | 3034 | 1828 |
 | website | 6 | 3 | 13 | 13 |
 | infrastructure | 58 | 40 | 1258 | 355 |
-| **Total** | 1880 | 2644  | 173322 | 81217 |
+| **Total** | 1881 | 2641  | 173349 | 81272 |
 
 
 Files **included** in the calculations: `*.cs,*.razor,*.xaml,*.md,*.sh,*.ps1,*.py,*.yml,*.yaml,*.json,*.xml`
