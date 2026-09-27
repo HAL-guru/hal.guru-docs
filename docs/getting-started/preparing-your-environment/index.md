@@ -62,6 +62,22 @@ While it is possible to pass your API key with every CLI command using the `--ap
 
     Restart your terminal after setting permanent environment variables for the changes to take effect.
 
+To check the validity of your API Key, execute the following command in the terminal:
+
+```bash
+halguru platform list
+```
+
+You should get a result like:
+
+```
+Start: List published agents
+Using API URL: https://api.hal.guru/
+Using package name: My Package
+There are 0 all agents published on the platform.
+Done: List successful in 144ms
+```
+
 ## Configuring a Self-Hosted API Endpoint (`HalGuruApiUrl`)
 
 To maximize reliability and ensure smooth communication with an on-premises or private self-hosted instance of the hal.guru platform, configure the custom API endpoint URL. When using a self-hosted server, the CLI needs to route requests to your specific domain rather than the default cloud infrastructure.
@@ -78,7 +94,7 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
 
     2. Append the export statement:
     ```bash
-    export HalGuruApiUrl="https://api.yourserver.com"
+    export HalGuruApiUrl="https://api.yourserver.com/"
     ```
 
     3. Reload the configuration in your active terminal session:
@@ -96,7 +112,7 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
 
     2. Add the export statement at the end:
     ```bash
-    export HalGuruApiUrl="https://api.yourserver.com"
+    export HalGuruApiUrl="https://api.yourserver.com/"
     ```
 
     3. Apply the changes:
@@ -109,12 +125,10 @@ Set the `HalGuruApiUrl` environment variable alongside your `HalGuruApiKey`:
     Open a terminal with administrator privileges. Right-click the **Start** button (or press `Win + X`) and select **Terminal (Admin)** or **Windows PowerShell (Administrator)**. Copy and paste the following command.
 
     ```cmd
-    setx HalGuruApiUrl "https://api.yourserver.com"
+    setx HalGuruApiUrl "https://api.yourserver.com/"
     ```
 
     Restart your terminal after setting permanent environment variables for the changes to take effect.
-
-## Checking the connection to the hal.guru platform
 
 To check the connection to the hal.guru platform API, execute the command in the terminal:
 
@@ -126,28 +140,12 @@ You should get a result like:
 
 ```
 Start: Checking API platform status
-Using API URL: https://api.hal.guru/
+Using API URL: https://api.yourserver.com/
 The API platform is up and running.
 The halguru CLI version: 1.93.0
 API core version: 1.93.0
 API app version: 1.82.0
 Done: Platform status retrieved successfully in 300ms
-```
-
-To check the validity of your API Key, execute the following command in the terminal:
-
-```bash
-halguru platform list
-```
-
-You should get a result like:
-
-```
-Start: List published agents
-Using API URL: https://api.hal.guru/
-Using package name: My Package
-There are 0 all agents published on the platform.
-Done: List successful in 144ms
 ```
 
 ## Next step
