@@ -15,12 +15,12 @@ Follow these streamlined steps to create and configure your agent workspace effi
 2. Open your project workspace by navigating to **File** -> **Open Folder...** (or pressing `Ctrl+K Ctrl+O` / `Cmd+O` on macOS for quick navigation).
    - For a new project, create a dedicated folder (e.g., `My First Agent`).
    - Click **Open** (or **Select Folder**) to confirm.
-3. In the **Explorer** panel on the left, right-click the folder space and select **Open in Integrated Terminal** (or use the shortcut `Ctrl+`` / ``Cmd+``).
+3. In the **Explorer** panel on the left, right-click the folder space and select **Open in Integrated Terminal** (or use the shortcut ``Ctrl+` ``).
 4. In the integrated terminal prompt, initialize the agent by running:
    ```bash
    halguru create
    ```
-5. In the Explorer view, locate and open the newly generated agent.halguru.yaml configuration file.
+5. In the Explorer view, locate and open the newly generated `agent.halguru.yaml` configuration file.
 
 Your screen should now display a layout similar to the following:
 
