@@ -26,6 +26,25 @@ Your screen should now display a layout similar to the following:
 
 ![Initialization](initialization.png)
 
-### Pierwsze uruchomienie
+### Running Your Agent for the First Time
 
-Aby uruchomić agenta lokalnie, w terminalu wpisz polecenie `halguru talk`.
+To start and interact with your agent locally, enter the following command in your terminal:
+
+```bash
+halguru talk
+```
+
+To verify that the agent is functioning correctly, try asking a simple test question such as `2+2=`. 
+The agent should respond with `4`. 
+When you are finished, enter `q` (or `quit`) to safely terminate the conversation session.
+```
+Start: Conversation
+Using agent file /Users/myaccount/Documents/My First Agent/agent.halguru.yaml
+Using agent id: 01A0E756-4272-7203-9117-DED788B7F3A3, name: OpenAI Agent, version: 0.0.0
+OpenAI Agent: Ready. What would you like to do?
+Type q or quit to exit.
+You: 2+2=
+OpenAI Agent: 4
+You: q
+Done: Conversation has been finished
+```
