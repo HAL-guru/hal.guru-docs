@@ -6,9 +6,6 @@ author: Chris Prusik
 
 We strongly recommend using the [default installer](index.md). The following guide is for advanced users who want to fully understand the installation process.
 
-For developing AI agents, we recommend using the **Visual Studio Code** editor, which can be downloaded from [Microsoft's website](https://code.visualstudio.com/download).
-Next, you need to install the halguru application along with its extension for this editor.
-
 ## Visit GitHub Releases
 
 1. Go to [https://github.com/HAL-guru/hal.guru/releases](https://github.com/HAL-guru/hal.guru/releases)

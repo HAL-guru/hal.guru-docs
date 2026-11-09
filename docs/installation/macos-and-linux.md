@@ -6,9 +6,6 @@ author: Chris Prusik
 
 halguru can be easily installed on macOS and Linux systems using a simple shell script.
 
-For developing AI agents, we recommend using the **Visual Studio Code** editor, which can be downloaded from [Microsoft's website](https://code.visualstudio.com/download).
-Next, you need to install the halguru application along with its extension for this editor.
-
 ## System Requirements
 
 - macOS or Linux operating system
