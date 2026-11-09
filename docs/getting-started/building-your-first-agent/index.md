@@ -7,7 +7,7 @@ draft: true
 
 Pre-requisite steps: [Environment configured](../preparing-your-environment/index.md)
 
-### Initializing the Agent
+## Initializing the Agent
 
 Follow these streamlined steps to create and configure your agent workspace efficiently:
 
@@ -26,7 +26,7 @@ Your screen should now display a layout similar to the following:
 
 ![Initialization](initialization.png)
 
-### Running Your Agent for the First Time
+## Running Your Agent for the First Time
 
 To start and interact with your agent locally, enter the following command in your terminal:
 
@@ -39,7 +39,7 @@ The agent should respond with `4`.
 When you are finished, enter `q` (or `quit`) to safely terminate the conversation session.
 ```
 Start: Conversation
-Using agent file /Users/myaccount/Documents/My First Agent/agent.halguru.yaml
+Using agent file /Users/chrisprusik/Documents/My First Agent/agent.halguru.yaml
 Using agent id: 01A0E756-4272-7203-9117-DED788B7F3A3, name: OpenAI Agent, version: 0.0.0
 OpenAI Agent: Ready. What would you like to do?
 Type q or quit to exit.
@@ -48,3 +48,5 @@ OpenAI Agent: 4
 You: q
 Done: Conversation has been finished
 ```
+
+##
